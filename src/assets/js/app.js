@@ -17,18 +17,27 @@ bodyScrollBar.addListener(ScrollTrigger.update);
 
 gsap.set(".title-wrap", {
     overflow: "hidden"
-})
+});
+
 gsap.from(".title", {
     y: "150%",
     duration: 0.5,
     delay: 1
-})
+});
 
-gsap.from(".image", {
-    yPercent: -50,
-    opacity: 0,
-    duration: 2,
+const sections = document.querySelectorAll('section');
+
+sections.forEach(section => {
+  gsap.from(section.children, {
+    opacity: 0, 
+    y: 120,
+    duration: 1, 
+    ease: 'easeInOut', 
     scrollTrigger: {
-      trigger: "section"
-    }, 
-  });
+  scroller: ".scroller",
+  trigger: section,
+  start: 'top 80%',
+
+}});  
+});
+
