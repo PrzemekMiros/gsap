@@ -16,6 +16,11 @@ main {
   padding: 13em;
 }
 
+@media (min-width: 767px) {
+  main {
+    padding: 13em;
+  }
+}
 .col-md-6:nth-child(even) {
   transform: translateY(50%);
 }

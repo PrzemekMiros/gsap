@@ -29,15 +29,16 @@ const sections = document.querySelectorAll('section');
 
 sections.forEach(section => {
   gsap.from(section.children, {
+    y: 100,
     opacity: 0, 
-    y: 120,
-    duration: 1, 
+    duration: .6, 
     ease: 'easeInOut', 
     scrollTrigger: {
   scroller: ".scroller",
   trigger: section,
-  start: 'top 80%',
-
+  start: 'top 70%',
+  // scrub: 1,
+  markers: true,
 }});  
 });
 
