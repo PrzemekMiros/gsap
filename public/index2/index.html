@@ -1,4 +1,28 @@
-        <div class="row">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="gsap">
+<div class="scroller">
+<div class="transition-fade" id="swup">
+
+<header>
+
+</header>
+
+
+
+<div class="title-wrap">
+    <h1 class="title">Gsap starter 2</h1>
+    <a href="/">Go to other page</a>
+</div>
+<main>
+            <div class="row">
             <div class="col-md-6">
                 <section class="trigger">
                 <div class="element">
@@ -168,3 +192,34 @@
             </section>
                         </div>
         </div>
+</main>
+<div class="spacing-200"></div>
+<div class="spacing-200"></div>
+</div>
+
+
+</div>
+<script src="/assets/js/app.js"></script>
+<!-- 
+<script> const setTheme = () => {
+     const currentTheme = localStorage.getItem('theme');
+     if (!currentTheme) {
+       localStorage.setItem('theme', 'light');
+       document.documentElement.dataset.theme = 'light';
+       return;
+     }
+     document.documentElement.dataset.theme = currentTheme;
+} setTheme();
+
+const themeToggleBtn = document.querySelector('.js-toggle-theme'); themeToggleBtn.addEventListener('click', () => {
+     const { theme } = document.documentElement.dataset;
+     const themeTo = theme === 'light' ? 'dark' : 'light';
+     const themeLabel = `Activate ${theme} mode`;
+     document.documentElement.dataset.theme = themeTo;
+     localStorage.setItem('theme', themeTo);
+     themeToggleBtn.setAttribute('aria-label', themeLabel);
+     themeToggleBtn.setAttribute('title', themeLabel);
+}); 
+</script> -->
+</body>
+</html>
