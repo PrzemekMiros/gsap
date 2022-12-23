@@ -17,18 +17,17 @@ body {
 }
 
   main {
-    padding: 13em
+    padding: 2em
   }
 
   @media(min-width:767px) {
         main {
             padding: 13em
-          }
+            }
+        .col-md-6:nth-child(even) {
+            transform: translateY(50%)
+            }
   }
-
-.col-md-6:nth-child(even) {
-    transform: translateY(50%)
-}
 
 .element {
     height: 50vh;
