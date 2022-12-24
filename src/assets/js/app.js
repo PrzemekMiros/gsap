@@ -95,7 +95,7 @@ function gsapAnimation() {
         duration: 1.5,
         x: "-110%",
         ease: Power4. easeOut,
-        stagger: 0.1,
+        stagger: 0.15,
         scrollTrigger: {
           trigger: target,
           scroller: ".smooth-scroll",
