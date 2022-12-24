@@ -1,7 +1,15 @@
 </div>
+     
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=3.4.0.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script>
+
+<script src="/assets/js/swup.js"></script>
 <script src="/assets/js/app.js"></script>
-<!-- 
-<script> const setTheme = () => {
+
+<script>
+   const setTheme = () => {
      const currentTheme = localStorage.getItem('theme');
      if (!currentTheme) {
        localStorage.setItem('theme', 'light');
@@ -9,9 +17,11 @@
        return;
      }
      document.documentElement.dataset.theme = currentTheme;
-} setTheme();
+   }
+   setTheme();
 
-const themeToggleBtn = document.querySelector('.js-toggle-theme'); themeToggleBtn.addEventListener('click', () => {
+   const themeToggleBtn = document.querySelector('.js-toggle-theme');
+   themeToggleBtn.addEventListener('click', () => {  
      const { theme } = document.documentElement.dataset;
      const themeTo = theme === 'light' ? 'dark' : 'light';
      const themeLabel = `Activate ${theme} mode`;
@@ -19,7 +29,8 @@ const themeToggleBtn = document.querySelector('.js-toggle-theme'); themeToggleBt
      localStorage.setItem('theme', themeTo);
      themeToggleBtn.setAttribute('aria-label', themeLabel);
      themeToggleBtn.setAttribute('title', themeLabel);
-}); 
-</script> -->
+   });
+</script>
+
 </body>
 </html>

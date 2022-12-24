@@ -1,0 +1,76 @@
+.js-toggle-theme {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  z-index: 3;
+}
+
+.round .moon-icon {
+  fill: var(--color-heading);
+}
+
+.round .moon-icon,
+.round .sun-icon {
+  cursor: pointer;
+  animation: opacity 0.4s linear;
+  font-size: 18px;
+}
+
+.js-toggle-theme input,
+.round .sun-icon {
+  display: none;
+  color: var(--color-dark-1);
+}
+
+[data-theme=dark] .round .sun-icon {
+  display: block;
+}
+
+[data-theme=dark] .round .moon-icon {
+  display: none;
+}
+
+[data-theme=dark] .logo-light {
+  display: block;
+}
+
+[data-theme=dark] .logo-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo-light {
+    display: block !important;
+  }
+  .logo-dark {
+    display: none;
+  }
+}
+.page-kontakt .logo-light,
+.page-wycena .logo-light {
+  display: block;
+}
+
+.page-kontakt .logo-dark,
+.page-wycena .logo-dark {
+  display: none;
+}
+
+.page-kontakt .site-menu-nav-list-link,
+.page-wycena .site-menu-nav-list-link {
+  color: var(--color-white);
+}
+
+@media (min-width: 767px) {
+  .js-toggle-theme {
+    height: 42px;
+  }
+  .round .moon-icon,
+  .round .sun-icon {
+    cursor: pointer;
+    font-size: 14px;
+  }
+}
