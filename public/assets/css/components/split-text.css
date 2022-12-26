@@ -9,9 +9,24 @@
   margin-bottom: -0.18em;
 }
 
+.split-line {
+  overflow: hidden;
+}
+
 .splitting .word,
 .splitting .char {
   display: inline-block;
+  overflow: hidden;
+}
+
+.split-line .splitting .word,
+.split-line .splitting .char {
+  display: inline-block;
+  margin-bottom: -0.4em;
+  overflow: hidden;
+}
+
+.splitting .char {
   overflow: hidden;
 }
 

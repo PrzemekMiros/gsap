@@ -127,7 +127,7 @@ progress::-moz-progress-bar {
   --xxl-font-size: 14;
   --xxl-line-height: .9;
   --xxl-letter-spacing: -1;
-  --xl-font-size: 7;
+  --xl-font-size: 6;
   --xl-line-height: 1;
   --xl-letter-spacing: -1;
   --h1-font-size: 6;
@@ -802,7 +802,7 @@ html.is-animating .transition-fade {
 
 .swup-progress-bar {
   height: 3px;
-  background-color: #fff;
+  background-color: var(--color-dark-1);
 }
 
 .container,
@@ -819,14 +819,19 @@ html.is-animating .transition-fade {
   margin-left: auto;
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 767px) {
   .container,
+  .container-fluid,
   .container-lg,
   .container-md,
   .container-sm,
   .container-xl,
   .container-xxl {
-    max-width: 1320px;
+    width: 100%;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 .row {
@@ -4903,9 +4908,24 @@ html.has-scroll-dragging {
   margin-bottom: -0.18em;
 }
 
+.split-line {
+  overflow: hidden;
+}
+
 .splitting .word,
 .splitting .char {
   display: inline-block;
+  overflow: hidden;
+}
+
+.split-line .splitting .word,
+.split-line .splitting .char {
+  display: inline-block;
+  margin-bottom: -0.4em;
+  overflow: hidden;
+}
+
+.splitting .char {
   overflow: hidden;
 }
 
@@ -5022,5 +5042,6 @@ html.has-scroll-dragging {
   margin-bottom: 1.8em;
   padding-left: 0;
   list-style: none;
+  overflow: hidden;
   z-index: 9;
 }
