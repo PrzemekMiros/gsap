@@ -102,13 +102,13 @@ progress::-moz-progress-bar {
 }
 
 .arrow {
-  width: 75px;
+  width: 75%;
   height: auto;
   fill: var(--color-dark-1);
 }
 
 .site-header {
-  padding-top: 40px;
+  padding-top: 8vh;
 }
 
 .site-logo img {
@@ -122,8 +122,8 @@ progress::-moz-progress-bar {
 }
 
 :root {
-  --font-primary: "Montserrat", sans-serif;
-  --font-secondary: "Syne", sans-serif;
+  --font-primary: "Syne", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
   --xxl-font-size: 14;
   --xxl-line-height: .9;
   --xxl-letter-spacing: -1;
@@ -181,7 +181,7 @@ h6 {
 .xxl {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   line-height: var(--xxl-line-height);
   font-size: calc(var(--xxl-font-size) * 1.5vw);
   font-weight: 900;
@@ -196,7 +196,7 @@ h6 {
 .xl {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   line-height: var(--xl-line-height);
   font-size: calc(var(--xl-font-size) * 1.5vw);
   font-weight: 800;
@@ -515,8 +515,6 @@ small, .small {
 .js-toggle-theme {
   position: relative;
   display: block;
-  width: 32px;
-  height: 36px;
   background: transparent;
   border: none;
   z-index: 3;
@@ -530,7 +528,7 @@ small, .small {
 .round .sun-icon {
   cursor: pointer;
   animation: opacity 0.4s linear;
-  font-size: 18px;
+  font-size: 1.5vw;
 }
 
 .js-toggle-theme input,
@@ -579,13 +577,10 @@ small, .small {
 }
 
 @media (min-width: 767px) {
-  .js-toggle-theme {
-    height: 42px;
-  }
   .round .moon-icon,
   .round .sun-icon {
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1vw;
   }
 }
 .h-100vh {

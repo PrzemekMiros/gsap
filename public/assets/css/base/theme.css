@@ -1,8 +1,6 @@
 .js-toggle-theme {
   position: relative;
   display: block;
-  width: 32px;
-  height: 36px;
   background: transparent;
   border: none;
   z-index: 3;
@@ -16,7 +14,7 @@
 .round .sun-icon {
   cursor: pointer;
   animation: opacity 0.4s linear;
-  font-size: 18px;
+  font-size: 1.5vw;
 }
 
 .js-toggle-theme input,
@@ -65,12 +63,9 @@
 }
 
 @media (min-width: 767px) {
-  .js-toggle-theme {
-    height: 42px;
-  }
   .round .moon-icon,
   .round .sun-icon {
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1vw;
   }
 }

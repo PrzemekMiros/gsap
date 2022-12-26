@@ -68,7 +68,7 @@
     paused: true 
   })
     .to(arrow, { 
-      x: "50%",
+      x: "40%",
       scale: 0.7,
       duration: .5
     })

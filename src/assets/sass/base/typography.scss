@@ -1,7 +1,7 @@
   
 :root {
-    --font-primary: "Montserrat", sans-serif;
-    --font-secondary: "Syne", sans-serif;
+    --font-primary: "Syne", sans-serif;
+    --font-secondary: "Montserrat", sans-serif;
     --xxl-font-size: 14;
     --xxl-line-height: .9;
     --xxl-letter-spacing: -1;
@@ -56,7 +56,7 @@ h6 {
 .xxl {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   line-height: var(--xxl-line-height);
   font-size: calc(var(--xxl-font-size) * 1.5vw);
   font-weight: 900;
@@ -72,7 +72,7 @@ h6 {
 .xl {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   line-height: var(--xl-line-height);
   font-size: calc(var(--xl-font-size) * 1.5vw);
   font-weight: 800;

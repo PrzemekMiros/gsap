@@ -102,13 +102,13 @@ progress::-moz-progress-bar {
 }
 
 .arrow {
-  width: 75px;
+  width: 75%;
   height: auto;
   fill: var(--color-dark-1);
 }
 
 .site-header {
-  padding-top: 40px;
+  padding-top: 8vh;
 }
 
 .site-logo img {
