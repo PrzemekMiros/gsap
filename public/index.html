@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Gsap</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Syne:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Syne:wght@400;500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <body class="gsap">
@@ -77,7 +77,7 @@
         <div class="spacing-200"></div>
 
         <div class="container">
-            <div class="row gx-0 pb-small">
+            <div class="row gx-0 pb-small">            
                 <div class="offset-md-3 col-md-6">
                     <p>
                         Wybrane prace
@@ -93,21 +93,21 @@
                     </p>
                 </div>
                 <div class="col-9">
-                    <h2 class="split-text">
+                    <h2 class="split-text" data-splitting>
                         REA
                     </h2>
                 </div>
             </div>
             <div class="row gx-0">
                 <div class="col-10">
-                    <h2 class="split-text">
+                    <h2 class="split-text" data-splitting>
                         LIZA
                     </h2>
                 </div>
             </div>
             <div class="row gx-0">
                 <div class="offset-3 col-9">
-                    <h2 class="split-text">
+                    <h2 class="split-text" data-splitting>
                         CJE
                     </h2>
                 </div>
@@ -136,21 +136,21 @@
                     </p>
                 </div>
                 <div class="col-9">
-                    <h2 class="split-text">
+                    <h2 data-splitting>
                         US
                     </h2>
                 </div>
             </div>
             <div class="row gx-0">
                 <div class="offset-1 col-10">
-                    <h2 class="split-text">
+                    <h2 data-splitting>
                        ŁU
                     </h2>
                 </div>
             </div>
             <div class="row gx-0">
                 <div class="offset-3 col-9">
-                    <h2 class="split-text">
+                    <h2 data-splitting>
                         GI
                     </h2>
                 </div>
@@ -166,8 +166,8 @@
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=3.4.0.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script>
-
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<script>Splitting();</script>
 <script src="/assets/js/swup.js"></script>
 <script src="/assets/js/app.js"></script>
 

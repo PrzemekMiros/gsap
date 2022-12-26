@@ -27,82 +27,41 @@ function gsapAnimation() {
     pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
   });
   
+
+
+  const triggers = document.querySelectorAll(".word");
   
-  // --- RED PANEL ---
-  gsap.from(".line-1", {
-    scrollTrigger: {
-      trigger: ".line-1",
-      scroller: ".smooth-scroll",
-      scrub: true,
-      start: "top bottom",
-      end: "top top",
-      onUpdate: self => console.log(self.direction)
-    },
-    scaleX: 0,
-    transformOrigin: "left center", 
-    ease: "none"
-  });
-  
-  
-  // --- ORANGE PANEL ---
-  gsap.from(".line-2", {
-    scrollTrigger: {
-      trigger: ".orange",
-      scroller: ".smooth-scroll",
-      scrub: true,
-      pin: true,
-      start: "top top",
-      end: "+=100%"
-    },
-    scaleX: 0, 
-    transformOrigin: "left center", 
-    ease: "none"
-  });
-  
-  
-  // --- PURPLE/GREEN PANEL ---
-  var tl = gsap.timeline({
+  triggers.forEach(trigger => {
+    gsap.from(trigger.children, {
+      duration: 1.5,
+      y: "110%",
+      ease: Power4. easeOut,
+      stagger: 0.15,
       scrollTrigger: {
-        trigger: ".purple",
+        trigger: trigger,
         scroller: ".smooth-scroll",
-        scrub: true,
-        pin: true,
-        start: "top top",
-        end: "+=100%"
+        start: "top 85%",
       }
     });
+  })
   
-  tl.from(".purple p", {scale: 0.3, rotation:45, autoAlpha: 0, ease: "power2"})
-    .from(".line-3", {scaleX: 0, transformOrigin: "left center", ease: "none"}, 0)
-    .to(".purple", {backgroundColor: "#28a92b"}, 0);
-  
-  
-  
-  
-    const targets = gsap.utils.toArray(".split-text");
-    targets.forEach((target) => {
-      let SplitClient2 = new SplitText(target, { 
-        charsClass: "char-parent"
-      });
-      let SplitClient = new SplitText(target, { 
-        type: "chars, lines", 
-        charsClass: "char-child",
-        linesClass: "line-child"
-      });
 
-      let chars = SplitClient.chars; //an array of all the divs that wrap each character
-      gsap.from(chars, {
-        duration: 1.5,
-        x: "-110%",
-        ease: Power4. easeOut,
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: target,
-          scroller: ".smooth-scroll",
-          start: "top 85%"
-        }
-      });
-    });
+  const hoverLink = document.querySelector('.site-link');
+  const arrow = document.querySelector('.arrow');
+  
+  const tl = gsap.timeline({ 
+    defaults: { ease: "power4.easeOut" }, 
+    paused: true 
+  })
+    .to(arrow, { 
+      x: 100,
+      scale: 0.8,
+      duration: .5
+    })
+  
+  
+    hoverLink.addEventListener("mouseenter", (e) => tl.play());
+    hoverLink.addEventListener("mouseleave", (e) => tl.reverse());
 
 
   // Progress
@@ -125,6 +84,7 @@ function gsapAnimation() {
   
 }
 
+/*
 // Swup config
 const swup = new Swup({
   plugins: [
@@ -135,7 +95,8 @@ const swup = new Swup({
 
 function loadingScripts() {
   if (document.querySelector('.gsap')) {
-    gsapAnimation();
+    Splitting(),
+    gsapAnimation()
   }
 }
 
@@ -145,6 +106,7 @@ document.addEventListener("swup:animationInStart", () => {
 document.addEventListener("swup:animationInDone", () => {
   
 }), console.clear();
+*/
 
 gsapAnimation();
 
