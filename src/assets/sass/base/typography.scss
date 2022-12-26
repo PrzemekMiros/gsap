@@ -58,9 +58,15 @@ h6 {
   margin-bottom: 0;
   font-family: var(--font-primary);
   line-height: var(--xxl-line-height);
-  font-size: calc(var(--xxl-font-size) * 1vw);
+  font-size: calc(var(--xxl-font-size) * 1.5vw);
   font-weight: 900;
   letter-spacing: calc(var(--xxl-letter-spacing) * 1px);
+}
+
+@media(min-width:767px) {
+  .xxl {
+    font-size: calc(var(--xxl-font-size) * 1vw)
+  }
 }
 
 .xl {
@@ -68,57 +74,99 @@ h6 {
   margin-bottom: 0;
   font-family: var(--font-primary);
   line-height: var(--xl-line-height);
-  font-size: calc(var(--xl-font-size) * 1vw);
+  font-size: calc(var(--xl-font-size) * 1.5vw);
   font-weight: 800;
   letter-spacing: calc(var(--xl-letter-spacing) * 1px);
+}
+
+@media(min-width:767px) {
+  .xl {
+    font-size: calc(var(--xl-font-size) * 1vw)
+  }
 }
 
 h1, .h1 {
   font-family: var(--font-primary);
   line-height: var(--h1-line-height);
-  font-size: calc(var(--h1-font-size) * 1vw);
+  font-size: calc(var(--h1-font-size) * 1.5vw);
   font-weight: 500;
   letter-spacing: calc(var(--h1-letter-spacing) * 1px);
+}
+
+@media(min-width:767px) {
+  h1, .h1 {
+    font-size: calc(var(--h1-font-size) * 1vw)
+  }
 }
 
 h2, .h2 {
     font-family: var(--font-primary);
     line-height: var(--h2-line-height);
-    font-size: calc(var(--h2-font-size) * 1vw);
+    font-size: calc(var(--h2-font-size) * 1.5vw);
     font-weight: 500;
     letter-spacing: calc(var(--h2-letter-spacing) * 1px);
+  }
+
+  @media(min-width:767px) {
+    h2, .h2 {
+      font-size: calc(var(--h2-font-size) * 1vw)
+    }
   }
 
   h3, .h3 {
     font-family: var(--font-primary);
     line-height: var(--h3-line-height);
-    font-size: calc(var(--h3-font-size) * 1vw);
+    font-size: calc(var(--h3-font-size) * 1.5vw);
     font-weight: 500;
     letter-spacing: calc(var(--h3-letter-spacing) * 1px);
+  }
+
+  @media(min-width:767px) {
+    h3, .h3 {
+      font-size: calc(var(--h3-font-size) * 1vw)
+    }
   }
 
   h4, .h4 {
     font-family: var(--font-primary);
     line-height: var(--h4-line-height);
-    font-size: calc(var(--h4-font-size) * 1vw);
+    font-size: calc(var(--h4-font-size) * 1.8vw);
     font-weight: 500;
     letter-spacing: calc(var(--h4-letter-spacing) * 1px);
+  }
+  
+  @media(min-width:767px) {
+    h4, .h4 {
+      font-size: calc(var(--h4-font-size) * 1vw)
+    }
   }
 
   h5, .h5 {
     font-family: var(--font-primary);
     line-height: var(--h5-line-height);
-    font-size: calc(var(--h5-font-size) * 1vw);
+    font-size: calc(var(--h5-font-size) * 1.8vw);
     font-weight: 500;
     letter-spacing: calc(var(--h5-letter-spacing) * 1px);
+  }
+  
+  @media(min-width:767px) {
+    h5, .h5 {
+      font-size: calc(var(--h5-font-size) * 1vw)
+    }
   }
 
   h6, .h6 {
     font-family: var(--font-primary);
     line-height: var(--h6-line-height);
-    font-size: calc(var(--h6-font-size) * 1vw);
+    font-size: calc(var(--h6-font-size) * 1.8vw);
     font-weight: 500;
     letter-spacing: calc(var(--h6-letter-spacing) * 1px);
+  }
+
+  @media(min-width:767px) {
+    h5, .h5 {
+      font-size: calc(var(--h5-font-size) * 1vw)
+    }
   }
 
   .subheading {
@@ -134,10 +182,16 @@ h2, .h2 {
     margin-top: 1em;
     margin-bottom: 1em;
     font-weight: 400;
-    font-size: calc(var(--paragraph-font-size) * 1vw);
+    font-size: calc(var(--paragraph-font-size) * 3vw);
     line-height: var(--paragraph-line-height);
     letter-spacing: calc(var(--paragraph-letter-spacing) * 1px);
     color: var(--color-text);
+  }
+
+  @media(min-width:767px) {
+    p {
+      font-size: calc(var(--paragraph-font-size) * 1vw)
+    }
   }
 
   blockquote {
@@ -147,8 +201,13 @@ h2, .h2 {
     font-size: 24px;
   }
 
-  small {
-    font-size: calc(var(--subheading-min-font-size) * 1px);
+  small, .small {
+    font-size: calc(var(--subheading-font-size) * 2vw);
+  }
+  @media(min-width:767px) {
+    small, .small {
+      font-size: calc(var(--subheading-font-size) * 1vw)
+    }
   }
 
   .text-uppercase {

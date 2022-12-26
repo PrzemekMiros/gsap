@@ -4,11 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Gsap</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Syne:wght@400;500;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Gsap and locomotive scroll">
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <style>
+        /* montserrat-regular - latin-ext_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+/* montserrat-800 - latin-ext_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-800.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+/* montserrat-900 - latin-ext_latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-900.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* syne-regular - latin */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/syne-v15-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/assets/fonts/syne-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/syne-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/syne-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/syne-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/syne-v15-latin-regular.svg#Syne') format('svg'); /* Legacy iOS */
+}
+
+
+    </style>
 </head>
 <body class="gsap">
     <div class="site-grid">
@@ -30,13 +86,13 @@
 <header class="site-header">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-9">
+            <div class="col-6">
                 <div class="site-logo">
                     <img src="assets/img/logo/logo-dark.webp" alt="" class="site-logo logo-dark">
                     <img src="assets/img/logo/logo-light.webp" alt="" class="site-logo logo-light">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <button class="js-toggle-theme mr-xxsmall" aria-label="Zmiana kolorystyki" title="">
                     <div class="round">
                         <svg class="moon-icon" width="1.6em" height="1.6em" viewbox="0 0 50 50">
@@ -78,74 +134,73 @@
 
 <main>
     
-    <div class="spacing-200"></div>
+    <div class="pt-md-xlarge pt-medium"></div>
         <section>
         <div class="container">
             <div class="row gx-0">
-                <div class="offset-md-3 col-md-6 pb-small">
+                <div class="offset-3 col-md-6 pb-small">
                     <p>
                         Dzień dobry
                     </p>
                 </div>
             </div>
             <div class="row gx-0">
-                <div class="offset-2 col-md-1">
+                <div class="offset-2 offset-md-2 col-1">
                     <p> 
                         <small>
                             01
                         </small>
                     </p>
                 </div>
-                <div class="col-5">
-                    <h1 class="h3 mt-3"> 
+                <div class="col-8 col-md-5">
+                    <h1 class="h3 mt-1 mt-md-3"> 
                         Jestem Przemek. Wykonuję strony internetowe dla małych i średnich firm. Postaw na specjalistyczne wsparcie i skutecznie rozwijaj swój biznes
                     </h1>
                 </div>
             </div>
         </div>
     </section>
-    <div class="spacing-100"></div>
+    <div class="pt-md-medium pt-small"></div>
     <div class="container">
             <div class="row gx-0">
-                <div class="offset-md-3 col-md-9">
+                <div class="offset-3 col-9">
                     <a href="/index2/">Zobacz więcej</a>
                 </div>
             </div>
     </div>
-    <div class="spacing-200"></div>
-    <div class="spacing-100"></div>
+    <div class="pt-md-xlarge pt-xlarge pb-md-xlarge"></div>
     <section>
     <div class="container">
         <div class="row gx-0 pb-small">
-            <div class="offset-md-3 col-md-6">
+            <div class="offset-3 col-md-6">
                 <p>
                     Wybrane prace
                 </p>
             </div>
         </div>
         <div class="row gx-0">
-            <div class="offset-md-2 col-md-1 pb-xsmall">
+            <div class="offset-1 offset-md-2 col-1 pb-xsmall">
                 <p>
                     <small>
                         01
                     </small>
                 </p>
             </div>
-            <div class="col-6">
+            <div class="offset-1 col-6">
                 <h2 class="xxl" data-splitting>
                     REA
                 </h2>
             </div>
         </div>
         <div class="row gx-0">
-            <div class="offset-2 col-8">
+            <div class="offset-1 offset-md-2 col-8">
                 <h2 class="xxl" data-splitting>
                     LIZA
                 </h2>
             </div>
         </div>
         <div class="row gx-0">
-            <div class="offset-4 col-5">
+            <div class="offset-3 offset-md-5 col-5">
                 <h2 class="xxl" data-splitting>
                     CJE
                 </h2>
@@ -154,33 +209,33 @@
     </div>
 </section>
 
-<div class="spacing-200"></div>
+<div class="pt-md-xlarge pt-medium"></div>
 
 <section>
     <div class="container">
         <div class="row gx-0">
-            <div class="offset-3 col-5">
+            <div class="offset-1 offset-md-3 col-12 col-md-5">
                 <div class="portfolio-list-wrap">
                     <ul class="portfolio-list">
                         <li class="portfolio-item d-flex align-items-center">
-                            <span class="col-2">I</span>
-                            <a href="" class="h4">Eco Tech Group</a>
+                            <span class="offset-1 offset-md-0 col-1 col-md-2 small">I</span>
+                            <a href="#" class="h4" title="Eco Tech Group" aria-label="Eco Tech Group">Eco Tech Group</a>
                         </li>
                         <li class="portfolio-item d-flex align-items-center">
-                            <span class="col-2">II</span>
-                            <a href="" class="h4">Business Woman</a>
+                            <span class="offset-1 offset-md-0 col-1 col-md-2 small">II</span>
+                            <a href="#" class="h4" title="Business Woman" aria-label="Business Woman">Business Woman</a>
                         </li>
                         <li class="portfolio-item d-flex align-items-center">
-                            <span class="col-2">III</span>
-                            <a href="" class="h4">EGP System</a>
+                            <span class="offset-1 offset-md-0 col-1 col-md-2 small">III</span>
+                            <a href="#" class="h4" title="EGP System" aria-label="EGP System">EGP System</a>
                         </li>
                         <li class="portfolio-item d-flex align-items-center">
-                            <span class="col-2">IV</span>
-                            <a href="" class="h4">Call Your Soul</a>
+                            <span class="offset-1 offset-md-0 col-1 col-md-2 small">IV</span>
+                            <a href="#" class="h4" title="Call Your Soul" aria-label="Call Your Soul">Call Your Soul</a>
                         </li>
                         <li class="portfolio-item d-flex align-items-center">
-                            <span class="col-2">V</span>
-                            <a href="" class="h4">Gaszyn Park</a>
+                            <span class="offset-1 offset-md-0 col-1 col-md-2 small">V</span>
+                            <a href="#" class="h4" title="Gaszyn Park" aria-label="Gaszyn Park">Gaszyn Park</a>
                         </li>
                     </ul>
                 </div>
@@ -188,44 +243,43 @@
         </div>
 
         <div class="row gx-0">
-            <div class="col-2">
-                <div class="overlay-40 trans-minus-100">
+            <div class="col-2 d-none d-md-block">
+                <div class="overlay-40 trans-minus-md-100">
                     <img src="assets/img/mobile.png" alt="">
                 </div>
             </div>
-            <div class="offset-1 col-6">
-                <div class="overlay-40 mt-5">
+            <div class="offset-md-1 col-12 col-md-6 d-none d-md-block">
+                <div class="overlay-40 mt-md-5">
                     <img src="assets/img/desktop.jpg" alt="">
                 </div>
             </div>
-            <div class="col-2">
-                <div class="overlay-40 trans-minus-200">
+            <div class="col-2 d-none d-md-block">
+                <div class="overlay-40 trans-minus-md-200">
                     <img src="assets/img/brand.png" alt="">
                 </div>
             </div>
         </div>
     </div>
 </section>
-    <div class="spacing-200"></div>
-    <div class="spacing-100"></div>
+    <div class="pt-md-xlarge pt-xlarge pb-md-xlarge"></div>
         <section>
         <div class="container">
-            <div class="row gx-0 pb-small">
-                <div class="offset-md-3 col-md-6">
+            <div class="row gx-0 pb-xsmall pb-md-small">
+                <div class="offset-3 col-md-6">
                     <p>
                         Moje usługi
                     </p>
                 </div>
             </div>
             <div class="row gx-0">
-                <div class="offset-md-2 col-md-1">
+                <div class="offset-2 col-1">
                     <p> 
                         <small>
                             02
                         </small>
                     </p>
                 </div>
-                <div class="col-6">
+                <div class="col-9">
                     <h3 class="xl split-line" data-splitting>
                         <span class="text-stroke">
                             PROJEKT
@@ -234,7 +288,7 @@
                 </div>
             </div>
             <div class="row gx-0">
-                <div class="offset-2 col-6">
+                <div class="offset-2 col-9">
                     <h3 class="xl split-line" data-splitting>
                          KODOWANIE
                     </h3>
@@ -244,7 +298,7 @@
             <div class="spacing-100"></div>
 
             <div class="row gx-0">
-            <div class="offset-3 col-5">
+            <div class="offset-2 offset-md-3 col-10 col-md-5">
                 <div class="portfolio-list-wrap">
                     <ul class="portfolio-list">
                         <li class="portfolio-item d-flex align-items-center">
@@ -272,20 +326,20 @@
             </div>
         </div>
         </div>
-        <div class="spacing-100"></div>
+        <div class="pt-md-large pt-small"></div>
     </section>
-    <div class="spacing-200"></div>
+    <div class="pt-md-xlarge pt-medium"></div>
         <section>
         <div class="container">
             <div class="row gx-0 pb-small">
-                <div class="offset-md-3 col-md-6">
+                <div class="offset-3 col-md-6">
                     <p>
                         Wybrane prace
                     </p>
                 </div>
             </div>
             <div class="row gx-0">
-                <div class="offset-2 col-md-1">
+                <div class="offset-2 col-1">
                     <p>
                         <small>
                             02
@@ -299,8 +353,8 @@
                 </div>
             </div>
             <div class="row gx-0">
-                <div class="offset-2 col-11">
-                    <h2 class="xxl" data-splitting>
+                <div class="offset-2 col-9">
+                     <h2 class="xxl" data-splitting>
                         TAKT
                     </h2>
                 </div>
@@ -308,13 +362,12 @@
         </div>
     </section>
 
-    <div class="spacing-200"></div>
-    <div class="spacing-100"></div>
+    <div class="pt-md-xlarge pt-medium"></div>
 
     <section>
         <div class="container">
             <div class="row gx-0 pb-small">
-                <div class="offset-md-3 col-md-2 d-flex align-items-center">
+                <div class="offset-1 offset-md-3 col-1 d-flex align-items-center">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
                         style="enable-background:new 0 0 64 64;" class="arrow" xml:space="preserve">
@@ -330,11 +383,11 @@
                         </g>
                     </svg>
                 </div>
-                <div class="col-5">
+                <div class="offset-1 offset-md-0 col-5">
                     <p class="mt-4 mb-1">
                         <small>NAPISZ DO MNIE</small>
                     </p>
-                    <a href="#" class="h5 site-link">
+                    <a href="#" class="h4 site-link">
                         kontakt@futurewebstudio.pl
                     </a>
                     <p class="mt-1 mb-4">
@@ -344,7 +397,7 @@
             </div>
         </div>
     </section>
-    <div class="spacing-200"></div>
+    <div class="pt-md-xlarge pt-medium"></div>
 
 </main>
 

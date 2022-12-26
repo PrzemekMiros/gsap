@@ -68,8 +68,8 @@
     paused: true 
   })
     .to(arrow, { 
-      x: 100,
-      scale: 0.8,
+      x: "50%",
+      scale: 0.7,
       duration: .5
     })
   
