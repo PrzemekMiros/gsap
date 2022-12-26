@@ -4,45 +4,17 @@ title: 2
 ---
 
 <main>
+
     <div class="spacing-200"></div>
-    <section>
-        <div class="container">
-            <div class="row gx-0">
-                <div class="offset-md-3 col-md-6 pb-small">
-                    <p>
-                        Dzień dobry
-                    </p>
-                </div>
-            </div>
-            <div class="row gx-0">
-                <div class="offset-2 col-md-1">
-                    <p> 
-                        <small>
-                            01
-                        </small>
-                    </p>
-                </div>
-                <div class="col-5">
-                    <p class="paragraph-big mt-3"> 
-                        Jestem Przemek. Wykonuję strony internetowe dla małych i średnich firm. Postaw na specjalistyczne wsparcie i skutecznie rozwijaj swój biznes
-                    </p>
-                </div>
-            </div>
-            <div class="row gx-0">
-                <div class="offset-md-3 col-md-9">
-                    <a href="/">Go to other page</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    {% include 'sections/welcome.njk' %}
+
+    <div class="spacing-200"></div>
+
+    {% include 'sections/portfolio.njk' %}
 
     <div class="spacing-200"></div>
 
     {% include 'sections/services.njk' %}
-
-    <div class="spacing-200"></div>
-
-    {% include 'sections/contact.njk' %}
-
-    <div class="spacing-200"></div>
+    
 </main>

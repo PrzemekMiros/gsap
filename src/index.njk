@@ -6,24 +6,13 @@ title: 1
 <main>
     
     <div class="spacing-200"></div>
-
-    <section>
-        <div class="container">
-            <div class="row gx-0">
-                <div class="offset-3 col-9">
-                    <a href="/index2/">Go to other page</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    {% include 'sections/welcome.njk' %}
     <div class="spacing-200"></div>
-
     {% include 'sections/portfolio.njk' %}
-
     <div class="spacing-200"></div>
-    <div class="spacing-200"></div>
-
     {% include 'sections/services.njk' %}
+    <div class="spacing-200"></div>
+    {% include 'sections/contact.njk' %}
+    <div class="spacing-200"></div>
 
 </main>

@@ -2,7 +2,6 @@
 
 
 // Gsap config
-function gsapAnimation() {
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +45,20 @@ function gsapAnimation() {
   })
   
 
+    gsap.from(".split-line", {
+      duration: 1.5,
+      y: "110%",
+      ease: Power4. easeOut,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: ".split-line",
+        scroller: ".smooth-scroll",
+        start: "top 85%",
+      }
+    });
+
+  
+
   const hoverLink = document.querySelector('.site-link');
   const arrow = document.querySelector('.arrow');
   
@@ -82,7 +95,6 @@ function gsapAnimation() {
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
   
-}
 
 /*
 // Swup config
@@ -108,5 +120,4 @@ document.addEventListener("swup:animationInDone", () => {
 }), console.clear();
 */
 
-gsapAnimation();
 
