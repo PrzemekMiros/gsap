@@ -14,7 +14,7 @@
 .round .sun-icon {
   cursor: pointer;
   animation: opacity 0.4s linear;
-  font-size: 1.5vw;
+  font-size: 3vw;
 }
 
 .js-toggle-theme input,

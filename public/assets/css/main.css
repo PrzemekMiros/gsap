@@ -108,12 +108,12 @@ progress::-moz-progress-bar {
 }
 
 .site-header {
-  padding-top: 8vh;
+  padding-top: 5vh;
 }
 
 .site-logo img {
-  width: 10vw;
-  padding-left: 3em;
+  width: 20vw;
+  padding-left: 1.5em;
   height: auto;
 }
 
@@ -121,6 +121,14 @@ progress::-moz-progress-bar {
   display: none;
 }
 
+@media (min-width: 767px) {
+  .site-header {
+    padding-top: 8vh;
+  }
+  .site-logo img {
+    width: 10vw;
+  }
+}
 :root {
   --font-primary: "Syne", sans-serif;
   --font-secondary: "Montserrat", sans-serif;
@@ -136,7 +144,7 @@ progress::-moz-progress-bar {
   --h2-font-size: 5;
   --h2-line-height: 1.2;
   --h2-letter-spacing: 1;
-  --h3-font-size: 4;
+  --h3-font-size: 3.8;
   --h3-line-height: 1.3;
   --h3-letter-spacing: 1;
   --h4-font-size: 2.6;
@@ -528,7 +536,7 @@ small, .small {
 .round .sun-icon {
   cursor: pointer;
   animation: opacity 0.4s linear;
-  font-size: 1.5vw;
+  font-size: 3vw;
 }
 
 .js-toggle-theme input,

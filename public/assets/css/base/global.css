@@ -108,15 +108,24 @@ progress::-moz-progress-bar {
 }
 
 .site-header {
-  padding-top: 8vh;
+  padding-top: 5vh;
 }
 
 .site-logo img {
-  width: 10vw;
-  padding-left: 3em;
+  width: 20vw;
+  padding-left: 1.5em;
   height: auto;
 }
 
 .logo-light {
   display: none;
+}
+
+@media (min-width: 767px) {
+  .site-header {
+    padding-top: 8vh;
+  }
+  .site-logo img {
+    width: 10vw;
+  }
 }
