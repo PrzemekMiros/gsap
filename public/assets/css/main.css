@@ -29,8 +29,6 @@ p {
 img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .spacing-200 {
@@ -83,133 +81,6 @@ progress::-moz-progress-bar {
   background: var(--color-dark-1);
 }
 
-:root {
-  --line-index: 10;
-  --line-total: 10;
-}
-
-/* Styles for Splitting */
-.splitting {
-  margin: 0;
-  font-size: 14vw;
-  font-weight: 800;
-  line-height: 0.9;
-}
-
-.splitting .word {
-  margin-bottom: -0.55em;
-}
-
-.splitting .word,
-.splitting .char {
-  display: inline-block;
-  overflow: hidden;
-}
-
-/* Psuedo-element chars */
-.splitting .char {
-  position: relative;
-}
-
-/**
- * Populate the psuedo elements with the character to allow for expanded effects
- * Set to `display: none` by default; just add `display: block` when you want
- * to use the psuedo elements
- */
-.splitting .char::before,
-.splitting .char::after {
-  content: attr(data-char);
-  position: absolute;
-  top: 0;
-  left: 0;
-  visibility: hidden;
-  transition: inherit;
-  user-select: none;
-}
-
-/* Expanded CSS Variables */
-.splitting {
-  /* The center word index */
-  --word-center: calc((var(--word-total) - 1) / 2);
-  /* The center character index */
-  --char-center: calc((var(--char-total) - 1) / 2);
-  /* The center character index */
-  --line-center: calc((var(--line-total) - 1) / 2);
-}
-
-.splitting .word {
-  /* Pecent (0-1) of the word's position */
-  --word-percent: calc(var(--word-index) / var(--word-total));
-  /* Pecent (0-1) of the line's position */
-  --line-percent: calc(var(--line-index) / var(--line-total));
-}
-
-.splitting .char {
-  /* Percent (0-1) of the char's position */
-  --char-percent: calc(var(--char-index) / var(--char-total));
-  /* Offset from center, positive & negative */
-  --char-offset: calc(var(--char-index) - var(--char-center));
-  /* Absolute distance from center, only positive */
-  --distance: calc(
-     (var(--char-offset) * var(--char-offset)) / var(--char-center)
-  );
-  /* Distance from center where -1 is the far left, 0 is center, 1 is far right */
-  --distance-sine: calc(var(--char-offset) / var(--char-center));
-  /* Distance from center where 1 is far left/far right, 0 is center */
-  --distance-percent: calc((var(--distance) / var(--char-center)));
-}
-
-.splitting.cells img {
-  width: 100%;
-  display: block;
-}
-
-@supports (display: grid) {
-  .splitting.cells {
-    position: relative;
-    overflow: hidden;
-    background-size: cover;
-    visibility: hidden;
-  }
-  .splitting .cell-grid {
-    background: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template: repeat(var(--row-total), 1fr)/repeat(var(--col-total), 1fr);
-  }
-  .splitting .cell {
-    background: inherit;
-    position: relative;
-    overflow: hidden;
-  }
-  .splitting .cell-inner {
-    background: inherit;
-    position: absolute;
-    visibility: visible;
-    /* Size to fit the whole container size */
-    width: calc(100% * var(--col-total));
-    height: calc(100% * var(--row-total));
-    /* Position properly */
-    left: calc(-100% * var(--col-index));
-    top: calc(-100% * var(--row-index));
-  }
-  /* Helper variables for advanced effects */
-  .splitting .cell {
-    --center-x: calc((var(--col-total) - 1) / 2);
-    --center-y: calc((var(--row-total) - 1) / 2);
-    /* Offset from center, positive & negative */
-    --offset-x: calc(var(--col-index) - var(--center-x));
-    --offset-y: calc(var(--row-index) - var(--center-y));
-    /* Absolute distance from center, only positive */
-    --distance-x: calc( (var(--offset-x) * var(--offset-x)) / var(--center-x) );
-    /* Absolute distance from center, only positive */
-    --distance-y: calc( (var(--offset-y) * var(--offset-y)) / var(--center-y) );
-  }
-}
 .site-link {
   position: relative;
 }
@@ -679,6 +550,22 @@ small {
   background-color: var(--color-green);
 }
 
+.overlay-60 {
+  position: relative;
+}
+
+.overlay-60::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+  z-index: 0;
+}
+
 .js-toggle-theme {
   position: relative;
   display: block;
@@ -921,6 +808,34 @@ small {
     padding-right: 10em;
   }
 }
+.trans-minus-200 {
+  transform: translateY(-178%);
+}
+
+.trans-minus-150 {
+  transform: translateY(-150%);
+}
+
+.trans-minus-100 {
+  transform: translateY(-100%);
+}
+
+.trans-minus-50 {
+  transform: translateY(-50%);
+}
+
+.trans-minus-33 {
+  transform: translateY(-33%);
+}
+
+.trans-minus-20 {
+  transform: translateY(-20%);
+}
+
+.trans-minus-17 {
+  transform: translateY(-17%);
+}
+
 :root {
   --transPower1: cubic-bezier(0,.5,.21,.97);
   --transPower2: cubic-bezier(.83,0,.17,1);
@@ -941,42 +856,33 @@ html.is-animating .transition-fade {
   background-color: #fff;
 }
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
+  padding-right: 8vw;
+  padding-left: 8vw;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
-  .container, .container-sm {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container, .container-md, .container-sm {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container, .container-lg, .container-md, .container-sm {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+@media (min-width: 1920px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
     max-width: 1320px;
   }
 }
 .row {
-  --bs-gutter-x:1.5rem;
-  --bs-gutter-y:0;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(var(--bs-gutter-y) * -1);
@@ -1142,52 +1048,64 @@ html.is-animating .transition-fade {
   margin-left: 91.6666666667%;
 }
 
-.g-0, .gx-0 {
-  --bs-gutter-x:0;
+.g-0,
+.gx-0 {
+  --bs-gutter-x: 0 ;
 }
 
-.g-0, .gy-0 {
-  --bs-gutter-y:0;
+.g-0,
+.gy-0 {
+  --bs-gutter-y: 0 ;
 }
 
-.g-1, .gx-1 {
-  --bs-gutter-x:0.25rem;
+.g-1,
+.gx-1 {
+  --bs-gutter-x: 0.25rem ;
 }
 
-.g-1, .gy-1 {
-  --bs-gutter-y:0.25rem;
+.g-1,
+.gy-1 {
+  --bs-gutter-y: 0.25rem ;
 }
 
-.g-2, .gx-2 {
-  --bs-gutter-x:0.5rem;
+.g-2,
+.gx-2 {
+  --bs-gutter-x: 0.5rem ;
 }
 
-.g-2, .gy-2 {
-  --bs-gutter-y:0.5rem;
+.g-2,
+.gy-2 {
+  --bs-gutter-y: 0.5rem ;
 }
 
-.g-3, .gx-3 {
-  --bs-gutter-x:1rem;
+.g-3,
+.gx-3 {
+  --bs-gutter-x: 1rem ;
 }
 
-.g-3, .gy-3 {
-  --bs-gutter-y:1rem;
+.g-3,
+.gy-3 {
+  --bs-gutter-y: 1rem ;
 }
 
-.g-4, .gx-4 {
-  --bs-gutter-x:1.5rem;
+.g-4,
+.gx-4 {
+  --bs-gutter-x: 1.5rem ;
 }
 
-.g-4, .gy-4 {
-  --bs-gutter-y:1.5rem;
+.g-4,
+.gy-4 {
+  --bs-gutter-y: 1.5rem ;
 }
 
-.g-5, .gx-5 {
-  --bs-gutter-x:3rem;
+.g-5,
+.gx-5 {
+  --bs-gutter-x: 3rem ;
 }
 
-.g-5, .gy-5 {
-  --bs-gutter-y:3rem;
+.g-5,
+.gy-5 {
+  --bs-gutter-y: 3rem ;
 }
 
 @media (min-width: 576px) {
@@ -1310,41 +1228,53 @@ html.is-animating .transition-fade {
   .offset-sm-11 {
     margin-left: 91.6666666667%;
   }
-  .g-sm-0, .gx-sm-0 {
-    --bs-gutter-x:0;
+  .g-sm-0,
+  .gx-sm-0 {
+    --bs-gutter-x: 0 ;
   }
-  .g-sm-0, .gy-sm-0 {
-    --bs-gutter-y:0;
+  .g-sm-0,
+  .gy-sm-0 {
+    --bs-gutter-y: 0 ;
   }
-  .g-sm-1, .gx-sm-1 {
-    --bs-gutter-x:0.25rem;
+  .g-sm-1,
+  .gx-sm-1 {
+    --bs-gutter-x: 0.25rem ;
   }
-  .g-sm-1, .gy-sm-1 {
-    --bs-gutter-y:0.25rem;
+  .g-sm-1,
+  .gy-sm-1 {
+    --bs-gutter-y: 0.25rem ;
   }
-  .g-sm-2, .gx-sm-2 {
-    --bs-gutter-x:0.5rem;
+  .g-sm-2,
+  .gx-sm-2 {
+    --bs-gutter-x: 0.5rem ;
   }
-  .g-sm-2, .gy-sm-2 {
-    --bs-gutter-y:0.5rem;
+  .g-sm-2,
+  .gy-sm-2 {
+    --bs-gutter-y: 0.5rem ;
   }
-  .g-sm-3, .gx-sm-3 {
-    --bs-gutter-x:1rem;
+  .g-sm-3,
+  .gx-sm-3 {
+    --bs-gutter-x: 1rem ;
   }
-  .g-sm-3, .gy-sm-3 {
-    --bs-gutter-y:1rem;
+  .g-sm-3,
+  .gy-sm-3 {
+    --bs-gutter-y: 1rem ;
   }
-  .g-sm-4, .gx-sm-4 {
-    --bs-gutter-x:1.5rem;
+  .g-sm-4,
+  .gx-sm-4 {
+    --bs-gutter-x: 1.5rem ;
   }
-  .g-sm-4, .gy-sm-4 {
-    --bs-gutter-y:1.5rem;
+  .g-sm-4,
+  .gy-sm-4 {
+    --bs-gutter-y: 1.5rem ;
   }
-  .g-sm-5, .gx-sm-5 {
-    --bs-gutter-x:3rem;
+  .g-sm-5,
+  .gx-sm-5 {
+    --bs-gutter-x: 3rem ;
   }
-  .g-sm-5, .gy-sm-5 {
-    --bs-gutter-y:3rem;
+  .g-sm-5,
+  .gy-sm-5 {
+    --bs-gutter-y: 3rem ;
   }
 }
 @media (min-width: 768px) {
@@ -1467,41 +1397,53 @@ html.is-animating .transition-fade {
   .offset-md-11 {
     margin-left: 91.6666666667%;
   }
-  .g-md-0, .gx-md-0 {
-    --bs-gutter-x:0;
+  .g-md-0,
+  .gx-md-0 {
+    --bs-gutter-x: 0 ;
   }
-  .g-md-0, .gy-md-0 {
-    --bs-gutter-y:0;
+  .g-md-0,
+  .gy-md-0 {
+    --bs-gutter-y: 0 ;
   }
-  .g-md-1, .gx-md-1 {
-    --bs-gutter-x:0.25rem;
+  .g-md-1,
+  .gx-md-1 {
+    --bs-gutter-x: 0.25rem ;
   }
-  .g-md-1, .gy-md-1 {
-    --bs-gutter-y:0.25rem;
+  .g-md-1,
+  .gy-md-1 {
+    --bs-gutter-y: 0.25rem ;
   }
-  .g-md-2, .gx-md-2 {
-    --bs-gutter-x:0.5rem;
+  .g-md-2,
+  .gx-md-2 {
+    --bs-gutter-x: 0.5rem ;
   }
-  .g-md-2, .gy-md-2 {
-    --bs-gutter-y:0.5rem;
+  .g-md-2,
+  .gy-md-2 {
+    --bs-gutter-y: 0.5rem ;
   }
-  .g-md-3, .gx-md-3 {
-    --bs-gutter-x:1rem;
+  .g-md-3,
+  .gx-md-3 {
+    --bs-gutter-x: 1rem ;
   }
-  .g-md-3, .gy-md-3 {
-    --bs-gutter-y:1rem;
+  .g-md-3,
+  .gy-md-3 {
+    --bs-gutter-y: 1rem ;
   }
-  .g-md-4, .gx-md-4 {
-    --bs-gutter-x:1.5rem;
+  .g-md-4,
+  .gx-md-4 {
+    --bs-gutter-x: 1.5rem ;
   }
-  .g-md-4, .gy-md-4 {
-    --bs-gutter-y:1.5rem;
+  .g-md-4,
+  .gy-md-4 {
+    --bs-gutter-y: 1.5rem ;
   }
-  .g-md-5, .gx-md-5 {
-    --bs-gutter-x:3rem;
+  .g-md-5,
+  .gx-md-5 {
+    --bs-gutter-x: 3rem ;
   }
-  .g-md-5, .gy-md-5 {
-    --bs-gutter-y:3rem;
+  .g-md-5,
+  .gy-md-5 {
+    --bs-gutter-y: 3rem ;
   }
 }
 @media (min-width: 992px) {
@@ -1624,41 +1566,53 @@ html.is-animating .transition-fade {
   .offset-lg-11 {
     margin-left: 91.6666666667%;
   }
-  .g-lg-0, .gx-lg-0 {
-    --bs-gutter-x:0;
+  .g-lg-0,
+  .gx-lg-0 {
+    --bs-gutter-x: 0 ;
   }
-  .g-lg-0, .gy-lg-0 {
-    --bs-gutter-y:0;
+  .g-lg-0,
+  .gy-lg-0 {
+    --bs-gutter-y: 0 ;
   }
-  .g-lg-1, .gx-lg-1 {
-    --bs-gutter-x:0.25rem;
+  .g-lg-1,
+  .gx-lg-1 {
+    --bs-gutter-x: 0.25rem ;
   }
-  .g-lg-1, .gy-lg-1 {
-    --bs-gutter-y:0.25rem;
+  .g-lg-1,
+  .gy-lg-1 {
+    --bs-gutter-y: 0.25rem ;
   }
-  .g-lg-2, .gx-lg-2 {
-    --bs-gutter-x:0.5rem;
+  .g-lg-2,
+  .gx-lg-2 {
+    --bs-gutter-x: 0.5rem ;
   }
-  .g-lg-2, .gy-lg-2 {
-    --bs-gutter-y:0.5rem;
+  .g-lg-2,
+  .gy-lg-2 {
+    --bs-gutter-y: 0.5rem ;
   }
-  .g-lg-3, .gx-lg-3 {
-    --bs-gutter-x:1rem;
+  .g-lg-3,
+  .gx-lg-3 {
+    --bs-gutter-x: 1rem ;
   }
-  .g-lg-3, .gy-lg-3 {
-    --bs-gutter-y:1rem;
+  .g-lg-3,
+  .gy-lg-3 {
+    --bs-gutter-y: 1rem ;
   }
-  .g-lg-4, .gx-lg-4 {
-    --bs-gutter-x:1.5rem;
+  .g-lg-4,
+  .gx-lg-4 {
+    --bs-gutter-x: 1.5rem ;
   }
-  .g-lg-4, .gy-lg-4 {
-    --bs-gutter-y:1.5rem;
+  .g-lg-4,
+  .gy-lg-4 {
+    --bs-gutter-y: 1.5rem ;
   }
-  .g-lg-5, .gx-lg-5 {
-    --bs-gutter-x:3rem;
+  .g-lg-5,
+  .gx-lg-5 {
+    --bs-gutter-x: 3rem ;
   }
-  .g-lg-5, .gy-lg-5 {
-    --bs-gutter-y:3rem;
+  .g-lg-5,
+  .gy-lg-5 {
+    --bs-gutter-y: 3rem ;
   }
 }
 @media (min-width: 1200px) {
@@ -1781,41 +1735,53 @@ html.is-animating .transition-fade {
   .offset-xl-11 {
     margin-left: 91.6666666667%;
   }
-  .g-xl-0, .gx-xl-0 {
-    --bs-gutter-x:0;
+  .g-xl-0,
+  .gx-xl-0 {
+    --bs-gutter-x: 0 ;
   }
-  .g-xl-0, .gy-xl-0 {
-    --bs-gutter-y:0;
+  .g-xl-0,
+  .gy-xl-0 {
+    --bs-gutter-y: 0 ;
   }
-  .g-xl-1, .gx-xl-1 {
-    --bs-gutter-x:0.25rem;
+  .g-xl-1,
+  .gx-xl-1 {
+    --bs-gutter-x: 0.25rem ;
   }
-  .g-xl-1, .gy-xl-1 {
-    --bs-gutter-y:0.25rem;
+  .g-xl-1,
+  .gy-xl-1 {
+    --bs-gutter-y: 0.25rem ;
   }
-  .g-xl-2, .gx-xl-2 {
-    --bs-gutter-x:0.5rem;
+  .g-xl-2,
+  .gx-xl-2 {
+    --bs-gutter-x: 0.5rem ;
   }
-  .g-xl-2, .gy-xl-2 {
-    --bs-gutter-y:0.5rem;
+  .g-xl-2,
+  .gy-xl-2 {
+    --bs-gutter-y: 0.5rem ;
   }
-  .g-xl-3, .gx-xl-3 {
-    --bs-gutter-x:1rem;
+  .g-xl-3,
+  .gx-xl-3 {
+    --bs-gutter-x: 1rem ;
   }
-  .g-xl-3, .gy-xl-3 {
-    --bs-gutter-y:1rem;
+  .g-xl-3,
+  .gy-xl-3 {
+    --bs-gutter-y: 1rem ;
   }
-  .g-xl-4, .gx-xl-4 {
-    --bs-gutter-x:1.5rem;
+  .g-xl-4,
+  .gx-xl-4 {
+    --bs-gutter-x: 1.5rem ;
   }
-  .g-xl-4, .gy-xl-4 {
-    --bs-gutter-y:1.5rem;
+  .g-xl-4,
+  .gy-xl-4 {
+    --bs-gutter-y: 1.5rem ;
   }
-  .g-xl-5, .gx-xl-5 {
-    --bs-gutter-x:3rem;
+  .g-xl-5,
+  .gx-xl-5 {
+    --bs-gutter-x: 3rem ;
   }
-  .g-xl-5, .gy-xl-5 {
-    --bs-gutter-y:3rem;
+  .g-xl-5,
+  .gy-xl-5 {
+    --bs-gutter-y: 3rem ;
   }
 }
 @media (min-width: 1400px) {
@@ -1938,41 +1904,53 @@ html.is-animating .transition-fade {
   .offset-xxl-11 {
     margin-left: 91.6666666667%;
   }
-  .g-xxl-0, .gx-xxl-0 {
-    --bs-gutter-x:0;
+  .g-xxl-0,
+  .gx-xxl-0 {
+    --bs-gutter-x: 0 ;
   }
-  .g-xxl-0, .gy-xxl-0 {
-    --bs-gutter-y:0;
+  .g-xxl-0,
+  .gy-xxl-0 {
+    --bs-gutter-y: 0 ;
   }
-  .g-xxl-1, .gx-xxl-1 {
-    --bs-gutter-x:0.25rem;
+  .g-xxl-1,
+  .gx-xxl-1 {
+    --bs-gutter-x: 0.25rem ;
   }
-  .g-xxl-1, .gy-xxl-1 {
-    --bs-gutter-y:0.25rem;
+  .g-xxl-1,
+  .gy-xxl-1 {
+    --bs-gutter-y: 0.25rem ;
   }
-  .g-xxl-2, .gx-xxl-2 {
-    --bs-gutter-x:0.5rem;
+  .g-xxl-2,
+  .gx-xxl-2 {
+    --bs-gutter-x: 0.5rem ;
   }
-  .g-xxl-2, .gy-xxl-2 {
-    --bs-gutter-y:0.5rem;
+  .g-xxl-2,
+  .gy-xxl-2 {
+    --bs-gutter-y: 0.5rem ;
   }
-  .g-xxl-3, .gx-xxl-3 {
-    --bs-gutter-x:1rem;
+  .g-xxl-3,
+  .gx-xxl-3 {
+    --bs-gutter-x: 1rem ;
   }
-  .g-xxl-3, .gy-xxl-3 {
-    --bs-gutter-y:1rem;
+  .g-xxl-3,
+  .gy-xxl-3 {
+    --bs-gutter-y: 1rem ;
   }
-  .g-xxl-4, .gx-xxl-4 {
-    --bs-gutter-x:1.5rem;
+  .g-xxl-4,
+  .gx-xxl-4 {
+    --bs-gutter-x: 1.5rem ;
   }
-  .g-xxl-4, .gy-xxl-4 {
-    --bs-gutter-y:1.5rem;
+  .g-xxl-4,
+  .gy-xxl-4 {
+    --bs-gutter-y: 1.5rem ;
   }
-  .g-xxl-5, .gx-xxl-5 {
-    --bs-gutter-x:3rem;
+  .g-xxl-5,
+  .gx-xxl-5 {
+    --bs-gutter-x: 3rem ;
   }
-  .g-xxl-5, .gy-xxl-5 {
-    --bs-gutter-y:3rem;
+  .g-xxl-5,
+  .gy-xxl-5 {
+    --bs-gutter-y: 3rem ;
   }
 }
 .d-inline {
@@ -4963,4 +4941,140 @@ html.has-scroll-dragging {
 .has-scroll-dragging .c-scrollbar_thumb {
   cursor: -webkit-grabbing;
   cursor: grabbing;
+}
+
+:root {
+  --line-index: 10;
+  --line-total: 10;
+}
+
+/* Styles for Splitting */
+.splitting {
+  margin-top: 0;
+  margin-bottom: -0.18em;
+  font-size: 14vw;
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.splitting .word,
+.splitting .char {
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Psuedo-element chars */
+.splitting .char {
+  position: relative;
+}
+
+/**
+ * Populate the psuedo elements with the character to allow for expanded effects
+ * Set to `display: none` by default; just add `display: block` when you want
+ * to use the psuedo elements
+ */
+.splitting .char::before,
+.splitting .char::after {
+  content: attr(data-char);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: inherit;
+  user-select: none;
+}
+
+/* Expanded CSS Variables */
+.splitting {
+  /* The center word index */
+  --word-center: calc((var(--word-total) - 1) / 2);
+  /* The center character index */
+  --char-center: calc((var(--char-total) - 1) / 2);
+  /* The center character index */
+  --line-center: calc((var(--line-total) - 1) / 2);
+}
+
+.splitting .word {
+  /* Pecent (0-1) of the word's position */
+  --word-percent: calc(var(--word-index) / var(--word-total));
+  /* Pecent (0-1) of the line's position */
+  --line-percent: calc(var(--line-index) / var(--line-total));
+}
+
+.splitting .char {
+  /* Percent (0-1) of the char's position */
+  --char-percent: calc(var(--char-index) / var(--char-total));
+  /* Offset from center, positive & negative */
+  --char-offset: calc(var(--char-index) - var(--char-center));
+  /* Absolute distance from center, only positive */
+  --distance: calc(
+     (var(--char-offset) * var(--char-offset)) / var(--char-center)
+  );
+  /* Distance from center where -1 is the far left, 0 is center, 1 is far right */
+  --distance-sine: calc(var(--char-offset) / var(--char-center));
+  /* Distance from center where 1 is far left/far right, 0 is center */
+  --distance-percent: calc((var(--distance) / var(--char-center)));
+}
+
+.splitting.cells img {
+  width: 100%;
+  display: block;
+}
+
+@supports (display: grid) {
+  .splitting.cells {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    visibility: hidden;
+  }
+  .splitting .cell-grid {
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: repeat(var(--row-total), 1fr)/repeat(var(--col-total), 1fr);
+  }
+  .splitting .cell {
+    background: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .splitting .cell-inner {
+    background: inherit;
+    position: absolute;
+    visibility: visible;
+    /* Size to fit the whole container size */
+    width: calc(100% * var(--col-total));
+    height: calc(100% * var(--row-total));
+    /* Position properly */
+    left: calc(-100% * var(--col-index));
+    top: calc(-100% * var(--row-index));
+  }
+  /* Helper variables for advanced effects */
+  .splitting .cell {
+    --center-x: calc((var(--col-total) - 1) / 2);
+    --center-y: calc((var(--row-total) - 1) / 2);
+    /* Offset from center, positive & negative */
+    --offset-x: calc(var(--col-index) - var(--center-x));
+    --offset-y: calc(var(--row-index) - var(--center-y));
+    /* Absolute distance from center, only positive */
+    --distance-x: calc( (var(--offset-x) * var(--offset-x)) / var(--center-x) );
+    /* Absolute distance from center, only positive */
+    --distance-y: calc( (var(--offset-y) * var(--offset-y)) / var(--center-y) );
+  }
+}
+.portfolio-list {
+  padding-left: 0;
+}
+
+.portfolio-item {
+  position: relative;
+  margin-bottom: 1.8em;
+  padding-left: 0;
+  list-style: none;
+  z-index: 9;
 }

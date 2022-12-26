@@ -1,0 +1,11 @@
+.portfolio-list {
+  padding-left: 0;
+}
+
+.portfolio-item {
+  position: relative;
+  margin-bottom: 1.8em;
+  padding-left: 0;
+  list-style: none;
+  z-index: 9;
+}
