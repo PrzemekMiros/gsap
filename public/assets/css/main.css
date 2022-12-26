@@ -31,11 +31,6 @@ img {
   width: 100%;
 }
 
-.spacing-200 {
-  height: 200px;
-  display: block;
-}
-
 .site-grid {
   position: fixed;
   top: 0;
@@ -106,6 +101,19 @@ progress::-moz-progress-bar {
   fill: var(--color-dark-1);
 }
 
+.site-header {
+  padding-top: 40px;
+}
+
+.site-logo img {
+  width: 160px;
+  height: auto;
+}
+
+.logo-light {
+  display: none;
+}
+
 :root {
   --font-primary: "Montserrat", sans-serif;
   --font-secondary: "Syne", sans-serif;
@@ -169,7 +177,7 @@ h6 {
   font-family: var(--font-primary);
   line-height: var(--xxl-line-height);
   font-size: calc(var(--xxl-font-size) * 1vw);
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: calc(var(--xxl-letter-spacing) * 1px);
 }
 
@@ -715,6 +723,16 @@ small {
 
 .trans-minus-17 {
   transform: translateY(-17%);
+}
+
+.spacing-100 {
+  height: 100px;
+  display: block;
+}
+
+.spacing-200 {
+  height: 200px;
+  display: block;
 }
 
 :root {

@@ -31,11 +31,6 @@ img {
   width: 100%;
 }
 
-.spacing-200 {
-  height: 200px;
-  display: block;
-}
-
 .site-grid {
   position: fixed;
   top: 0;
@@ -104,4 +99,17 @@ progress::-moz-progress-bar {
   width: 75px;
   height: auto;
   fill: var(--color-dark-1);
+}
+
+.site-header {
+  padding-top: 40px;
+}
+
+.site-logo img {
+  width: 160px;
+  height: auto;
+}
+
+.logo-light {
+  display: none;
 }
