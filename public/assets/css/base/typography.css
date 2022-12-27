@@ -3,7 +3,7 @@
   --font-secondary: "Montserrat", sans-serif;
   --xxl-font-size: 14;
   --xxl-line-height: .9;
-  --xxl-letter-spacing: -1;
+  --xxl-letter-spacing: 2;
   --xl-font-size: 6;
   --xl-line-height: 1;
   --xl-letter-spacing: -1;
@@ -27,7 +27,7 @@
   --h6-letter-spacing: 0;
   --subheading-font-size: 1;
   --subheading-line-height: 1;
-  --subheading-letter-spacing: 2;
+  --subheading-letter-spacing: 4;
   --paragraph-font-size: 1;
   --paragraph-line-height: 1.8;
   --paragraph-letter-spacing: 0.8;
@@ -223,8 +223,8 @@ small, .small {
 
 .text-stroke {
   color: var(--color-light-1) !important;
-  background: var(--color-light-1);
-  text-shadow: 2px 0 0 var(--color-dark-1), -2px 0 0 var(--color-dark-1), 0 2px 0 var(--color-dark-1), 0 -2px 0 var(--color-dark-1), 1px 1px 0 var(--color-dark-1), -1px -1px 0 var(--color-dark-1), 1px -1px 0 var(--color-dark-1), -1px 1px 0 var(--color-dark-1), 1px 1px 5px var(--color-dark-1);
+  background: transparent;
+  text-shadow: 1px 0 0 var(--color-dark-1), -1px 0 0 var(--color-dark-1), 0 1px 0 var(--color-dark-1), 0 -1px 0 var(--color-dark-1), 1px 1px 0 var(--color-dark-1), -1px -1px 0 var(--color-dark-1), 1px -1px 0 var(--color-dark-1), -1px 1px 0 var(--color-dark-1), 1px 1px 1px var(--color-dark-1);
 }
 
 .stroke-light {

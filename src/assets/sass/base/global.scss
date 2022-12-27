@@ -5,6 +5,7 @@
   }
 }
 html {
+  background: var(--color-light-1)!important;
   overflow-x: hidden!important
 }
 body {
@@ -12,9 +13,8 @@ body {
     height: 100%;
     width: 100vw;
     max-width: 100vw;
-    font-family: "Syne", sans-serif;
-    font-weight: 800;
-    background: var(--color-light-1);
+    font-family: var(--font-primary);
+    background: var(--color-light-1)!important;
     color: var(--color-dark-1);
     overflow-x: hidden;
     overflow-y: scroll;
@@ -26,7 +26,7 @@ a {
 }
 
 p {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 5vw;
   font-weight: 400;
 }
@@ -43,6 +43,7 @@ img {
   left: 0;
   width: 100%;
   height: 100vh;
+  pointer-events: none
 }
 
 .site-grid-item {
@@ -51,82 +52,57 @@ img {
 }
 
 
-.progress-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 12px
-}
 
-progress {
+.progress {
   position: fixed;
   top: 0;
   left: 0;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 15px;
-  border: none;
-  background: transparent
-}
-progress::-webkit-progress-bar {
-  background: transparent
-}
-progress::-webkit-progress-value {
-  background: var(--color-dark-1)
-}
-progress::-moz-progress-bar {
+  width: 4px;
+  height: calc(100% + 200px);
   background: var(--color-dark-1)
 }
 
 
 
 
-.site-link {
-  position:relative
- }
- .site-link:before {
-  content:"";
-  width:0;
-  height:3px;
-  background:var(--color-dark-1);
-  transition:all .5s ease-in-out;
-  position:absolute;
-  bottom:-5px;
-  left:0
- }
- .site-link:hover:before {
-  width:100%
- }
- .arrow {
-  width:75%;
-  height:auto;
-  fill:var(--color-dark-1)
- }
 
+@keyframes opacityGradient {
+  0% {
+      opacity: .5
+  }
+  50% {
+      opacity: 1
+  }
+  100% {
+      opacity: .5
+  }
+}
 
+.gradient-black,
+.gradient-black-anim,
+.gradient-white-anim {
+  position: relative;
+  overflow: hidden
+}
 
-
- .site-header {
-  padding-top: 5vh;
- }
-
- .site-logo img {
-  width: 20vw;
-  padding-left: 1.5em;
-  height: auto
- }
-
- .logo-light {
-  display: none
+.gradient-black-anim::before,
+.gradient-black::before,
+.gradient-white-anim::before {
+  position: absolute;
+  content: "";
+  opacity: .8
 }
 
 @media(min-width:767px) {
-  .site-header {
-    padding-top: 8vh;
-   }
-  .site-logo img {
-    width: 10vw
-   }
+  .gradient-black::before {
+    top: -150vh;
+    left: -85%;
+    height: 280vh;
+    width: 170%;
+      background: var(--color-light-1);
+      background: radial-gradient(circle, var(--color-light-2) 0, var(--color-light-1) 40%);
+      z-index: -1
+  }
 }
+
+

@@ -1,12 +1,12 @@
 :root {
-  --color-accent-1: #06d6a0;
+  --color-accent-1: #e75a3a;
   --color-accent-2: #224637;
-  --color-light-1: #fff;
-  --color-light-2: #F7FAF8;
+  --color-light-1: #fefef5;
+  --color-light-2: #fafaed;
   --color-light-3: #f7faf881;
-  --color-dark-1: rgb(21, 33, 45);
-  --color-dark-2: rgba(14, 14, 14, 0.486);
-  --color-white: #fff;
+  --color-dark-1: rgb(7, 9, 10);
+  --color-dark-2: rgb(14, 14, 14);
+  --color-white: rgb(255, 255, 255);
   --color-black: rgb(14, 14, 14);
   --color-red: #D91A3B;
   --color-blue: #0F9ED9;
@@ -18,14 +18,12 @@
 }
 
 [data-theme=dark] {
-  --color-accent-1: #06d6a0;
-  --color-accent-2: #224637;
   --color-light-1: rgb(4, 5, 5);
-  --color-light-2: rgb(15, 16, 18);
-  --color-light-3: rgba(33, 43, 52, 0.5);
+  --color-light-2: rgb(18, 19, 19);
+  --color-light-3: rgba(77, 90, 101, 0.5);
   --color-white: #fff;
-  --color-dark-1: #fff;
-  --color-dark-2: rgba(255, 255, 255, 0.479);
+  --color-dark-1: #fefef5;
+  --color-dark-2: #fafaed;
   --color-black: rgb(14, 14, 14);
   --color-heading: #fff;
   --color-text: #aaa;
@@ -35,14 +33,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-accent-1: #06d6a0;
-    --color-accent-2: #224637;
     --color-light-1: rgb(4, 5, 5);
-    --color-light-2: rgb(33, 43, 52);
-    --color-light-3: rgba(33, 43, 52, 0.5);
+    --color-light-2: rgb(18, 19, 19);
+    --color-light-3: rgba(77, 90, 101, 0.5);
     --color-white: #fff;
-    --color-dark-1: #fff;
-    --color-dark-2: rgba(255, 255, 255, 0.479);
+    --color-dark-1: #fefef5;
+    --color-dark-2: #fafaed;
     --color-black: rgb(14, 14, 14);
     --color-heading: #fff;
     --color-text: #aaa;
@@ -122,11 +118,13 @@
   background-color: var(--color-green);
 }
 
+.overlay-20,
 .overlay-40,
 .overlay-60 {
   position: relative;
 }
 
+.overlay-20::before,
 .overlay-40::before,
 .overlay-60::before {
   position: absolute;
@@ -137,6 +135,10 @@
   height: 100%;
   background: #000;
   z-index: 0;
+}
+
+.overlay-20::before {
+  opacity: 0.1;
 }
 
 .overlay-40::before {

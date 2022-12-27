@@ -7,6 +7,8 @@
     <title>Gsap</title>
     <meta name="description" content="Gsap and locomotive scroll">
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
+
     <style>
         /* montserrat-regular - latin-ext_latin */
 @font-face {
@@ -49,94 +51,197 @@
        url('/assets/fonts/montserrat-v25-latin-ext_latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/montserrat-v25-latin-ext_latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
-/* syne-regular - latin */
+/* syne-regular - latin-ext_latin */
 @font-face {
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/syne-v15-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/syne-v15-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('/assets/fonts/syne-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/syne-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/syne-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/syne-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/syne-v15-latin-regular.svg#Syne') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.svg#Syne') format('svg'); /* Legacy iOS */
 }
 
-
     </style>
+     <script>
+      function fadeInPage() {
+         if (!window.AnimationEvent) {
+            return;
+         }
+         var fader = document.getElementById('fader');
+         fader.classList.add('fade-out');
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+         if (!window.AnimationEvent) {
+            return;
+         }
+         var anchors = document.getElementsByTagName('a');
+         for (var idx = 0; idx < anchors.length; idx += 1) {
+            if (anchors[idx].hostname !== window.location.hostname ||
+               anchors[idx].pathname === window.location.pathname) {
+               continue;
+            }
+            anchors[idx].addEventListener('click', function (event) {
+               var fader = document.getElementById('fader'),
+                  anchor = event.currentTarget;
+               var listener = function () {
+                  window.location = anchor.href;
+                  fader.removeEventListener('animationend', listener);
+               };
+               fader.addEventListener('animationend', listener);
+               event.preventDefault();
+               fader.classList.add('fade-in');
+            });
+         }
+      });
+      window.addEventListener('pageshow', function (event) {
+         if (!event.persisted) {
+            return;
+         }
+         var fader = document.getElementById('fader');
+         fader.classList.remove('fade-in');
+      });
+   </script>
 </head>
-<body class="gsap">
-    <div class="site-grid">
-    <div class="container">
+<body class="gsap gradient-black">
+                      <div class="cursor">
+                        <div class="cursor--small"></div>
+                        <div class="cursor--large"></div>
+                        <div class="cursor--text">
+                            <div class="text">GO HERE! GO HERE! GO HERE! GO HERE!</div>
+                        </div>
+                    </div>
+<div class="progress-wrap" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
+    <div class="progress"></div>
+</div>
+<svg id="fader"></svg>
+    <script>
+      fadeInPage();
+    </script>
+<div class="site-grid">
+   <div class="container">
         <div class="row gx-0">
             <div class="col-2 site-grid-item"></div>
             <div class="col-1 site-grid-item"></div>
             <div class="col-8 col-md-6 site-grid-item"></div>
         </div>
-    </div>
+   </div>
 </div>
 
-<!--
-<div class="progress-wrap" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-<progress max="100" value="0"></progress>
-</div>
--->
 
-<header class="site-header">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-6">
-                <div class="site-logo">
-                    <img src="assets/img/logo/logo-dark.webp" alt="" class="site-logo logo-dark">
-                    <img src="assets/img/logo/logo-light.webp" alt="" class="site-logo logo-light">
-                </div>
+
+
+
+    <header class="site-header">
+        <div class="header-wrap">
+            <div class="site-logo">
+                <img src="/assets/img/logo/logo-dark.png" alt="" class="site-logo logo-dark">
+                <img src="/assets/img/logo/logo-light.png" alt="" class="site-logo logo-light">
             </div>
-            <div class="col-2">
-                <button class="js-toggle-theme mr-xxsmall" aria-label="Zmiana kolorystyki" title="">
-                    <div class="round">
-                        <svg class="moon-icon" width="1.6em" height="1.6em" viewbox="0 0 50 50">
-                            <path d="M 43.81 29.354 C 43.688 28.958 43.413 28.626 43.046 28.432 C 42.679 28.238 42.251 28.198 41.854 28.321 C 36.161 29.886
+            <div class="menu-items">
+                <div class="theme d-none d-md-block">
+                    <button class="js-toggle-theme mr-xxsmall" aria-label="Zmiana kolorystyki" title="">
+                        <div class="round">
+                            <svg class="moon-icon" width="1.6em" height="1.6em" viewbox="0 0 50 50">
+                                <path d="M 43.81 29.354 C 43.688 28.958 43.413 28.626 43.046 28.432 C 42.679 28.238 42.251 28.198 41.854 28.321 C 36.161 29.886
                                     30.067 28.272 25.894 24.096 C 21.722 19.92 20.113 13.824 21.683 8.133 C 21.848 7.582 21.697 6.985 21.29 6.578 C 20.884
                                     6.172 20.287 6.022 19.736 6.187 C 10.659 8.728 4.691 17.389 5.55 26.776 C 6.408 36.163 13.847 43.598 23.235 44.451 C
                                     32.622 45.304 41.28 39.332 43.816 30.253 C 43.902 29.96 43.9 29.647 43.81 29.354 Z"
-                                style="transform: none; transform-origin: 24.6735px 25.3265px 0px;"
-                                transform-origin="24.673513412475586px 25.326481819152832px"></path>
-                        </svg>
-                        <svg class="sun-icon" width="1.6em" height="1.6em" viewbox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" style="transform-origin: 50% 50% 0px;"
-                            transform-origin="50% 50%">
-                            <circle cx="11.9998" cy="11.9998" r="5.75375" fill="currentColor"
-                                style="transform: none; transform-origin: 11.9998px 11.9998px 0px;"
-                                transform-origin="11.999799728393555px 11.999799728393555px"></circle>
-                            <g style="transform: none; transform-origin: 12px 11.9998px 0px;"
-                                transform-origin="11.999960899353027px 11.999764442443848px">
-                                <circle cx="3.08982" cy="6.85502" r="1.71143" transform="rotate(-60 3.08982 6.85502)"
-                                    fill="currentColor"></circle>
-                                <circle cx="3.0903" cy="17.1436" r="1.71143" transform="rotate(-120 3.0903 17.1436)"
-                                    fill="currentColor"></circle>
-                                <circle cx="12" cy="22.2881" r="1.71143" fill="currentColor"></circle>
-                                <circle cx="20.9101" cy="17.1436" r="1.71143" transform="rotate(-60 20.9101 17.1436)"
-                                    fill="currentColor"></circle>
-                                <circle cx="20.9101" cy="6.8555" r="1.71143" transform="rotate(-120 20.9101 6.8555)"
-                                    fill="currentColor"></circle>
-                                <circle cx="12" cy="1.71143" r="1.71143" fill="currentColor"></circle>
-                            </g>
-                        </svg>
+                                    style="transform: none; transform-origin: 24.6735px 25.3265px 0px;"
+                                    transform-origin="24.673513412475586px 25.326481819152832px"></path>
+                            </svg>
+                            <svg class="sun-icon" width="1.6em" height="1.6em" viewbox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="transform-origin: 50% 50% 0px;"
+                                transform-origin="50% 50%">
+                                <circle cx="11.9998" cy="11.9998" r="5.75375" fill="currentColor"
+                                    style="transform: none; transform-origin: 11.9998px 11.9998px 0px;"
+                                    transform-origin="11.999799728393555px 11.999799728393555px"></circle>
+                                <g style="transform: none; transform-origin: 12px 11.9998px 0px;"
+                                    transform-origin="11.999960899353027px 11.999764442443848px">
+                                    <circle cx="3.08982" cy="6.85502" r="1.71143"
+                                        transform="rotate(-60 3.08982 6.85502)" fill="currentColor"></circle>
+                                    <circle cx="3.0903" cy="17.1436" r="1.71143" transform="rotate(-120 3.0903 17.1436)"
+                                        fill="currentColor"></circle>
+                                    <circle cx="12" cy="22.2881" r="1.71143" fill="currentColor"></circle>
+                                    <circle cx="20.9101" cy="17.1436" r="1.71143"
+                                        transform="rotate(-60 20.9101 17.1436)" fill="currentColor"></circle>
+                                    <circle cx="20.9101" cy="6.8555" r="1.71143" transform="rotate(-120 20.9101 6.8555)"
+                                        fill="currentColor"></circle>
+                                    <circle cx="12" cy="1.71143" r="1.71143" fill="currentColor"></circle>
+                                </g>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+                <div class="menu">
+                    <span id="menuBtn">
+                        <div id="menuBtnDiv">MENU</div>
+                        <div id="menuBtnDiv2">ZAMKNIJ</div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- menuOpen  -->
+    <div class="menu-container">
+        <div class="menu-container-1">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-md-2 col-md-5">
+                        <div class="menu-container-header">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span>Realizacje</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>Moje usługi</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>Aktualności</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>Skontaktuj się</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </button>
+                    <div class="col-md-5">
+                        <div class="menu-container-footer">
+                            <ul>
+                                <li class="h4"><span>Ostatnie prace</span></li>
+                                <li><span>Call Your Soul</span></li>
+                                <li><span>Business Woman</span></li>
+                                <li><span>Eco Tech Group</span></li>
+                                <li><span>Twoje konsultacje</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</header>
-<div class="smooth-scroll" id="fixed-target">
-<div class="transition-fade" id="swup">
+
+    <div class="smooth-scroll" id="fixed-target">
+        <div class="transition-fade" id="swup">
+
 
 
 <main>
     
     <div class="pt-md-xlarge pt-medium"></div>
-        <section>
+        <section class="pt-large">
         <div class="container">
             <div class="row gx-0">
                 <div class="offset-3 col-md-6 pb-xsmall pb-md-small">
@@ -155,7 +260,7 @@
                 </div>
                 <div class="col-8 col-md-5">
                     <h1 class="h3 mt-1"> 
-                        Jestem Przemek. Wykonuję strony internetowe dla małych i średnich firm. Postaw na specjalistyczne wsparcie i skutecznie rozwijaj swój biznes
+                        Jestem Przemek. <strong class="text-stroke">Wykonuję strony internetowe</strong> dla małych i średnich firm. Postaw na specjalistyczne wsparcie i skutecznie rozwijaj swój biznes
                     </h1>
                 </div>
             </div>
@@ -201,7 +306,7 @@
             </div>
         </div>
         <div class="row gx-0">
-            <div class="offset-4 offset-md-5 col-5">
+            <div class="offset-4 offset-md-5 col-6">
                 <h2 class="xxl split-word" data-splitting>
                     CJE
                 </h2>
@@ -218,25 +323,40 @@
             <div class="offset-1 offset-md-3 col-12 col-md-5">
                 <div class="portfolio-list-wrap">
                     <ul class="portfolio-list">
-                        <li class="portfolio-item d-flex align-items-center">
+                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-1">
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small">I</span>
-                            <a href="https://callyoursoul.pl/" class="h4" title="Eco Tech Group" aria-label="Eco Tech Group" class="site-link-portfolio">Eco Tech Group</a>
+                            <a href="https://callyoursoul.pl/" class="h4" title="Eco Tech Group"
+                                aria-label="Eco Tech Group" class="site-link-portfolio">
+                               Business Woman 
+                            </a>
                         </li>
-                        <li class="portfolio-item d-flex align-items-center">
+                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-2">
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small">II</span>
-                            <a href="https://callyoursoul.pl/" class="h4" title="Business Woman" aria-label="Business Woman" class="site-link-portfolio">Business Woman</a>
+                            <a href="https://callyoursoul.pl/" class="h4" title="Business Woman"
+                                aria-label="Business Woman" class="site-link-portfolio">
+                                Eco Tech Group
+                            </a>
                         </li>
-                        <li class="portfolio-item d-flex align-items-center">
+                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-3">
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small">III</span>
-                            <a href="https://callyoursoul.pl/" class="h4" title="EGP System" aria-label="EGP System" class="site-link-portfolio">EGP System</a>
+                            <a href="https://callyoursoul.pl/" class="h4" title="EGP System"
+                                aria-label="EGP System" class="site-link-portfolio">
+                                Mastermatch Online
+                            </a>
                         </li>
-                        <li class="portfolio-item d-flex align-items-center">
+                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-4">
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small">IV</span>
-                            <a href="https://callyoursoul.pl/" class="h4" title="Call Your Soul" aria-label="Call Your Soul" class="site-link-portfolio">Call Your Soul</a>
+                            <a href="https://callyoursoul.pl/" class="h4" title="Call Your Soul"
+                                aria-label="Call Your Soul" class="site-link-portfolio">
+                                Call Your Soul
+                            </a>
                         </li>
-                        <li class="portfolio-item d-flex align-items-center">
+                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-5">
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small">V</span>
-                            <a href="https://callyoursoul.pl/" class="h4" title="Gaszyn Park" aria-label="Gaszyn Park" class="site-link-portfolio">Gaszyn Park</a>
+                            <a href="https://callyoursoul.pl/" class="h4" title="Gaszyn Park"
+                                aria-label="Gaszyn Park" class="site-link-portfolio">
+                                EGP System
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -245,18 +365,30 @@
 
         <div class="row gx-0">
             <div class="col-2 d-none d-md-block">
-                <div class="overlay-40 trans-minus-md-100">
-                    <img src="/assets/img/mobile.png" alt="">
+                <div class="portfolio-img-wrap overlay-20 trans-minus-md-100">
+                    <img src="/assets/img/mockups/mobile-1.jpg" class="portfolio-img p-img-1" alt="">
+                    <img src="/assets/img/mockups/mobile-2.jpg" class="portfolio-img p-img-2" alt="">
+                    <img src="/assets/img/mockups/mobile-3.jpg" class="portfolio-img p-img-3" alt="">
+                    <img src="/assets/img/mockups/mobile-4.jpg" class="portfolio-img p-img-4" alt="">
+                    <img src="/assets/img/mockups/mobile-5.jpg" class="portfolio-img p-img-5" alt="">
                 </div>
             </div>
             <div class="offset-md-1 col-12 col-md-6 d-none d-md-block">
-                <div class="overlay-40 mt-md-5">
-                    <img src="/assets/img/desktop.jpg" alt="">
+                <div class="portfolio-img-wrap overlay-20 mt-md-5">
+                    <img src="/assets/img/mockups/desktop-1.jpg" class="portfolio-img p-img-1" alt="">
+                    <img src="/assets/img/mockups/desktop-2.jpg" class="portfolio-img p-img-2" alt="">
+                    <img src="/assets/img/mockups/desktop-3.jpg" class="portfolio-img p-img-3" alt="">
+                    <img src="/assets/img/mockups/desktop-4.jpg" class="portfolio-img p-img-4" alt="">
+                    <img src="/assets/img/mockups/desktop-5.jpg" class="portfolio-img p-img-5" alt="">
                 </div>
             </div>
             <div class="col-2 d-none d-md-block">
-                <div class="overlay-40 trans-minus-md-200">
-                    <img src="/assets/img/brand.png" alt="">
+                <div class="portfolio-img-wrap overlay-20 trans-minus-md-200">
+                    <img src="/assets/img/mockups/brand-1.jpg" class="portfolio-img p-img-1" alt="">
+                    <img src="/assets/img/mockups/brand-2.jpg" class="portfolio-img p-img-2" alt="">
+                    <img src="/assets/img/mockups/brand-3.jpg" class="portfolio-img p-img-3" alt="">
+                    <img src="/assets/img/mockups/brand-4.jpg" class="portfolio-img p-img-4" alt="">
+                    <img src="/assets/img/mockups/brand-5.jpg" class="portfolio-img p-img-5" alt="">
                 </div>
             </div>
         </div>
@@ -284,8 +416,7 @@
                     <h3 class="xl split-line">
                         <span class="text-stroke">
                             PROJEKT
-                        </span> <span> &</span> 
-                            KODOWANIE
+                        </span> & KODOWANIE
                     </h3>
                 </div>
             </div>
@@ -359,7 +490,7 @@
             </div>
             <div class="row gx-0">
                 <div class="offset-2 col-9">
-                     <h2 class="xxl split-word" data-splitting>
+                    <h2 class="xxl split-word" data-splitting>
                         TAKT
                     </h2>
                 </div>
@@ -372,7 +503,7 @@
     <section>
         <div class="container">
             <div class="row gx-0 pb-small">
-                <div class="offset-1 offset-md-3 col-1 d-flex align-items-center">
+                <div class="offset-2 offset-md-3 col-1 d-flex align-items-center">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
                         style="enable-background:new 0 0 64 64;" class="arrow" xml:space="preserve">
@@ -388,16 +519,50 @@
                         </g>
                     </svg>
                 </div>
-                <div class="offset-1 offset-md-0 col-5">
+                <div class="col-5">
                     <p class="mt-4 mb-1">
-                        <small>NAPISZ DO MNIE</small>
+                        <small>WYŚLIJ WIADOMOŚĆ</small>
                     </p>
-                    <a href="#" class="h4 site-link">
+                    <a href="mailto:kontakt@futurewebstudio.pl" class="h4 contact-link">
                         kontakt@futurewebstudio.pl
                     </a>
                     <p class="mt-1 mb-4">
                         <small>Dostępny od stycznia 2023</small>
                     </p>
+                </div>
+            </div>
+            <div class="row gx-0 pb-small">
+                <div class="offset-3 offset-md-4 col-8 col-md-7">
+                    <p class="mb-5">
+                        <small>ZOBACZ RÓWNIEŻ NA</small>
+                    </p>
+                    <div class="contact-icon-wrap support">
+                        
+                        <a class="cursor-hover-item" data-cursor-text="Facebook" data-cursor-text-repeat="4"
+                            href="https://www.facebook.com/przemekstronyinternetowe" target="_blank">
+                            <svg viewBox="0 0 454 454" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M425.625 227C425.625 174.321 404.699 123.8 367.449 86.551C330.2 49.3016 279.679 28.3751 227 28.3751C176.985 28.3289 128.793 47.1534 92.0514 81.0884C55.3097 115.023 32.7229 161.571 28.8028 211.432C24.8827 261.294 39.9178 310.799 70.9049 350.059C101.892 389.318 146.55 415.443 195.958 423.213V284.403H145.564V227H195.986V183.246C195.986 133.476 225.638 105.952 271.01 105.952C292.745 105.952 315.473 109.84 315.473 109.84V158.73H290.418C265.732 158.73 258.071 174.052 258.071 189.744V227H313.147L304.35 284.403H258.042V423.213C304.762 415.815 347.309 391.989 378.029 356.02C408.749 320.052 425.626 274.302 425.625 227V227Z"
+                                    fill="var(--color-dark-1)" />
+                            </svg>
+                        </a>
+                        <a class="cursor-hover-item" data-cursor-text="Github Git" data-cursor-text-repeat="4"
+                            href="https://github.com/PrzemekMiros" target="_blank">
+                            <svg viewBox="0 0 454 454" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M227 28.375C117.274 28.375 28.375 117.189 28.375 226.801C28.375 314.48 85.2953 388.823 164.206 415.07C174.137 416.886 177.769 410.757 177.769 405.507C177.769 400.797 177.599 388.312 177.486 371.741C122.24 383.744 110.606 345.154 110.606 345.154C101.554 322.227 88.53 316.126 88.53 316.126C70.5119 303.811 89.892 304.067 89.892 304.067C109.84 305.485 120.338 324.497 120.338 324.497C138.044 354.858 166.817 346.062 178.138 341.011C179.926 328.185 185.062 319.446 190.737 314.48C146.642 309.486 100.277 292.461 100.277 216.416C100.277 194.766 108.024 177.032 120.707 163.185C118.664 158.162 111.854 137.988 122.693 110.691C122.693 110.691 139.321 105.328 177.287 131.007C193.49 126.593 210.206 124.341 227 124.311C243.883 124.396 260.88 126.581 276.741 131.007C314.65 105.328 331.306 110.663 331.306 110.663C342.146 137.988 335.336 158.162 333.293 163.156C346.005 177.06 353.723 194.766 353.723 216.416C353.723 292.631 307.245 309.429 263.008 314.31C270.13 320.439 276.486 332.555 276.486 351.084C276.486 377.586 276.231 398.981 276.231 405.507C276.231 410.813 279.834 416.971 289.907 415.041C329.416 401.867 363.781 376.601 388.137 342.818C412.494 309.036 425.609 268.449 425.625 226.801C425.595 174.15 404.652 123.667 367.404 86.4558C330.155 49.2444 279.651 28.3524 227 28.375V28.375Z"
+                                    fill="var(--color-dark-1)" />
+                            </svg>
+                        </a>
+                        <a class="cursor-hover-item" data-cursor-text="Codepen" data-cursor-text-repeat="4"
+                            href="https://codepen.io/przemek-miros" target="_blank">
+                            <svg viewBox="0 0 454 454" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M216.404 183.861V134.515L133.407 189.758L170.472 214.497L216.404 183.861ZM329.061 244.912V209.532L302.548 227.222L329.061 244.912ZM227 28.375C117.313 28.375 28.375 117.313 28.375 227C28.375 336.687 117.313 425.625 227 425.625C336.687 425.625 425.625 336.687 425.625 227C425.625 117.313 336.687 28.375 227 28.375ZM350.254 264.686C350.254 265.173 350.21 265.617 350.165 266.06C350.165 266.237 350.121 266.37 350.077 266.503C350.014 266.988 349.895 267.465 349.722 267.922C349.633 268.188 349.545 268.454 349.456 268.676C349.367 268.853 349.279 269.03 349.234 269.208C349.101 269.429 349.013 269.696 348.88 269.917C348.791 270.095 348.702 270.228 348.569 270.405C348.436 270.627 348.259 270.848 348.126 271.07C347.993 271.247 347.904 271.38 347.771 271.513C347.594 271.691 347.416 271.912 347.239 272.09C347.106 272.223 346.973 272.356 346.796 272.489C346.618 272.666 346.397 272.843 346.175 272.976C345.998 273.109 345.865 273.242 345.687 273.331C345.643 273.375 345.554 273.42 345.51 273.464L232.852 348.48C231.079 349.678 229.039 350.254 227 350.254C224.916 350.254 222.877 349.633 221.103 348.48L108.446 273.508C108.401 273.464 108.313 273.42 108.268 273.375L107.781 273.021C107.559 272.843 107.382 272.71 107.204 272.533C107.071 272.4 106.938 272.267 106.761 272.134C106.584 271.957 106.406 271.779 106.229 271.558C106.097 271.421 105.979 271.273 105.874 271.114C105.697 270.893 105.564 270.671 105.431 270.449C105.342 270.272 105.209 270.139 105.121 269.962C104.988 269.74 104.854 269.474 104.766 269.252C104.677 269.075 104.588 268.897 104.544 268.72C104.455 268.454 104.367 268.188 104.278 267.966C104.234 267.789 104.145 267.612 104.101 267.434C104.012 267.124 103.968 266.858 103.923 266.548C103.879 266.415 103.879 266.237 103.835 266.104C103.79 265.661 103.746 265.173 103.746 264.73V189.713C103.746 189.27 103.79 188.782 103.835 188.339C103.879 188.206 103.879 188.029 103.923 187.896C103.986 187.411 104.105 186.934 104.278 186.477C104.367 186.211 104.455 185.945 104.544 185.723C104.633 185.546 104.721 185.369 104.766 185.191C104.854 184.97 104.988 184.704 105.121 184.482C105.209 184.304 105.298 184.171 105.431 183.994C105.697 183.595 105.963 183.24 106.229 182.886C106.406 182.708 106.584 182.487 106.761 182.309C106.894 182.176 107.027 182.043 107.204 181.91C107.382 181.733 107.603 181.556 107.781 181.423C107.958 181.29 108.091 181.157 108.268 181.068C108.313 181.024 108.401 180.979 108.446 180.935L221.103 105.963C224.65 103.613 229.305 103.613 232.852 105.963L345.51 180.935C345.554 180.979 345.643 181.024 345.687 181.068L346.175 181.423L346.796 181.91C346.929 182.043 347.062 182.176 347.239 182.309C347.416 182.487 347.594 182.664 347.771 182.886C348.081 183.24 348.347 183.595 348.569 183.994C348.658 184.171 348.791 184.304 348.88 184.482C349.013 184.704 349.146 184.925 349.234 185.191C349.323 185.369 349.412 185.546 349.456 185.723C349.545 185.989 349.633 186.255 349.722 186.477C349.766 186.654 349.855 186.832 349.899 187.009C349.988 187.319 350.032 187.585 350.077 187.896C350.121 188.029 350.121 188.206 350.165 188.339C350.21 188.782 350.254 189.27 350.254 189.713V264.686V264.686ZM237.596 270.582V319.928L320.593 264.686L283.528 239.946L237.596 270.582ZM124.939 209.532V244.912L151.452 227.222L124.939 209.532ZM227 202.216L189.536 227.222L227 252.227L264.464 227.222L227 202.216ZM320.593 189.758L237.596 134.515V183.861L283.528 214.497L320.593 189.758ZM170.472 239.946L133.407 264.686L216.404 319.928V270.582L170.472 239.946V239.946Z"
+                                    fill="var(--color-dark-1)" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -409,7 +574,7 @@
 
 
 </div>
-     
+
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=3.4.0.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
@@ -441,35 +606,8 @@
 
 <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 <script>Splitting();</script>
-
+<script src="/assets/js/circle.js"></script>
 <script src="/assets/js/app.js"></script>
-
-<script src="/assets/js/swup.js"></script>
-<script>
-// Swup config
-const swup = new Swup({
-  plugins: [
-  new SwupBodyClassPlugin(),
-  new SwupProgressPlugin()
-  ]
-});
-
-function loadingScripts() {
-  if (document.querySelector('.gsap')) {
-    Splitting(),
-    gsapAnimation()
-  }
-}
-
-document.addEventListener("swup:animationInStart", () => {
-  loadingScripts(), locoScroll.scrollTo( 'top');
-}), 
-document.addEventListener("swup:animationInDone", () => {
-
-}), console.clear();
-
-</script>
-
 
 <script>
    const setTheme = () => {

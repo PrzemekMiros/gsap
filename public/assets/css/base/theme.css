@@ -66,6 +66,6 @@
   .round .moon-icon,
   .round .sun-icon {
     cursor: pointer;
-    font-size: 1vw;
+    font-size: 0.8vw;
   }
 }

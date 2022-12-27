@@ -5,9 +5,44 @@
 
 .portfolio-item {
     position: relative;
-    margin-bottom: 1.8em;
+    padding-bottom: 1.8em;
     padding-left: 0;
     list-style: none;
     overflow: hidden;
     z-index: 9
+}
+
+.portfolio-item a {
+    position: relative
+}
+
+.portfolio-item a::before {
+    position: absolute;
+    content: "";
+    bottom: 3px;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-dark-1);
+    transition: .5s ease-in-out
+}
+
+.portfolio-item:hover a::before {
+    width: 100%
+}
+
+
+.portfolio-img-wrap {
+    position: relative;
+}
+.portfolio-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1
+}
+.portfolio-img:first-child {
+    position: relative;
+    opacity: 1;
+    z-index: -1
 }
