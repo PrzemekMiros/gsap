@@ -229,6 +229,11 @@ h2, .h2 {
     z-index: -1
   }
 
+  .text-center {
+    text-align: center    
+}
+
+@media(min-width:767px) {
   .text-stroke {
     color: var(--color-light-1)!important;
     background: transparent;
@@ -247,13 +252,6 @@ h2, .h2 {
   .stroke-light {
     text-shadow: 3px 3px 15px var(--color-white);
   }
-
-
-  .text-center {
-    text-align: center    
-}
-
-@media(min-width:767px) {
   .text-md-center {
     text-align: center    
 }

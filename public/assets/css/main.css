@@ -320,21 +320,19 @@ small, .small {
   z-index: -1;
 }
 
-.text-stroke {
-  color: var(--color-light-1) !important;
-  background: transparent;
-  text-shadow: 1px 0 0 var(--color-dark-1), -1px 0 0 var(--color-dark-1), 0 1px 0 var(--color-dark-1), 0 -1px 0 var(--color-dark-1), 1px 1px 0 var(--color-dark-1), -1px -1px 0 var(--color-dark-1), 1px -1px 0 var(--color-dark-1), -1px 1px 0 var(--color-dark-1), 1px 1px 1px var(--color-dark-1);
-}
-
-.stroke-light {
-  text-shadow: 3px 3px 15px var(--color-white);
-}
-
 .text-center {
   text-align: center;
 }
 
 @media (min-width: 767px) {
+  .text-stroke {
+    color: var(--color-light-1) !important;
+    background: transparent;
+    text-shadow: 1px 0 0 var(--color-dark-1), -1px 0 0 var(--color-dark-1), 0 1px 0 var(--color-dark-1), 0 -1px 0 var(--color-dark-1), 1px 1px 0 var(--color-dark-1), -1px -1px 0 var(--color-dark-1), 1px -1px 0 var(--color-dark-1), -1px 1px 0 var(--color-dark-1), 1px 1px 1px var(--color-dark-1);
+  }
+  .stroke-light {
+    text-shadow: 3px 3px 15px var(--color-white);
+  }
   .text-md-center {
     text-align: center;
   }
@@ -5244,7 +5242,7 @@ ul {
 .cursor .cursor--text {
   --cursor-size: fit-content;
   font-size: 0.75rem;
-  color: #fff;
+  color: var(--color-light-1);
   opacity: 0;
 }
 
