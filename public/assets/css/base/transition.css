@@ -1,41 +1,53 @@
-#fader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  pointer-events: none;
-  background: var(--color-light-1);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
+:root {
+  --transPower1: cubic-bezier(0,.5,.21,.97);
+  --transPower2: cubic-bezier(.83,0,.17,1);
 }
 
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+.transition-fade {
+  transition: 500ms var(--transPower1);
+  transform: translateY(0);
 }
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-#fader.fade-out {
+
+html.is-animating .transition-fade {
+  transform: translateY(-50px);
   opacity: 0;
-  animation-name: fade-out;
 }
 
-#fader.fade-in {
-  opacity: 1;
-  animation-name: fade-in;
+/*--
+.bg-gradient-wrap {
+  transition-property: transform;
+  transition-duration: 800ms;
 }
+html.is-animating .bg-gradient-wrap {
+  border-radius: 0;
+  transition-duration: 800ms;
+  transition-property: transform;
+  transform: scale(6)
+}
+--*/
+.swup-progress-bar {
+  height: 3px;
+  background-color: var(--color-dark-2);
+}
+
+/*--
+.site-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-dark-1);
+  pointer-events: none;
+  transition: 1000ms var(--transPower2);
+  transform: translateY(100%);
+  transform-origin: top;
+  z-index: 999;
+}
+html.is-animating .site-overlay {
+  transform: translateY(-100%);
+}
+html.is-leaving .site-overlay {
+  transform: translateY(0)
+}
+--*/

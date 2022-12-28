@@ -41,7 +41,7 @@ html.has-scroll-dragging {
   top: 0;
   right: 0;
   background-color: var(--color-dark-2);
-  opacity: 0;
+  opacity: 0.2;
   width: 7px;
   border-radius: 10px;
   margin: 2px;
@@ -52,4 +52,13 @@ html.has-scroll-dragging {
 .has-scroll-dragging .c-scrollbar_thumb {
   cursor: -webkit-grabbing;
   cursor: grabbing;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: calc(100% + 200px);
+  background: var(--color-dark-1);
 }

@@ -1,9 +1,4 @@
-@media(min-width:767px) {
-  html {
-    width: 100vw;
-    overflow-y: hidden
-  }
-}
+
 html {
   background: var(--color-light-1)!important;
   overflow-x: hidden!important
@@ -50,19 +45,6 @@ img {
   height: 100vh;
   border-right: 1px solid rgba(130, 130, 130, 0.25);
 }
-
-
-
-.progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: calc(100% + 200px);
-  background: var(--color-dark-1)
-}
-
-
 
 
 

@@ -57,28 +57,13 @@
 }
 
 .cursor .cursor--small {
-  --cursor-size: 8px;
+  --cursor-size: 5px;
   background: var(--color-light-1);
 }
 
 .cursor .cursor--large {
   --cursor-size: 60px;
-  border: 2px solid var(--color-light-1);
-}
-
-.support a {
-  display: inline-block;
-  margin: 0 1em 0 0;
-  width: 2vw;
-  color: var(--color-dark-1);
-  font-size: 3.8rem;
-  backface-visibility: hidden;
-  transition: all 150ms ease;
-  mix-blend-mode: difference;
-}
-
-.support a:hover {
-  transform: scale(1.1);
+  border: 1px solid var(--color-light-1);
 }
 
 @media (min-width: 767px) {

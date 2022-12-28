@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gsap</title>
-    <meta name="description" content="Gsap and locomotive scroll">
+    <title>Swup</title>
+    <meta name="description" content="Swup experiment">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
-
     <style>
         /* montserrat-regular - latin-ext_latin */
 @font-face {
@@ -23,7 +22,6 @@
        url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
-
 /* montserrat-800 - latin-ext_latin */
 @font-face {
   font-family: 'Montserrat';
@@ -37,7 +35,6 @@
        url('/assets/fonts/montserrat-v25-latin-ext_latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/montserrat-v25-latin-ext_latin-800.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
-
 /* montserrat-900 - latin-ext_latin */
 @font-face {
   font-family: 'Montserrat';
@@ -64,63 +61,12 @@
        url('/assets/fonts/syne-v15-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/syne-v15-latin-ext_latin-regular.svg#Syne') format('svg'); /* Legacy iOS */
 }
-
     </style>
-     <script>
-      function fadeInPage() {
-         if (!window.AnimationEvent) {
-            return;
-         }
-         var fader = document.getElementById('fader');
-         fader.classList.add('fade-out');
-      }
-      document.addEventListener('DOMContentLoaded', function () {
-         if (!window.AnimationEvent) {
-            return;
-         }
-         var anchors = document.getElementsByTagName('a');
-         for (var idx = 0; idx < anchors.length; idx += 1) {
-            if (anchors[idx].hostname !== window.location.hostname ||
-               anchors[idx].pathname === window.location.pathname) {
-               continue;
-            }
-            anchors[idx].addEventListener('click', function (event) {
-               var fader = document.getElementById('fader'),
-                  anchor = event.currentTarget;
-               var listener = function () {
-                  window.location = anchor.href;
-                  fader.removeEventListener('animationend', listener);
-               };
-               fader.addEventListener('animationend', listener);
-               event.preventDefault();
-               fader.classList.add('fade-in');
-            });
-         }
-      });
-      window.addEventListener('pageshow', function (event) {
-         if (!event.persisted) {
-            return;
-         }
-         var fader = document.getElementById('fader');
-         fader.classList.remove('fade-in');
-      });
-   </script>
 </head>
 <body class="gsap gradient-black">
-                      <div class="cursor">
-                        <div class="cursor--small"></div>
-                        <div class="cursor--large"></div>
-                        <div class="cursor--text">
-                            <div class="text">GO HERE! GO HERE! GO HERE! GO HERE!</div>
-                        </div>
-                    </div>
 <div class="progress-wrap" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
     <div class="progress"></div>
 </div>
-<svg id="fader"></svg>
-    <script>
-      fadeInPage();
-    </script>
 <div class="site-grid">
    <div class="container">
         <div class="row gx-0">

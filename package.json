@@ -25,5 +25,9 @@
   "browserslist": [
     "> 0.25%",
     "not IE 11"
-  ]
+  ],
+  "dependencies": {
+    "@swup/scripts-plugin": "^1.1.0",
+    "@swup/scroll-plugin": "^1.3.3"
+  }
 }

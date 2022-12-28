@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gsap</title>
-    <meta name="description" content="Gsap and locomotive scroll">
+    <title>Swup</title>
+    <meta name="description" content="Swup experiment">
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
-
     <style>
         /* montserrat-regular - latin-ext_latin */
 @font-face {
@@ -23,7 +22,6 @@
        url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
-
 /* montserrat-800 - latin-ext_latin */
 @font-face {
   font-family: 'Montserrat';
@@ -37,7 +35,6 @@
        url('/assets/fonts/montserrat-v25-latin-ext_latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/montserrat-v25-latin-ext_latin-800.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
-
 /* montserrat-900 - latin-ext_latin */
 @font-face {
   font-family: 'Montserrat';
@@ -64,63 +61,12 @@
        url('/assets/fonts/syne-v15-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/syne-v15-latin-ext_latin-regular.svg#Syne') format('svg'); /* Legacy iOS */
 }
-
     </style>
-     <script>
-      function fadeInPage() {
-         if (!window.AnimationEvent) {
-            return;
-         }
-         var fader = document.getElementById('fader');
-         fader.classList.add('fade-out');
-      }
-      document.addEventListener('DOMContentLoaded', function () {
-         if (!window.AnimationEvent) {
-            return;
-         }
-         var anchors = document.getElementsByTagName('a');
-         for (var idx = 0; idx < anchors.length; idx += 1) {
-            if (anchors[idx].hostname !== window.location.hostname ||
-               anchors[idx].pathname === window.location.pathname) {
-               continue;
-            }
-            anchors[idx].addEventListener('click', function (event) {
-               var fader = document.getElementById('fader'),
-                  anchor = event.currentTarget;
-               var listener = function () {
-                  window.location = anchor.href;
-                  fader.removeEventListener('animationend', listener);
-               };
-               fader.addEventListener('animationend', listener);
-               event.preventDefault();
-               fader.classList.add('fade-in');
-            });
-         }
-      });
-      window.addEventListener('pageshow', function (event) {
-         if (!event.persisted) {
-            return;
-         }
-         var fader = document.getElementById('fader');
-         fader.classList.remove('fade-in');
-      });
-   </script>
 </head>
 <body class="gsap gradient-black">
-                      <div class="cursor">
-                        <div class="cursor--small"></div>
-                        <div class="cursor--large"></div>
-                        <div class="cursor--text">
-                            <div class="text">GO HERE! GO HERE! GO HERE! GO HERE!</div>
-                        </div>
-                    </div>
 <div class="progress-wrap" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
     <div class="progress"></div>
 </div>
-<svg id="fader"></svg>
-    <script>
-      fadeInPage();
-    </script>
 <div class="site-grid">
    <div class="container">
         <div class="row gx-0">
@@ -538,7 +484,7 @@
                     </p>
                     <div class="contact-icon-wrap support">
                         
-                        <a class="cursor-hover-item" data-cursor-text="Facebook" data-cursor-text-repeat="5"
+                        <a class="cursor-hover-item" data-cursor-text="Facebook" data-cursor-text-repeat="4"
                             href="https://www.facebook.com/przemekstronyinternetowe" title="Facebook" target="_blank">
                             <svg viewBox="0 0 454 454" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -546,7 +492,7 @@
                                     fill="var(--color-dark-1)" />
                             </svg>
                         </a>
-                        <a class="cursor-hover-item" data-cursor-text="Github" data-cursor-text-repeat="6"
+                        <a class="cursor-hover-item" data-cursor-text="Github " data-cursor-text-repeat="5"
                             href="https://github.com/PrzemekMiros" title="Github" target="_blank">
                             <svg viewBox="0 0 454 454" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -554,7 +500,7 @@
                                     fill="var(--color-dark-1)" />
                             </svg>
                         </a>
-                        <a class="cursor-hover-item" data-cursor-text="Codepen" data-cursor-text-repeat="5"
+                        <a class="cursor-hover-item" data-cursor-text="Codepen" data-cursor-text-repeat="4"
                             href="https://codepen.io/przemek-miros" title="Codepen" target="_blank">
                             <svg viewBox="0 0 454 454" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -574,41 +520,16 @@
 
 
 </div>
-
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=3.4.0.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
-<script>
-    // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-  
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".smooth-scroll"),
-    smooth: true,
-    multiplier: 0.75
-  });
-  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-  locoScroll.on("scroll", ScrollTrigger.update);
-  
-  // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-  ScrollTrigger.scrollerProxy(".smooth-scroll", {
-    scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-    getBoundingClientRect() {
-      return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-    },
-    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-    pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
-  });
-  
-</script>
-
-<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<script src="/assets/js/split.js"></script>
 <script>Splitting();</script>
-<script src="/assets/js/circle.js"></script>
+
 <script src="/assets/js/app.js"></script>
 
+<script src="/assets/js/swup.js"></script>
 <script>
    const setTheme = () => {
      const currentTheme = localStorage.getItem('theme');
@@ -620,7 +541,6 @@
      document.documentElement.dataset.theme = currentTheme;
    }
    setTheme();
-
    const themeToggleBtn = document.querySelector('.js-toggle-theme');
    themeToggleBtn.addEventListener('click', () => {  
      const { theme } = document.documentElement.dataset;
@@ -631,6 +551,33 @@
      themeToggleBtn.setAttribute('aria-label', themeLabel);
      themeToggleBtn.setAttribute('title', themeLabel);
    });
+</script>
+
+<script>
+  const swup = new Swup({
+      // when this option is enabled, swup disables browser native scroll control (sets scrollRestoration to manual) and takes over this task. 
+      animateHistoryBrowsing: true,
+      // stores previously loaded contents of the pages in memory
+      cache: true,
+      // request headers
+      requestHeaders: {
+        'X-Requested-With': 'swup',
+        Accept: 'text/html, application/xhtml+xml'
+      },
+      // enable/disable plugins
+      plugins: [
+        new SwupBodyClassPlugin(),
+        new SwupProgressPlugin()
+      ]
+});
+// Swup events
+document.addEventListener("swup:animationInStart", () => {
+   locoScroll.destroy(), locoScroll.init()
+}), 
+document.addEventListener("swup:animationInDone", () => {
+
+}), console.clear();
+
 </script>
 
 </body>
