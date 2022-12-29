@@ -21,7 +21,8 @@
 
   gsap.registerPlugin(ScrollTrigger, CustomEase);
 
-  CustomEase.create("power6", "M0,0 C0.322,0.592 0.146,0.266 0.338,0.622 0.452,0.834 0.512,0.944 1,1 ");
+  CustomEase.create("power6", "M0,0 C0.21,0.186 0.256,0.442 0.39,0.69 0.522,0.946 0.626,1 1,1");
+  CustomEase.create("power7", "M0,0 C0.21,0.186 0.362,0.276 0.414,0.52 0.486,0.788 0.626,1 1,1");
 
 
   // Reveal split text chars
@@ -30,8 +31,8 @@
     gsap.from(reveal, {
       duration: 1,
       x: "-100%",
-      ease: "power6",
-      stagger: 0.2,
+      ease: "power7",
+      stagger: 0.25,
       scrollTrigger: {
         trigger: reveal,
         scroller: ".smooth-scroll",
@@ -46,7 +47,7 @@
     gsap.from(revsplit, {
       duration: 1,
       y: "100%",
-      ease: "power6",
+      ease: "power7",
       stagger: 0.2,
       scrollTrigger: {
         trigger: revsplit,
@@ -84,7 +85,7 @@
     .to(arrow, { 
       x: "40%",
       scale: 0.5,
-      duration: .8
+      duration: .6
     })
   
     hoverLink.addEventListener("mouseenter", (e) => tl.play());
