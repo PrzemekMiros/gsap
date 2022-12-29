@@ -19,16 +19,19 @@
     });
 
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, CustomEase);
+
+  CustomEase.create("power6", "M0,0 C0.322,0.592 0.146,0.266 0.338,0.622 0.452,0.834 0.512,0.944 1,1 ");
+
 
   // Reveal split text chars
   const reveals = gsap.utils.toArray(".char .reveal");
   reveals.forEach(reveal => {
     gsap.from(reveal, {
-      duration: 1.5,
+      duration: 1,
       x: "-100%",
-      ease: "expo.out",
-      stagger: 0.25,
+      ease: "power6",
+      stagger: 0.2,
       scrollTrigger: {
         trigger: reveal,
         scroller: ".smooth-scroll",
@@ -41,9 +44,9 @@
   const revealSplit = gsap.utils.toArray(".split-line");
   revealSplit.forEach(revsplit => {
     gsap.from(revsplit, {
-      duration: 1.5,
+      duration: 1,
       y: "100%",
-      ease: "expo.out",
+      ease: "power6",
       stagger: 0.2,
       scrollTrigger: {
         trigger: revsplit,
@@ -57,11 +60,11 @@
   const boxes = gsap.utils.toArray('.fade-down');
   boxes.forEach(box => {
   gsap.from(box, { 
-    duration: 1.5,
+    duration: 1,
     y: "100%",
     opacity: 0,
     delay: .2,
-    ease: "expo.out",
+    ease: "power6",
     scrollTrigger: {
       trigger: box,
       scroller: ".smooth-scroll",
@@ -75,13 +78,13 @@
   const arrow = document.querySelector('.arrow');
   
   const tl = gsap.timeline({ 
-    defaults: { ease: "expo.easeOut" }, 
+    defaults: { ease: "power6" }, 
     paused: true 
   })
     .to(arrow, { 
       x: "40%",
       scale: 0.5,
-      duration: .3
+      duration: .8
     })
   
     hoverLink.addEventListener("mouseenter", (e) => tl.play());

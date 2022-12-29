@@ -3,12 +3,12 @@
 }
 
 .contact-link:before {
+  position: absolute;
   content: "";
   width: 0;
   height: 3px;
   background: var(--color-dark-1);
-  transition: all 0.3s cubic-bezier(0.02, 0.61, 0.03, 1.01);
-  position: absolute;
+  transition: all 0.8s cubic-bezier(0.02, 0.61, 0.03, 1.01);
   bottom: -5px;
   left: 0;
 }

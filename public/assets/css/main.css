@@ -4976,7 +4976,8 @@ html.has-scroll-dragging {
   width: 0;
   height: 3px;
   background-color: var(--color-dark-1);
-  transition: 1.5s cubic-bezier(0.02, 0.61, 0.03, 1.01);
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 }
 
 .portfolio-item:hover a::before {
@@ -5006,12 +5007,12 @@ html.has-scroll-dragging {
 }
 
 .contact-link:before {
+  position: absolute;
   content: "";
   width: 0;
   height: 3px;
   background: var(--color-dark-1);
-  transition: all 0.3s cubic-bezier(0.02, 0.61, 0.03, 1.01);
-  position: absolute;
+  transition: all 0.8s cubic-bezier(0.02, 0.61, 0.03, 1.01);
   bottom: -5px;
   left: 0;
 }
