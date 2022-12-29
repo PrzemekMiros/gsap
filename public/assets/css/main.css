@@ -4976,7 +4976,7 @@ html.has-scroll-dragging {
   width: 0;
   height: 3px;
   background-color: var(--color-dark-1);
-  transition: 0.5s ease-in-out;
+  transition: 1.5s cubic-bezier(0.02, 0.61, 0.03, 1.01);
 }
 
 .portfolio-item:hover a::before {
@@ -5010,7 +5010,7 @@ html.has-scroll-dragging {
   width: 0;
   height: 3px;
   background: var(--color-dark-1);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.02, 0.61, 0.03, 1.01);
   position: absolute;
   bottom: -5px;
   left: 0;

@@ -25,10 +25,10 @@
   const reveals = gsap.utils.toArray(".char .reveal");
   reveals.forEach(reveal => {
     gsap.from(reveal, {
-      duration: 1,
+      duration: 1.5,
       x: "-100%",
-      ease: Power1. easeOut,
-      stagger: 0.1,
+      ease: "expo.out",
+      stagger: 0.25,
       scrollTrigger: {
         trigger: reveal,
         scroller: ".smooth-scroll",
@@ -41,10 +41,10 @@
   const revealSplit = gsap.utils.toArray(".split-line");
   revealSplit.forEach(revsplit => {
     gsap.from(revsplit, {
-      duration: .8,
+      duration: 1.5,
       y: "100%",
-      ease: Power1. easeOut,
-      stagger: 0.1,
+      ease: "expo.out",
+      stagger: 0.2,
       scrollTrigger: {
         trigger: revsplit,
         scroller: ".smooth-scroll",
@@ -57,11 +57,11 @@
   const boxes = gsap.utils.toArray('.fade-down');
   boxes.forEach(box => {
   gsap.from(box, { 
-    duration: .8,
+    duration: 1.5,
     y: "100%",
     opacity: 0,
     delay: .2,
-    ease: Power1. easeOut,
+    ease: "expo.out",
     scrollTrigger: {
       trigger: box,
       scroller: ".smooth-scroll",
@@ -75,13 +75,13 @@
   const arrow = document.querySelector('.arrow');
   
   const tl = gsap.timeline({ 
-    defaults: { ease: "power1.easeOut" }, 
+    defaults: { ease: "expo.easeOut" }, 
     paused: true 
   })
     .to(arrow, { 
       x: "40%",
-      scale: 0.7,
-      duration: .5
+      scale: 0.5,
+      duration: .3
     })
   
     hoverLink.addEventListener("mouseenter", (e) => tl.play());
