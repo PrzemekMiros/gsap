@@ -19,11 +19,7 @@
     });
 
 
-  gsap.registerPlugin(ScrollTrigger, CustomEase);
-
-  CustomEase.create("power6", "M0,0 C0.21,0.186 0.256,0.442 0.39,0.69 0.522,0.946 0.626,1 1,1");
-  CustomEase.create("power7", "M0,0 C0.21,0.186 0.362,0.276 0.414,0.52 0.486,0.788 0.626,1 1,1");
-
+  gsap.registerPlugin(ScrollTrigger);
 
   // Reveal split text chars
   const reveals = gsap.utils.toArray(".char .reveal");
@@ -31,7 +27,7 @@
     gsap.from(reveal, {
       duration: 1,
       x: "-100%",
-      ease: "power7",
+      ease: Power3. easeOut,
       stagger: 0.25,
       scrollTrigger: {
         trigger: reveal,
@@ -47,7 +43,7 @@
     gsap.from(revsplit, {
       duration: 1,
       y: "100%",
-      ease: "power7",
+      ease: Power3. easeOut,
       stagger: 0.2,
       scrollTrigger: {
         trigger: revsplit,
@@ -65,7 +61,7 @@
     y: "100%",
     opacity: 0,
     delay: .2,
-    ease: "power6",
+    ease: Power3. easeOut,
     scrollTrigger: {
       trigger: box,
       scroller: ".smooth-scroll",
@@ -79,7 +75,7 @@
   const arrow = document.querySelector('.arrow');
   
   const tl = gsap.timeline({ 
-    defaults: { ease: "power6" }, 
+    defaults: { ease: Power3. easeOut }, 
     paused: true 
   })
     .to(arrow, { 
