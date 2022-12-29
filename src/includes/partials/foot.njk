@@ -50,8 +50,9 @@ document.addEventListener("swup:animationInStart", () => {
    locoScroll.destroy(), locoScroll.init()
 }), 
 document.addEventListener("swup:animationInDone", () => {
-
+    new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll"));
 }), console.clear();
 </script>
+<script> new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll")); </script>
 </body>
 </html>

@@ -18,6 +18,7 @@
       },
     });
 
+
   gsap.registerPlugin(ScrollTrigger);
 
   // Reveal split text chars

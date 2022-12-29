@@ -4901,7 +4901,7 @@ html.has-scroll-dragging {
 }
 
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: fit-content;

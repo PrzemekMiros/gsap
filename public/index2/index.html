@@ -81,6 +81,8 @@
 
 
 
+
+
     <header class="site-header">
         <div class="header-wrap">
             <div class="site-logo">
@@ -125,10 +127,8 @@
             </div>
         </div>
     </header>
-
-    <div class="smooth-scroll" id="fixed-target">
-        <div class="transition-fade" id="swup">
-
+<div class="smooth-scroll" id="fixed-target">
+<div class="transition-fade" id="swup">
 
 
 <main>
@@ -224,8 +224,9 @@ document.addEventListener("swup:animationInStart", () => {
    locoScroll.destroy(), locoScroll.init()
 }), 
 document.addEventListener("swup:animationInDone", () => {
-
+    new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll"));
 }), console.clear();
 </script>
+<script> new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll")); </script>
 </body>
 </html>
