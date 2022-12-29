@@ -4,7 +4,7 @@
 
 .portfolio-item {
   position: relative;
-  padding-bottom: 1.8em;
+  margin-bottom: 1.8em;
   padding-left: 0;
   list-style: none;
   overflow: hidden;

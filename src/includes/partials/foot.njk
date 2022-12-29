@@ -2,12 +2,9 @@
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=3.4.0.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-
 <script src="/assets/js/split.js"></script>
-<script>Splitting();</script>
-
+<script>splt({ reveal: true });</script>
 <script src="/assets/js/app.js"></script>
-
 <script src="/assets/js/swup.js"></script>
 <script>
    const setTheme = () => {
@@ -31,7 +28,6 @@
      themeToggleBtn.setAttribute('title', themeLabel);
    });
 </script>
-
 <script>
   const swup = new Swup({
       // when this option is enabled, swup disables browser native scroll control (sets scrollRestoration to manual) and takes over this task. 
@@ -56,8 +52,6 @@ document.addEventListener("swup:animationInStart", () => {
 document.addEventListener("swup:animationInDone", () => {
 
 }), console.clear();
-
 </script>
-
 </body>
 </html>
