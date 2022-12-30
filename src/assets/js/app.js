@@ -1,3 +1,4 @@
+  gsap.registerPlugin(ScrollTrigger);
 
   // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
   const locoScroll = new LocomotiveScroll({
@@ -17,9 +18,6 @@
         return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
       },
     });
-
-
-  gsap.registerPlugin(ScrollTrigger);
 
   // Reveal split text chars
   const reveals = gsap.utils.toArray(".char .reveal");
