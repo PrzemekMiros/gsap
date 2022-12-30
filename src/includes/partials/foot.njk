@@ -5,7 +5,7 @@
 <script src="/assets/js/split.js"></script>
 <script>splt({ reveal: true });</script>
 <script src="/assets/js/app.js"></script>
-<script src="/assets/js/swup.js"></script>
+
 <script>
    const setTheme = () => {
      const currentTheme = localStorage.getItem('theme');
@@ -28,31 +28,5 @@
      themeToggleBtn.setAttribute('title', themeLabel);
    });
 </script>
-<script>
-  const swup = new Swup({
-      // when this option is enabled, swup disables browser native scroll control (sets scrollRestoration to manual) and takes over this task. 
-      animateHistoryBrowsing: true,
-      // stores previously loaded contents of the pages in memory
-      cache: true,
-      // request headers
-      requestHeaders: {
-        'X-Requested-With': 'swup',
-        Accept: 'text/html, application/xhtml+xml'
-      },
-      // enable/disable plugins
-      plugins: [
-        new SwupBodyClassPlugin(),
-        new SwupProgressPlugin()
-      ]
-});
-// Swup events
-document.addEventListener("swup:animationInStart", () => {
-   locoScroll.destroy(), locoScroll.init()
-}), 
-document.addEventListener("swup:animationInDone", () => {
-    new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll"));
-}), console.clear();
-</script>
-<script> new ResizeObserver(() => scroll.update()).observe(document.querySelector(".smooth-scroll")); </script>
 </body>
 </html>
