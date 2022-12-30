@@ -1,25 +1,26 @@
 
-  // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-  const locoScroll = new LocomotiveScroll({
-        el: document.querySelector(".smooth-scroll"),
-        smooth: true,
-        multiplier: 0.75
-      });
-  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-  locoScroll.on("scroll", ScrollTrigger.update);
-      
-  // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-  ScrollTrigger.scrollerProxy(".smooth-scroll", {
-      scrollTop(value) {
-        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-      }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-      getBoundingClientRect() {
-        return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-      },
-    });
+// For more information, see greensock.com/docs/v3/Plugins/ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Smooth scroll setup
+const bodyScrollBar = Scrollbar.init(document.body, { damping: 0.1, delegateTo: document });
+ 
+bodyScrollBar.setPosition(0, 0);
+bodyScrollBar.track.xAxis.element.remove();
+
+// How to get them to work together
+ScrollTrigger.scrollerProxy("body", {
+  scrollTop(value) {
+    if (arguments.length) {
+      bodyScrollBar.scrollTop = value;
+    }
+    return bodyScrollBar.scrollTop;
+  }
+});
 
 
-  gsap.registerPlugin(ScrollTrigger);
+// Regular ScrollTrigger stuff
+
 
   // Reveal split text chars
   const reveals = gsap.utils.toArray(".char .reveal");
@@ -31,7 +32,6 @@
       stagger: 0.25,
       scrollTrigger: {
         trigger: reveal,
-        scroller: ".smooth-scroll",
         start: "top 80%",
       }
     });
@@ -47,7 +47,6 @@
       stagger: 0.2,
       scrollTrigger: {
         trigger: revsplit,
-        scroller: ".smooth-scroll",
         start: "top 90%",
       }
     });
@@ -64,7 +63,6 @@
     ease: Power3. easeOut,
     scrollTrigger: {
       trigger: box,
-      scroller: ".smooth-scroll",
       start: "top 95%",
     }
   })
@@ -86,21 +84,3 @@
   
     hoverLink.addEventListener("mouseenter", (e) => tl.play());
     hoverLink.addEventListener("mouseleave", (e) => tl.reverse());
-
-  // Progress
-    gsap.from('.progress', {
-      height: 0,
-      ease: 'none',
-      scrollTrigger: { 
-        trigger: "body",
-        scroller: ".smooth-scroll",
-        start: "top top",
-        scrub: 0.3 
-      }
-    });
-
-  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  
-  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-  ScrollTrigger.refresh();
