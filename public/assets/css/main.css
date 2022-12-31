@@ -31,6 +31,8 @@ p {
 img {
   display: block;
   width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .site-grid {
@@ -884,8 +886,8 @@ html.is-leaving .site-overlay {
   .container-xl,
   .container-xxl {
     width: 100%;
-    padding-right: 5vw;
-    padding-left: 5vw;
+    padding-right: 0;
+    padding-left: 0;
     margin-right: auto;
     margin-left: auto;
   }
