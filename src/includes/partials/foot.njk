@@ -1,3 +1,6 @@
+</div>
+</div>
+<script src="/assets/js/swup.js"></script>
 
 <script src="/assets/js/split.js"></script>
 <script>splt({ reveal: true });</script>
@@ -5,10 +8,37 @@
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
 <script>
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true
+scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: !0,
+    reloadOnContextChange: !0,
+    multiplier: .9,
+    lerp: .1,
+    touchMultiplier: 2,
+    tablet: {
+      smooth: !0
+    },
+    smartphone: {
+      smooth: !1
+    }
+  });
+
+new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
+
+const swup = new Swup({
+  plugins: [
+    new SwupProgressPlugin(), 
+    new SwupBodyClassPlugin()
+  ]
 });
+
+document.addEventListener("swup:animationInStart", () => {
+  scroll.destroy(), scroll.init()
+}), 
+
+document.addEventListener("swup:animationInDone", () => {
+  scroll.destroy(), scroll.init()
+}), console.clear();
 </script>
 
 <script>
