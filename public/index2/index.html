@@ -425,11 +425,11 @@
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
 <script>
-scroll = new LocomotiveScroll({
+  scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
-    smooth: !0,
+    smooth: true,
     reloadOnContextChange: !0,
-    multiplier: .9,
+    multiplier: 1.1,
     lerp: .1,
     touchMultiplier: 2,
     tablet: {
@@ -440,8 +440,6 @@ scroll = new LocomotiveScroll({
     }
   });
 
-new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
-
 const swup = new Swup({
   plugins: [
     new SwupProgressPlugin(), 
@@ -450,7 +448,7 @@ const swup = new Swup({
 });
 
 document.addEventListener("swup:animationInStart", () => {
-  scroll.destroy(), scroll.init()
+  scroll.destroy(), scroll.init(), splt({ reveal: true })
 }), 
 
 document.addEventListener("swup:animationInDone", () => {
@@ -479,6 +477,16 @@ document.addEventListener("swup:animationInDone", () => {
      themeToggleBtn.setAttribute('aria-label', themeLabel);
      themeToggleBtn.setAttribute('title', themeLabel);
    });
+</script>
+<script>
+
+  const portfolioLink = document.querySelector(".p-link-1");
+  const portfolioImage = document.querySelector(".portfolio-img-wrap");
+
+  portfolioLink.addEventListener("mouseenter", () => {
+    portfolioImage.classList.add("active");
+})
+
 </script>
 </body>
 <div class="site-grid">

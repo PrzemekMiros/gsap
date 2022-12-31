@@ -115,6 +115,7 @@
 <div id="swup" class="transition-fade">
 
 
+
 <section class="pt-xlarge pb-large" data-scroll-section>
     <div class="container pt-small">
         <div class="row gx-0">
@@ -141,7 +142,7 @@
         </div>
         <div class="row gx-0">
             <div class="offset-3 col-9">
-                <a href="/">Zobacz więcej</a>
+                <a href="/index2/">Zobacz więcej</a>
             </div>
         </div>
     </div>
@@ -190,58 +191,60 @@
 <section class="pb-large" data-scroll-section>
     <div class="container">
         <div class="row gx-0">
-            <div class="offset-1 offset-md-3 col-12 col-md-5">
-                <div class="portfolio-list-wrap">
+            <div class="offset-1 offset-md-3 col-12 col-md-6">
+                <div class="portfolio-list-wrap pb-small">
                     <ul class="portfolio-list">
-                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-1 fade-in"
+                        <li class="portfolio-item d-flex align-items-center fade-in"
                             data-scroll>
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small fade-down">
                                 <span>I</span>
                             </span>
-                            <a href="https://callyoursoul.pl/" class="site-link-portfolio h4 split-line"
+                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-1 h4 split-line"
                                 title="Eco Tech Group" aria-label="Eco Tech Group">
                                 Business Woman
                             </a>
                         </li>
-                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-2 fade-in"
+                        <li class="portfolio-item d-flex align-items-center fade-in"
                             data-scroll>
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small fade-down">II</span>
-                            <a href="https://callyoursoul.pl/" class="site-link-portfolio h4 split-line"
+                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-2 h4 split-line"
                                 title="Business Woman" aria-label="Business Woman">
                                 Eco Tech Group
                             </a>
                         </li>
-                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-3 fade-in"
+                        <li class="portfolio-item d-flex align-items-center fade-in"
                             data-scroll>
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small fade-down">III</span>
-                            <a href="https://callyoursoul.pl/" class="site-link-portfolio h4 split-line"
+                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-3 h4 split-line"
                                 title="EGP System" aria-label="EGP System">
                                 Mastermatch Online
                             </a>
                         </li>
-                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-4 fade-in"
+                        <li class="portfolio-item d-flex align-items-center fade-in"
                             data-scroll>
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small fade-down">IV</span>
-                            <a href="https://callyoursoul.pl/" class="site-link-portfolio h4 split-line"
+                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-4 h4 split-line"
                                 title="Call Your Soul" aria-label="Call Your Soul">
                                 Call Your Soul
                             </a>
                         </li>
-                        <li class="portfolio-item d-flex align-items-center portfolio-link p-link-5 fade-in"
+                        <li class="portfolio-item d-flex align-items-center fade-in"
                             data-scroll>
                             <span class="offset-1 offset-md-0 col-1 col-md-2 small fade-down">V</span>
-                            <a href="https://callyoursoul.pl/" class="site-link-portfolio h4 split-line"
+                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-5 h4 split-line"
                                 title="Gaszyn Park" aria-label="Gaszyn Park">
                                 EGP System
                             </a>
                         </li>
                     </ul>
                 </div>
+                <div class="portfolio-img-wrap">
+                    <img src="https://przemekmiros.pl/assets/img/mockups/konsultacje.jpg" alt="" class="fade-in" data-scroll>
+                </div>
             </div>
         </div>
     </div>
 </section>
-
 <section class="pt-large pb-large" data-scroll-section>
     <div class="container">
 
@@ -323,17 +326,6 @@
 
     </div>
 </section>
-
-<section class="section pb-xlarge" data-scroll-section>
-    <div class="container">
-        <div class="row gx-0">
-            <div class="offset-3 col-6">
-                <img src="https://przemekmiros.pl/assets/img/mockups/konsultacje.jpg" alt="" class="fade-in" data-scroll>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="section pb-xlarge" data-scroll-section>
     <div class="container">
         <div class="row gx-0 pb-xsmall pb-md-small">
@@ -361,7 +353,7 @@
             </div>
         </div>
         <div class="row gx-0">
-            <div class="offset-4 offset-md-4 col-8">
+            <div class="offset-2 offset-md-4 col-10 col-md-8">
                 <h2 class="xxl splt" data-scroll>MYSIĘ</h2>
             </div>
         </div>
@@ -409,6 +401,12 @@
     </div>
 </section>
 
+
+
+
+
+
+
 <!---
 <div class="progress-wrap" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
     <div class="progress"></div>
@@ -425,11 +423,11 @@
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
 <script>
-scroll = new LocomotiveScroll({
+  scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
-    smooth: !0,
+    smooth: true,
     reloadOnContextChange: !0,
-    multiplier: .9,
+    multiplier: 1.1,
     lerp: .1,
     touchMultiplier: 2,
     tablet: {
@@ -440,8 +438,6 @@ scroll = new LocomotiveScroll({
     }
   });
 
-new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
-
 const swup = new Swup({
   plugins: [
     new SwupProgressPlugin(), 
@@ -450,7 +446,7 @@ const swup = new Swup({
 });
 
 document.addEventListener("swup:animationInStart", () => {
-  scroll.destroy(), scroll.init()
+  scroll.destroy(), scroll.init(), splt({ reveal: true })
 }), 
 
 document.addEventListener("swup:animationInDone", () => {
@@ -479,6 +475,16 @@ document.addEventListener("swup:animationInDone", () => {
      themeToggleBtn.setAttribute('aria-label', themeLabel);
      themeToggleBtn.setAttribute('title', themeLabel);
    });
+</script>
+<script>
+
+  const portfolioLink = document.querySelector(".p-link-1");
+  const portfolioImage = document.querySelector(".portfolio-img-wrap");
+
+  portfolioLink.addEventListener("mouseenter", () => {
+    portfolioImage.classList.add("active");
+})
+
 </script>
 </body>
 <div class="site-grid">
