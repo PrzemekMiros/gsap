@@ -2,7 +2,7 @@
 :root {
     --font-primary: "Syne", sans-serif;
     --font-secondary: "Montserrat", sans-serif;
-    --xxl-font-size: 14;
+    --xxl-font-size: 16;
     --xxl-line-height: .9;
     --xxl-letter-spacing: 3;
     --xl-font-size: 6;
@@ -59,7 +59,7 @@ h6 {
   font-family: var(--font-secondary);
   line-height: var(--xxl-line-height);
   font-size: calc(var(--xxl-font-size) * 1.5vw);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: calc(var(--xxl-letter-spacing) * 1px);
 }
 

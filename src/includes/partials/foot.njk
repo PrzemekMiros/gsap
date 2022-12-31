@@ -1,6 +1,15 @@
 </div>
 </div>
 <script src="/assets/js/swup.js"></script>
+<script src="/assets/js/app.js"></script>
+
+<script>
+function loadingScripts() {
+    if (document.querySelector(".portfolio-list")) {
+        portfolioList();
+    }
+}
+</script>
 
 <script src="/assets/js/split.js"></script>
 <script>splt({ reveal: true });</script>
@@ -12,7 +21,7 @@
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
     reloadOnContextChange: !0,
-    multiplier: 1.1,
+    multiplier: .5,
     lerp: .1,
     touchMultiplier: 2,
     tablet: {
@@ -23,7 +32,10 @@
     }
   });
 
+new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
+
 const swup = new Swup({
+  animateHistoryBrowsing: true,
   plugins: [
     new SwupProgressPlugin(), 
     new SwupBodyClassPlugin()
@@ -31,7 +43,11 @@ const swup = new Swup({
 });
 
 document.addEventListener("swup:animationInStart", () => {
-  scroll.destroy(), scroll.init(), splt({ reveal: true })
+  scroll.destroy(), 
+  scroll.init(), 
+  loadingScripts(),
+  greetingsText(),
+  splt({ reveal: true })
 }), 
 
 document.addEventListener("swup:animationInDone", () => {
@@ -63,22 +79,6 @@ document.addEventListener("swup:animationInDone", () => {
 </script>
 <script>
 
-  const portfolioLink = document.querySelector(".p-link-1");
-  const portfolioImage = document.querySelector(".portfolio-img-wrap");
-
-  portfolioLink.addEventListener("mouseenter", () => {
-    portfolioImage.classList.add("active");
-})
-
 </script>
 </body>
-<div class="site-grid">
-   <div class="container">
-        <div class="row gx-0">
-            <div class="col-2 site-grid-item"></div>
-            <div class="col-1 site-grid-item"></div>
-            <div class="col-8 col-md-6 site-grid-item"></div>
-        </div>
-   </div>
-</div>
 </html>
