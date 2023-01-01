@@ -4,61 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swup | Gsap | Locomotive</title>
-    <meta name="description" content="Swup experiment">
+    <title>Nowoczesne Strony Internetowe - Przemek Miros</title>
+    <meta name="description" content="Wykonuję strony internetowe dla małych i średnich firm. Postaw na specjalistyczne wsparcie i skutecznie rozwijaj swój biznes">
     <link rel="stylesheet" href="/assets/css/main.css" />
     <style>
-        /* montserrat-regular - latin-ext_latin */
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.eot'); 
   src: local(''),
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.woff2') format('woff2'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.woff') format('woff'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.ttf') format('truetype'),
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-regular.svg#Montserrat') format('svg'); 
 }
-/* montserrat-800 - latin-ext_latin */
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 800;
-  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-800.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-800.eot'); 
   src: local(''),
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.svg#Montserrat') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.woff2') format('woff2'),
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.woff') format('woff'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.ttf') format('truetype'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-800.svg#Montserrat') format('svg'); 
 }
-/* montserrat-900 - latin-ext_latin */
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
-  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-900.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/montserrat-v25-latin-ext_latin-900.eot'); 
   src: local(''),
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.eot?#iefix') format('embedded-opentype'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.woff2') format('woff2'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.woff') format('woff'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.ttf') format('truetype'), 
+       url('/assets/fonts/montserrat-v25-latin-ext_latin-900.svg#Montserrat') format('svg'); 
 }
-/* syne-regular - latin-ext_latin */
 @font-face {
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/syne-v15-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/syne-v15-latin-ext_latin-regular.eot'); 
   src: local(''),
-       url('/assets/fonts/syne-v15-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/syne-v15-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/syne-v15-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/syne-v15-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/syne-v15-latin-ext_latin-regular.svg#Syne') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.woff2') format('woff2'), 
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.woff') format('woff'), 
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.ttf') format('truetype'), 
+       url('/assets/fonts/syne-v15-latin-ext_latin-regular.svg#Syne') format('svg'); 
 }
     </style>
 </head>
@@ -84,7 +80,7 @@
         </div>
         <div class="menu-items">
             <div class="theme">
-                <button class="js-toggle-theme mr-xxsmall" aria-label="Zmiana kolorystyki" title="">
+                <button class="js-toggle-theme mr-xxsmall" aria-label="Zmiana kolorystyki" title="Kolorystyka">
                     <div class="round">
                         <svg class="moon-icon" width="1.6em" height="1.6em" viewbox="0 0 50 50">
                             <path d="M 43.81 29.354 C 43.688 28.958 43.413 28.626 43.046 28.432 C 42.679 28.238 42.251 28.198 41.854 28.321 C 36.161 29.886
@@ -120,7 +116,6 @@
         </div>
     </div>
 </header>
-
 <div id="swup" class="transition-fade">
 
 
@@ -148,15 +143,10 @@
                 </h1>
             </div>
         </div>
-        <div class="row gx-0">
-            <div class="offset-3 offset-md-4 col-8 pt-small">
-                <a href="/index2/">Zobacz więcej</a>
-            </div>
-        </div>
     </div>
 </section>
 
-<section class="pb-small" data-scroll-section>
+<section class="pt-md-large pb-small" data-scroll-section>
     <div class="container">
         <div class="row gx-0 pb-xsmall pb-md-small">
             <div class="offset-3 offset-md-4 col-md-6">
@@ -183,7 +173,7 @@
             </div>
         </div>
         <div class="row gx-0">
-            <div class="offset-3 offset-md-5 col-7">
+            <div class="offset-5 offset-md-5 col-7">
                 <h2 class="xxl splt" data-scroll>CJE</h2>
             </div>
         </div>
@@ -208,36 +198,36 @@
                     <ul class="portfolio-list">
                         <li class="portfolio-item d-flex align-items-center fade-in-down"
                             data-scroll>
-                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-1 h4 split-line"
-                                title="Eco Tech Group" aria-label="Eco Tech Group">
+                            <a href="https://businesswomanlife.pl/" class="portfolio-link p-link-1 h4 split-line"
+                                title="Business Woman" aria-label="Business Woman" rel="nofollow" target="_blank">
                                 Business Woman
                             </a>
                         </li>
                         <li class="portfolio-item d-flex align-items-center fade-in-down"
                             data-scroll>
-                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-2 h4 split-line"
-                                title="Business Woman" aria-label="Business Woman">
+                            <a href="https://ecotechgroup.pl/" class="portfolio-link p-link-2 h4 split-line"
+                                title="Eco Tech Group" aria-label="Eco Tech Group" rel="nofollow" target="_blank">
                                 Eco Tech Group
                             </a>
                         </li>
                         <li class="portfolio-item d-flex align-items-center fade-in-down"
                             data-scroll>
-                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-3 h4 split-line"
-                                title="EGP System" aria-label="EGP System">
+                            <a href="https://mastermatch.online/" class="portfolio-link p-link-3 h4 split-line"
+                                title="Mastermatch Online" aria-label="Mastermatch Online" rel="nofollow" target="_blank">
                                 Mastermatch Online
                             </a>
                         </li>
                         <li class="portfolio-item d-flex align-items-center fade-in-down"
                             data-scroll>
                             <a href="https://callyoursoul.pl/" class="portfolio-link p-link-4 h4 split-line"
-                                title="Call Your Soul" aria-label="Call Your Soul">
+                                title="Call Your Soul" aria-label="Call Your Soul" rel="nofollow" target="_blank">
                                 Call Your Soul
                             </a>
                         </li>
                         <li class="portfolio-item d-flex align-items-center fade-in-down"
                             data-scroll>
-                            <a href="https://callyoursoul.pl/" class="portfolio-link p-link-5 h4 split-line"
-                                title="Gaszyn Park" aria-label="Gaszyn Park">
+                            <a href="https://egp-system.com/" class="portfolio-link p-link-5 h4 split-line"
+                                title="EGP System" aria-label="EGP System" rel="nofollow" target="_blank">
                                 EGP System
                             </a>
                         </li>
@@ -265,7 +255,7 @@
         </div>
     </div>
 </section>
-<section class="pb-md-xlarge" data-scroll-section>
+<section class="pt-md-large pb-md-large" data-scroll-section>
     <div class="container">
 
         <div class="row gx-0 pb-xsmall pb-md-small">
@@ -341,7 +331,7 @@
 
     </div>
 </section>
-<section class="pt-large" data-scroll-section>
+<section class="pt-large pb-md-xlarge" data-scroll-section>
     <div class="container">
 
         <div class="row gx-0 pb-xsmall pb-md-small">
@@ -377,7 +367,7 @@
 
         <div class="row gx-0 pt-large pt-md-medium">
             <div class="offset-1 offset-md-2 col-2">
-                <div class="counter">
+                <div class="counter fade-in" data-scroll>
                     <h3 class="xxl text-stroke text-center">
                         <ul class="counter-numbers" data-scroll>
                             <li>1</li>
@@ -387,10 +377,13 @@
                             <li>5</li>
                         </ul>
                     </h3>
+                    <span class="counter-title fade-in" data-scroll>
+                        <small>Lat doświadczenia</small>
+                    </span>
                 </div>
             </div>
             <div class="offset-1 col-6 col-md-4">
-                <h3 class="h5 mt-0">
+                <h3 class="h5 mt-0 fade-in" data-scroll>
                     Jestem partnerem i doradcą biznesowym. Postaw na specjalistyczne wsparcie i skutecznie rozwijaj swój biznes
                 </h3>
             </div>
@@ -515,7 +508,7 @@
 
     </div>
 </section>
-<section class="section pb-large" data-scroll-section="data-scroll-section">
+<section class="pt-md-small pb-large" data-scroll-section="data-scroll-section">
     <div class="container">
         <div class="row gx-0 pb-xsmall pb-md-small">
             <div class="offset-3 offset-md-4 col-md-6">
@@ -596,7 +589,7 @@
                     <small>ZOBACZ RÓWNIEŻ NA</small>
                 </p>
                 <div class="contact-icon-wrap">
-                    <a href="#">
+                    <a href="https://www.facebook.com/przemekstronyinternetowe" title="Facebook" rel="nofollow" target="_blank" aria-title="Facebook">
                         <svg
                             width="54"
                             height="54"
@@ -613,7 +606,7 @@
                                 fill="var(--color-dark-1)"/>
                         </svg>
                     </a>
-                    <a href="#">
+                    <a href="https://github.com/PrzemekMiros" title="Github" rel="nofollow" target="_blank" aria-title="Github">
                         <svg width="54" height="54" viewBox="0 0 454 454" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 fill-rule="evenodd"
@@ -632,7 +625,7 @@
                                 fill="var(--color-dark-1)"/>
                         </svg>
                     </a>
-                    <a href="#">
+                    <a href="https://codepen.io/przemek-miros" title="Codepen" rel="nofollow" target="_blank" aria-title="Codepen">
                         <svg width="54" height="54" viewBox="0 0 454 454" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M216.404 183.861V134.515L133.407 189.758L170.472 214.497L216.404 183.861ZM329.061 244.912V209.532L302.548
@@ -680,11 +673,7 @@
 
 
 
-<!---
-<div class="progress-wrap" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-    <div class="progress"></div>
-</div>
--->
+
 
 </div>
 </div>
@@ -716,7 +705,7 @@ function loadingScripts() {
       smooth: !0
     },
     smartphone: {
-      smooth: !1
+      smooth: !0
     }
   });
 

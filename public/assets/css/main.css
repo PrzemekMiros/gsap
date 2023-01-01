@@ -102,10 +102,10 @@ img {
   --h4-line-height: 1.5;
   --h4-letter-spacing: 0;
   --h5-font-size: 2;
-  --h5-line-height: 1.5;
+  --h5-line-height: 1.6;
   --h5-letter-spacing: 0;
   --h6-font-size: 1.5;
-  --h6-line-height: 1.5;
+  --h6-line-height: 1.6;
   --h6-letter-spacing: 0;
   --subheading-font-size: 1;
   --subheading-line-height: 1;
@@ -4859,15 +4859,17 @@ html.is-leaving .site-overlay {
   transform: translateY(0)
 }
 --*/
-/* Animations
----------------------------------- */
+:root {
+  --ease1: cubic-bezier(0.96, 0.04, -0.01, 0.98);
+}
+
 .char {
   overflow: hidden;
 }
 
 .reveal {
   transform: translateX(-100%);
-  animation-timing-function: cubic-bezier(0.96, 0.04, -0.01, 0.98);
+  animation-timing-function: var(--ease1);
   transition-duration: 0.8s;
 }
 
@@ -4921,6 +4923,7 @@ html.is-leaving .site-overlay {
   opacity: 0;
   transform: translateY(50%);
   transition: 0.8s;
+  animation-timing-function: var(--ease1);
   transition-delay: 0.3s;
 }
 
@@ -5097,7 +5100,8 @@ html.has-scroll-dragging {
   width: 0;
   height: 3px;
   background-color: var(--color-dark-1);
-  transition: 0.5s cubic-bezier(0.58, 0.02, 0.1, 0.87);
+  animation-timing-function: var(--ease1);
+  transition: 0.5s;
 }
 
 .portfolio-link:hover::before {
@@ -5150,10 +5154,12 @@ html.has-scroll-dragging {
 
 .counter-numbers {
   margin-top: 0;
+  margin-bottom: 0;
   padding-left: 0;
   display: flex;
   width: 500%;
   transition: 2s;
+  animation-timing-function: var(--ease1);
   transition-delay: 0.5s;
 }
 
@@ -5164,6 +5170,10 @@ html.has-scroll-dragging {
 .counter-numbers li {
   width: 20%;
   list-style: none;
+}
+
+.counter-title small {
+  opacity: 0.5;
 }
 
 .accordion {
@@ -5185,8 +5195,9 @@ html.has-scroll-dragging {
   position: absolute;
   content: "";
   top: calc(50% - 0.6em);
-  left: -5em;
-  font-size: 1vw;
+  left: -3.3em;
+  font-size: 3vw;
+  opacity: 0.5;
 }
 
 .accordion-wrap div:nth-child(1) .accordion::after {
@@ -5230,6 +5241,7 @@ html.has-scroll-dragging {
   height: 2px;
   background: var(--color-dark-1);
   border-radius: 50%;
+  opacity: 0.5;
 }
 
 .icon::before {
@@ -5242,7 +5254,8 @@ html.has-scroll-dragging {
   background: var(--color-dark-1);
   border-radius: 50%;
   transform: rotate(90deg);
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-timing-function: var(--ease1);
+  transition: 0.3s;
 }
 
 .accordion.open .icon::before {
@@ -5262,6 +5275,10 @@ html.has-scroll-dragging {
 @media (min-width: 767px) {
   .icon {
     right: 2em;
+  }
+  .accordion::after {
+    left: -5em;
+    font-size: 1vw;
   }
 }
 .contact-link {

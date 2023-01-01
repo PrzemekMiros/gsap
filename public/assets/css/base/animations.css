@@ -1,12 +1,14 @@
-/* Animations
----------------------------------- */
+:root {
+  --ease1: cubic-bezier(0.96, 0.04, -0.01, 0.98);
+}
+
 .char {
   overflow: hidden;
 }
 
 .reveal {
   transform: translateX(-100%);
-  animation-timing-function: cubic-bezier(0.96, 0.04, -0.01, 0.98);
+  animation-timing-function: var(--ease1);
   transition-duration: 0.8s;
 }
 
@@ -60,6 +62,7 @@
   opacity: 0;
   transform: translateY(50%);
   transition: 0.8s;
+  animation-timing-function: var(--ease1);
   transition-delay: 0.3s;
 }
 

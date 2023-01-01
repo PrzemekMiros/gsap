@@ -6,10 +6,12 @@
 }
 .counter-numbers {
     margin-top: 0;
+    margin-bottom: 0;
     padding-left: 0;
     display: flex;
     width: 500%;
     transition: 2s;
+    animation-timing-function: var(--ease1);
     transition-delay: .5s;
 }
 .counter-numbers.is-inview {
@@ -19,4 +21,8 @@
 .counter-numbers li {
     width: 20%;
     list-style: none
+}
+
+.counter-title small {
+    opacity: .5
 }
