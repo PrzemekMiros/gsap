@@ -8,8 +8,31 @@
     margin-bottom: 1.8em;
     padding-left: 0;
     list-style: none;
-    overflow: hidden;
     z-index: 9
+}
+
+.portfolio-item::after {
+    position: absolute;
+    content: "";
+    top: calc(50% - 0.6em);
+    left: -5em;
+    font-size: 1vw
+}
+
+.portfolio-item:nth-child(1):after {
+    content: "I"
+}
+.portfolio-item:nth-child(2):after {
+    content: "II"
+}
+.portfolio-item:nth-child(3):after {
+    content: "III"
+}
+.portfolio-item:nth-child(4):after {
+    content: "IV"
+}
+.portfolio-item:nth-child(5):after {
+    content: "V"
 }
 
 .portfolio-link {
@@ -33,6 +56,7 @@
 .portfolio-link.active::before {
     width: 100%
 }
+
 
 
 .portfolio-img-wrap {
