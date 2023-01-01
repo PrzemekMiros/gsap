@@ -1,0 +1,23 @@
+.counter {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.counter-numbers {
+  margin-top: 0;
+  padding-left: 0;
+  display: flex;
+  width: 500%;
+  transition: 2s;
+  transition-delay: 0.5s;
+}
+
+.counter-numbers.is-inview {
+  transform: translateX(-80%);
+}
+
+.counter-numbers li {
+  width: 20%;
+  list-style: none;
+}

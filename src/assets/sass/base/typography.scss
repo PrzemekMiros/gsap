@@ -2,7 +2,7 @@
 :root {
     --font-primary: "Syne", sans-serif;
     --font-secondary: "Montserrat", sans-serif;
-    --xxl-font-size: 16;
+    --xxl-font-size: 15;
     --xxl-line-height: .9;
     --xxl-letter-spacing: 3;
     --xl-font-size: 6;
@@ -65,7 +65,7 @@ h6 {
 
 @media(min-width:767px) {
   .xxl {
-    font-size: calc(var(--xxl-font-size) * 1vw)
+    font-size: calc(var(--xxl-font-size) * .8vw)
   }
 }
 
@@ -233,7 +233,6 @@ h2, .h2 {
     text-align: center    
 }
 
-@media(min-width:767px) {
   .text-stroke {
     color: var(--color-light-1)!important;
     background: transparent;
@@ -254,5 +253,4 @@ h2, .h2 {
   }
   .text-md-center {
     text-align: center    
-}
 }
