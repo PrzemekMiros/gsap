@@ -19,6 +19,10 @@
   transform: translateX(-80%);
 }
 
+.counter h3 {
+  margin-bottom: 8px;
+}
+
 .counter-numbers li {
   width: 20%;
   list-style: none;

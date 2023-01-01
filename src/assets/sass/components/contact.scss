@@ -24,43 +24,12 @@
 .contact-icon-wrap svg {
     width: 7vw;
     height: 7vw;
-    margin-right: 2.2em
+    margin-right: 2.2em;
+    transition: .15s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
-
-
-
-  .cursor .cursor--small,
-  .cursor .cursor--large,
-  .cursor .cursor--text {
-    position: fixed;
-    left: 0;
-    top: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    width: var(--cursor-size);
-    height: var(--cursor-size);
-    mix-blend-mode: difference;
-    pointer-events: none;
-    user-select: none
-  }
-  .cursor .cursor--text {
-    --cursor-size: fit-content;
-    font-size: .75rem;
-    color: var(--color-light-1);
-    opacity: 0
-  }
-  .cursor .cursor--text .text {
-    font-family: sans-serif;
-    font-weight: bold
-  }
-  .cursor .cursor--small {
-    --cursor-size: 5px;
-    background: var(--color-light-1)
-  }
-  .cursor .cursor--large {
-    --cursor-size: 60px;
-    border: 1px solid var(--color-light-1)
-  }
+.contact-icon-wrap svg:hover {
+  transform: scale(1.15)
+}
 
 @media(min-width:767px) {
     .arrow {
