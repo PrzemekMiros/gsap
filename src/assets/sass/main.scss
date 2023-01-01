@@ -3,13 +3,15 @@
 @use 'base/colors.scss';
 @use 'base/theme.scss';
 @use 'base/spacing.scss';
-@use 'base/transition.scss';
 @use 'base/grid.scss';
+@use 'base/transition.scss';
+@use 'base/animations.scss';
 
 @use 'components/scroller.scss';
 @use 'components/header.scss';
 @use 'components/split-text.scss';
 @use 'components/portfolio-list.scss';
 @use 'components/counter.scss';
+@use 'components/accordion.scss';
 @use 'components/contact.scss';
 
