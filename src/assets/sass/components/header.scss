@@ -1,7 +1,4 @@
 
-
-
-
 .site-header {
     position: fixed;
     top: 0;
@@ -13,14 +10,14 @@
   }
   
   .header-wrap {
-    padding: 1em;
+    padding: 2em 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   
    .site-logo img {
-    width: 20vw;
+    width: 22vw;
     height: auto;
     pointer-events: all
    }

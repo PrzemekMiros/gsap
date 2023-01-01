@@ -40,7 +40,7 @@ img {
 
 .site-grid-item {
   height: 100vh;
-  border-right: 1px solid rgba(130, 130, 130, 0.25);
+  border-right: 1px solid rgba(160, 160, 160, 0.2);
 }
 
 @keyframes opacityGradient {
@@ -83,7 +83,7 @@ img {
 :root {
   --font-primary: "Syne", sans-serif;
   --font-secondary: "Montserrat", sans-serif;
-  --xxl-font-size: 15;
+  --xxl-font-size: 14;
   --xxl-line-height: .9;
   --xxl-letter-spacing: 3;
   --xl-font-size: 5;
@@ -102,7 +102,7 @@ img {
   --h4-line-height: 1.5;
   --h4-letter-spacing: 0;
   --h5-font-size: 2;
-  --h5-line-height: 1.6;
+  --h5-line-height: 1.55;
   --h5-letter-spacing: 0;
   --h6-font-size: 1.5;
   --h6-line-height: 1.6;
@@ -488,7 +488,7 @@ small, .small {
 .round .sun-icon {
   cursor: pointer;
   animation: opacity 0.4s linear;
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 
 .js-toggle-theme input,
@@ -753,60 +753,21 @@ small, .small {
 .container-xl,
 .container-xxl {
   width: 100%;
+  max-width: 100%;
   padding-right: 0;
   padding-left: 0;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
-  .container,
-  .container-sm {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container,
-  .container-md,
-  .container-sm {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl {
-    max-width: 1320px;
-  }
-}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-right: calc(var(--bs-gutter-x) / -2);
-  margin-left: calc(var(--bs-gutter-x) / -2);
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .row > * {
@@ -819,6 +780,12 @@ small, .small {
   margin-top: var(--bs-gutter-y);
 }
 
+@media (min-width: 767px) {
+  .row {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
 .col {
   flex: 1 0 0%;
 }
@@ -5008,14 +4975,14 @@ html.has-scroll-dragging {
 }
 
 .header-wrap {
-  padding: 1em;
+  padding: 2em 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .site-logo img {
-  width: 20vw;
+  width: 22vw;
   height: auto;
   pointer-events: all;
 }
