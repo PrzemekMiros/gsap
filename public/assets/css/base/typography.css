@@ -176,7 +176,7 @@ p {
   margin-top: 1em;
   margin-bottom: 1em;
   font-weight: 400;
-  font-size: calc(var(--paragraph-font-size) * 3.2vw);
+  font-size: calc(var(--paragraph-font-size) * 3.3vw);
   line-height: var(--paragraph-line-height);
   letter-spacing: calc(var(--paragraph-letter-spacing) * 1px);
   color: var(--color-text);
@@ -184,7 +184,7 @@ p {
 
 @media (min-width: 767px) {
   p {
-    font-size: calc(var(--paragraph-font-size) * 1vw);
+    font-size: calc(var(--paragraph-font-size) * 1.1vw);
   }
 }
 blockquote {

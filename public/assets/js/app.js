@@ -16,10 +16,8 @@ function portfolioList() {
         portfolioImg5 = document.querySelectorAll(".p-img-5");
 
   portfolioLink.forEach(function (item) {
-  item.addEventListener(
-    "mouseenter",
-    function (e) {
-      // ADDS AND REMOVES ACTIVE CLASS ON TABLINKS
+    item.addEventListener("mouseenter", function (e) {
+      // Remove and add class on portfolio links
       portfolioLink.forEach(function (item) {
         item.classList.remove("active");
       });
@@ -29,28 +27,28 @@ function portfolioList() {
 });
 
 portfolioLink1.addEventListener("mouseenter", () => {
-  portfolioImg.forEach(el=>el.classList.remove('active'));
-  portfolioImg1.forEach(el=>el.classList.add('active'));
+  portfolioImg.forEach(el=>el.classList.remove('active'))
+  portfolioImg1.forEach(el=>el.classList.add('active'))
 });
 
 portfolioLink2.addEventListener("mouseenter", () => {
-  portfolioImg.forEach(el=>el.classList.remove('active'));
-  portfolioImg2.forEach(el=>el.classList.add('active'));
+  portfolioImg.forEach(el=>el.classList.remove('active'))
+  portfolioImg2.forEach(el=>el.classList.add('active'))
 });
 
 portfolioLink3.addEventListener("mouseenter", () => {
-  portfolioImg.forEach(el=>el.classList.remove('active'));
-  portfolioImg3.forEach(el=>el.classList.add('active'));
+  portfolioImg.forEach(el=>el.classList.remove('active'))
+  portfolioImg3.forEach(el=>el.classList.add('active'))
 });
 
 portfolioLink4.addEventListener("mouseenter", () => {
-  portfolioImg.forEach(el=>el.classList.remove('active'));
-  portfolioImg4.forEach(el=>el.classList.add('active'));
+  portfolioImg.forEach(el=>el.classList.remove('active'))
+  portfolioImg4.forEach(el=>el.classList.add('active'))
 });
 
 portfolioLink5.addEventListener("mouseenter", () => {
-  portfolioImg.forEach(el=>el.classList.remove('active'));
-  portfolioImg5.forEach(el=>el.classList.add('active'));
+  portfolioImg.forEach(el=>el.classList.remove('active'))
+  portfolioImg5.forEach(el=>el.classList.add('active'))
 });
 
 }
