@@ -1,8 +1,8 @@
 .fixed-nav {
   position: fixed;
   display: block;
-  top: 16vh;
-  right: 1vw;
+  top: 8em;
+  right: 1.3vw;
   z-index: 999;
 }
 
@@ -13,9 +13,8 @@
 .mm-projects-nav-btn {
   display: block;
   overflow: hidden;
-  line-height: 10vh;
-  padding: 10px 0;
-  margin: 10px 0 0;
+  line-height: 4em;
+  margin: 2em 0 0;
   transform: rotate(180deg);
 }
 

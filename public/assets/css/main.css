@@ -5006,8 +5006,8 @@ html.has-scroll-dragging {
 .fixed-nav {
   position: fixed;
   display: block;
-  top: 16vh;
-  right: 1vw;
+  top: 8em;
+  right: 1.3vw;
   z-index: 999;
 }
 
@@ -5018,9 +5018,8 @@ html.has-scroll-dragging {
 .mm-projects-nav-btn {
   display: block;
   overflow: hidden;
-  line-height: 10vh;
-  padding: 10px 0;
-  margin: 10px 0 0;
+  line-height: 4em;
+  margin: 2em 0 0;
   transform: rotate(180deg);
 }
 
@@ -5054,7 +5053,7 @@ html.has-scroll-dragging {
 
 .portfolio-item {
   position: relative;
-  margin-bottom: 1.8em;
+  margin-bottom: 1.6em;
   padding-left: 0;
   list-style: none;
   z-index: 9;
