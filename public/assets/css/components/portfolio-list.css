@@ -15,7 +15,8 @@
   content: "";
   top: calc(50% - 0.6em);
   left: -5em;
-  font-size: 1vw;
+  font-size: 3vw;
+  opacity: 0.5;
 }
 
 .portfolio-item:nth-child(1):after {
@@ -94,4 +95,11 @@
 .portfolio-img.active {
   transition: 0.5s;
   opacity: 1;
+}
+
+@media (min-width: 767px) {
+  .portfolio-item::after {
+    left: -5em;
+    font-size: 1vw;
+  }
 }

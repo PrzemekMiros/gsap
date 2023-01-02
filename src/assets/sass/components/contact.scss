@@ -22,9 +22,9 @@
    }
   
 .contact-icon-wrap svg {
-    width: 7vw;
-    height: 7vw;
-    margin-right: 2.2em;
+    width: 10vw;
+    height: 10vw;
+    margin-right: 1em;
     transition: all .6s cubic-bezier(0.79, 0, 0.07, 0.88)
 }
 .contact-icon-wrap svg:hover {
@@ -41,6 +41,7 @@
     }
     .contact-icon-wrap svg {
         width: 3.2vw;
-        height: 3.2vw
+        height: 3.2vw;
+        margin-right: 2.2em
     }
 }
