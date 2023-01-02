@@ -58,7 +58,7 @@
 }
     </style>
 </head>
-<body class="page-index2"> 
+<body class="page-index2" id="scroll-target"> 
 <div id="js-scroll" data-scroll-container>
 <div class="site-grid">
    <div class="container">
@@ -117,6 +117,23 @@
     </div>
 </header>
 <div id="swup" class="transition-fade">
+
+<section class="fixed-nav d-none d-md-block" data-scroll data-scroll-sticky data-scroll-target="#scroll-target">
+    <ul class="mm-projects-nav" id="mm-projects-nav">
+      <li id="nav-btn-1" class="mm-projects-nav-btn active">
+        <a href="#category-lst" class="" id="last-btn" data-scroll-to="">Prace</a>
+      </li>
+      <li id="nav-btn-2" class="mm-projects-nav-btn">
+        <a href="#category-old" class="" id="old-btn" data-scroll-to>Usługi</a>
+      </li>
+      <li id="nav-btn-3" class="mm-projects-nav-btn">
+        <a href="#category-arc" class="" id="archive-btn" data-scroll-to>O mnie</a>
+      </li>
+      <li id="nav-btn-4" class="mm-projects-nav-btn">
+        <a href="#category-plg" class="" id="playground-btn" data-scroll-to>Kontakt</a>
+      </li>
+    </ul>
+</section>
 
 
 <section class="pt-xlarge pb-large" data-scroll-section>
@@ -444,6 +461,7 @@ function loadingScripts() {
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
 <script>
+  window.addEventListener("load", () => {
   scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
@@ -478,6 +496,7 @@ document.addEventListener("swup:animationInStart", () => {
 document.addEventListener("swup:animationInDone", () => {
   scroll.destroy(), scroll.init()
 }), console.clear();
+});
 </script>
 
 <script>

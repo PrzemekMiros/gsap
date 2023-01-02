@@ -21,7 +21,7 @@ function portfolioList() {
       portfolioLink.forEach(function (item) {
         item.classList.remove("active");
       });
-      item.classList.add("active");
+        item.classList.add("active");
     },
   );
 });

@@ -27,6 +27,7 @@ function loadingScripts() {
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
 <script>
+  window.addEventListener("load", () => {
   scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
@@ -61,6 +62,7 @@ document.addEventListener("swup:animationInStart", () => {
 document.addEventListener("swup:animationInDone", () => {
   scroll.destroy(), scroll.init()
 }), console.clear();
+});
 </script>
 
 <script>

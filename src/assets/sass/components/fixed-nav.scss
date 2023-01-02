@@ -1,0 +1,32 @@
+
+.fixed-nav {
+    position: fixed;
+    display: block;
+    top: 16vh;
+    right: 1vw;
+    z-index: 999
+}
+
+.mm-projects-nav {
+    height: 100%
+}
+
+.mm-projects-nav-btn {
+    display: block;
+    overflow: hidden;
+    line-height: 10vh;
+    padding: 10px 0;
+    margin: 10px 0 0;
+    transform: rotate(180deg);
+}
+
+.mm-projects-nav-btn a {
+    display: inline-block;
+    vertical-align: top;
+    transform: translate(0,100%) rotate(-90deg);
+    transform-origin: 0 0;
+    white-space: nowrap;
+    font-size: .85vw;
+    letter-spacing: .1em;
+    opacity: .5
+}
