@@ -90,7 +90,7 @@ function greetingsText () {
 
   contactLink.addEventListener("mouseenter", () => {
     contactArrow.classList.add("active");
-  });
+  })
 
   contactLink.addEventListener("mouseleave", () => {
     contactArrow.classList.remove("active");
