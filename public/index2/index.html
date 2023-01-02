@@ -424,8 +424,18 @@
 function loadingScripts() {
     if (document.querySelector(".portfolio-list")) {
         portfolioList();
+    };
+    if (document.querySelector(".gsap")) {
+        greetingsText(),
+    }
+    if (document.querySelector(".gsap")) {
+        accordionWrap(),
+    }
+    if (document.querySelector(".gsap")) {
+        splt({ reveal: true })
     }
 }
+  
 </script>
 
 <script src="/assets/js/split.js"></script>
@@ -462,10 +472,7 @@ const swup = new Swup({
 document.addEventListener("swup:animationInStart", () => {
   scroll.destroy(), 
   scroll.init(), 
-  loadingScripts(),
-  greetingsText(),
-  accordionWrap(),
-  splt({ reveal: true })
+  loadingScripts()
 }), 
 
 document.addEventListener("swup:animationInDone", () => {

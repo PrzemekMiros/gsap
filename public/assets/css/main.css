@@ -5084,6 +5084,18 @@ html.has-scroll-dragging {
   overflow: hidden;
 }
 
+.portfolio-img-wrap::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.2;
+  z-index: 1;
+}
+
 .portfolio-img {
   position: absolute;
   top: 0;
@@ -5098,21 +5110,10 @@ html.has-scroll-dragging {
 }
 
 .portfolio-img.active {
-  animation: scaleUpImg 0.6s;
+  transition: 0.5s;
   opacity: 1;
 }
 
-@keyframes scaleUpImg {
-  0% {
-    transform: scale(1);
-  }
-  20% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .counter {
   position: relative;
   overflow: hidden;
@@ -5281,16 +5282,20 @@ html.has-scroll-dragging {
   width: 7vw;
   height: 7vw;
   margin-right: 2.2em;
-  transition: 0.15s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.6s cubic-bezier(0.79, 0, 0.07, 0.88);
 }
 
 .contact-icon-wrap svg:hover {
-  transform: scale(1.15);
+  transform: scale(1.25);
 }
 
 @media (min-width: 767px) {
   .arrow {
     width: 65%;
+    transition: all 0.6s cubic-bezier(0.79, 0, 0.07, 0.88);
+  }
+  .arrow.active {
+    transform: translateX(55%) scale(0.6);
   }
   .contact-icon-wrap svg {
     width: 3.2vw;
