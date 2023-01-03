@@ -731,14 +731,17 @@ function loadingScripts() {
     if (document.querySelector(".portfolio-list")) {
         portfolioList()
     }
-    if (document.querySelector(".gsap")) {
+    if (document.querySelector("#scroll-target")) {
         greetingsText()
     }
-    if (document.querySelector(".gsap")) {
+    if (document.querySelector("#scroll-target")) {
         accordionWrap()
     }
-    if (document.querySelector(".gsap")) {
+    if (document.querySelector("#scroll-target")) {
         splt({ reveal: true })
+    }
+    if (document.querySelector(".fixed-nav")) {
+        scrollObserver()
     }
 }
   
@@ -773,7 +776,7 @@ function loadingScripts() {
     }
   });
 
-
+function scrollObserver() {
  scroll.on("call", callValue => {
       if (callValue === "one") {
         navBtn1.classList.add("active");
@@ -817,9 +820,9 @@ function loadingScripts() {
       } else {
         navBtn5.classList.remove("active");
       };
-
 });
-
+}
+scrollObserver();
 
 
 new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
