@@ -321,6 +321,13 @@ small, .small {
   text-align: center;
 }
 
+@media (min-width: 767px) {
+  .text-md-stroke {
+    color: var(--color-light-1) !important;
+    background: transparent;
+    text-shadow: 1px 0 0 var(--color-dark-1), -1px 0 0 var(--color-dark-1), 0 1px 0 var(--color-dark-1), 0 -1px 0 var(--color-dark-1), 1px 1px 0 var(--color-dark-1), -1px -1px 0 var(--color-dark-1), 1px -1px 0 var(--color-dark-1), -1px 1px 0 var(--color-dark-1), 1px 1px 1px var(--color-dark-1);
+  }
+}
 :root {
   --color-accent-1: #e75a3a;
   --color-accent-2: #224637;
@@ -4955,13 +4962,13 @@ html.has-scroll-dragging {
   cursor: grabbing;
 }
 
-.progress {
-  position: fixed;
+.progress-bar {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: calc(100% + 200px);
-  background: var(--color-dark-1);
+  width: 10px;
+  height: 0;
+  background: red;
 }
 
 .site-header {
@@ -5024,6 +5031,7 @@ html.has-scroll-dragging {
 }
 
 .mm-projects-nav-btn a {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   transform: translate(0, 100%) rotate(-90deg);
@@ -5032,6 +5040,23 @@ html.has-scroll-dragging {
   font-size: 0.85vw;
   letter-spacing: 0.1em;
   opacity: 0.5;
+}
+
+.mm-projects-nav-btn.active {
+  transition: 1s;
+}
+
+.mm-projects-nav-btn.active a::before {
+  position: absolute;
+  content: "";
+  top: 0.5vw;
+  left: 40%;
+  width: 0.4vw;
+  height: 0.4vw;
+  background-color: var(--color-dark-1);
+  border-radius: 50%;
+  transition: 1s;
+  opacity: 0.6;
 }
 
 .overflow-hidden {

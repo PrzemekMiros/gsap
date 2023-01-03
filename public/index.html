@@ -60,6 +60,7 @@
 </head>
 <body class="page-home" id="scroll-target"> 
 <div id="js-scroll" data-scroll-container>
+<div class="progress-bar" data-scroll data-scroll-sticky data-scroll-target="#js-scroll"></div>
 <div class="site-grid">
    <div class="container">
         <div class="row gx-0">
@@ -75,8 +76,10 @@
 <header class="site-header">
     <div class="header-wrap">
         <div class="site-logo">
-            <img src="/assets/img/logo/logo-dark.png" alt="" class="site-logo logo-dark">
-            <img src="/assets/img/logo/logo-light.png" alt="" class="site-logo logo-light">
+            <a href="/" title="Logo">
+                <img src="/assets/img/logo/logo-dark.png" alt="" class="site-logo logo-dark">
+                <img src="/assets/img/logo/logo-light.png" alt="" class="site-logo logo-light">
+            </a>
         </div>
         <div class="menu-items">
             <div class="theme">
@@ -118,26 +121,28 @@
 </header>
 <div id="swup" class="transition-fade">
 
+
+
+
 <section class="fixed-nav d-none d-lg-block" data-scroll data-scroll-sticky data-scroll-target="#scroll-target">
     <ul class="mm-projects-nav" id="mm-projects-nav">
       <li id="nav-btn-1" class="mm-projects-nav-btn active">
-        <a href="#category-lst" class="" id="last-btn" data-scroll-to="">Prace</a>
+        <a href="#portfolio" class="" id="one" data-scroll-to>Prace</a>
       </li>
       <li id="nav-btn-2" class="mm-projects-nav-btn">
-        <a href="#category-old" class="" id="old-btn" data-scroll-to>Usługi</a>
+        <a href="#services" class="" id="two" data-scroll-to>Usługi</a>
       </li>
       <li id="nav-btn-3" class="mm-projects-nav-btn">
-        <a href="#category-arc" class="" id="archive-btn" data-scroll-to>O mnie</a>
-      </li>
-      <li id="nav-btn-30000" class="mm-projects-nav-btn">
-        <a href="#category-arc000000000" class="" id="archive-btn000000" data-scroll-to>Pytania</a>
+        <a href="#about" class="" id="three" data-scroll-to>O mnie</a>
       </li>
       <li id="nav-btn-4" class="mm-projects-nav-btn">
-        <a href="#category-plg" class="" id="playground-btn" data-scroll-to>Kontakt</a>
+        <a href="#faq" class="" id="four" data-scroll-to>Pytania</a>
+      </li>
+      <li id="nav-btn-5" class="mm-projects-nav-btn">
+        <a href="#contact" class="" id="five" data-scroll-to>Kontakt</a>
       </li>
     </ul>
 </section>
-
 
 <section class="pt-xlarge pb-large" data-scroll-section>
     <div class="container pt-small">
@@ -158,14 +163,15 @@
             </div>
             <div class="col-7 col-md-6">
                 <h1 class="h3 mt-1">
-                    Jestem Przemek. <span class="text-stroke">Wykonuję strony internetowe</span> dla małych i średnich
+                    Jestem Przemek. <a href="/index2/"><span class="text-md-stroke">Wykonuję strony internetowe</span></a> dla małych i średnich
                     firm. Postaw na specjalistyczne wsparcie i skutecznie rozwijaj swój biznes
                 </h1>
             </div>
         </div>
     </div>
 </section>
-<section class="pt-md-large pb-small" data-scroll-section>
+<section class="pt-md-large pb-small" id="portfolio" data-scroll-section>
+    <div data-scroll data-scroll-repeat data-scroll-call="one"></div>
     <div class="container">
         <div class="row gx-0 pb-xsmall pb-md-small">
             <div class="offset-3 offset-md-4 col-md-6">
@@ -320,9 +326,9 @@
         </div>
     </div>
 </section>
-<section class="pt-md-large pb-md-large" data-scroll-section>
+<section class="pt-md-large pb-md-large" id="services" data-scroll-section>
+    <div data-scroll data-scroll-repeat data-scroll-call="two"></div>
     <div class="container">
-
         <div class="row gx-0 pb-xsmall pb-md-small">
             <div class="offset-3 offset-md-4 col-md-6">
                 <p class="fade-in-down" data-scroll>
@@ -396,9 +402,9 @@
 
     </div>
 </section>
-<section class="pt-large pb-md-xlarge" data-scroll-section>
+<section class="pt-large pb-md-xlarge" id="about" data-scroll-section>
+    <div data-scroll data-scroll-repeat data-scroll-call="three"></div>
     <div class="container">
-
         <div class="row gx-0 pb-xsmall pb-md-small">
             <div class="offset-3 offset-md-4 col-md-6">
                 <p class="fade-in-down" data-scroll>
@@ -456,9 +462,9 @@
 
     </div>
 </section>
-<section class="pt-large pt-md-xsmall pb-xlarge" data-scroll-section>
+<section class="pt-large pt-md-large pb-xlarge" id="faq" data-scroll-section>
+<div data-scroll data-scroll-repeat data-scroll-call="four"></div>
     <div class="container">
-
         <div class="row gx-0 pb-xsmall pb-md-small">
             <div class="offset-3 offset-md-4 col-md-6">
                 <p class="fade-in-down" data-scroll>
@@ -573,7 +579,8 @@
 
     </div>
 </section>
-<section class="pt-md-small pb-large" data-scroll-section="data-scroll-section">
+<section class="pt-md-large pb-large" id="contact" data-scroll-section>
+<div data-scroll data-scroll-repeat data-scroll-call="five"></div>
     <div class="container">
         <div class="row gx-0 pb-xsmall pb-md-small">
             <div class="offset-3 offset-md-4 col-md-6">
@@ -606,7 +613,7 @@
         </div>
     </div>
 </section>
-<section class="pb-xlarge" data-scroll-section="data-scroll-section">
+<section class="pb-xlarge" data-scroll-section>
     <div class="container">
         <div class="row gx-0 pb-small">
             <div class="offset-2 offset-md-3 col-1 d-flex align-items-center fade-in-down" data-scroll="data-scroll">
@@ -770,6 +777,13 @@ function loadingScripts() {
 
 <script>
   window.addEventListener("load", () => {
+
+  const navBtn1 = document.getElementById("nav-btn-1");
+  const navBtn2 = document.getElementById("nav-btn-2");
+  const navBtn3 = document.getElementById("nav-btn-3");
+  const navBtn4 = document.getElementById("nav-btn-4");
+  const navBtn5 = document.getElementById("nav-btn-5");
+
   scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
@@ -784,6 +798,55 @@ function loadingScripts() {
       smooth: !0
     }
   });
+
+
+ scroll.on("call", callValue => {
+      if (callValue === "one") {
+        navBtn1.classList.add("active");
+        navBtn2.classList.remove("active");
+        console.log(callValue);
+      } else {
+        navBtn1.classList.remove("active");
+      };
+
+      if (callValue === "two") {
+        navBtn2.classList.add("active");
+        navBtn1.classList.remove("active");
+        navBtn3.classList.remove("active");
+        console.log(callValue);
+      } else {
+        navBtn2.classList.remove("active");
+      };
+
+      if (callValue === "three") {
+        navBtn3.classList.add("active");
+        navBtn2.classList.remove("active");
+        navBtn4.classList.remove("active");
+        console.log(callValue);
+      } else {
+        navBtn3.classList.remove("active");
+      };
+
+      if (callValue === "four") {
+        navBtn4.classList.add("active");
+        navBtn3.classList.remove("active");
+        navBtn5.classList.remove("active");
+        console.log(callValue);
+      } else {
+        navBtn4.classList.remove("active");
+      };
+      
+      if (callValue === "five") {
+        navBtn5.classList.add("active");
+        navBtn4.classList.remove("active");
+        console.log(callValue);
+      } else {
+        navBtn5.classList.remove("active");
+      };
+
+});
+
+
 
 new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
 

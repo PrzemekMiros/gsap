@@ -19,6 +19,7 @@
 }
 
 .mm-projects-nav-btn a {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   transform: translate(0, 100%) rotate(-90deg);
@@ -27,4 +28,21 @@
   font-size: 0.85vw;
   letter-spacing: 0.1em;
   opacity: 0.5;
+}
+
+.mm-projects-nav-btn.active {
+  transition: 1s;
+}
+
+.mm-projects-nav-btn.active a::before {
+  position: absolute;
+  content: "";
+  top: 0.5vw;
+  left: 40%;
+  width: 0.4vw;
+  height: 0.4vw;
+  background-color: var(--color-dark-1);
+  border-radius: 50%;
+  transition: 1s;
+  opacity: 0.6;
 }

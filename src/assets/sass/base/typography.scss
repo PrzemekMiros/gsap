@@ -254,3 +254,20 @@ h2, .h2 {
   .text-md-center {
     text-align: center    
 }
+
+@media(min-width:767px) {
+  .text-md-stroke {
+    color: var(--color-light-1)!important;
+    background: transparent;
+    text-shadow: 
+    1px   0  0   var(--color-dark-1), 
+   -1px   0  0   var(--color-dark-1),
+    0    1px 0   var(--color-dark-1),
+    0   -1px 0   var(--color-dark-1),
+    1px  1px 0   var(--color-dark-1),
+   -1px -1px 0   var(--color-dark-1), 
+    1px -1px 0   var(--color-dark-1),
+   -1px  1px 0   var(--color-dark-1),
+    1px  1px 1px var(--color-dark-1), 
+  }
+}
