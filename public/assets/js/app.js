@@ -27,7 +27,6 @@ function scrollObserver() {
          if (callValue === "one") {
            navBtn1.classList.add("active");
            navBtn2.classList.remove("active");
-           console.log(callValue);
          } else {
            navBtn1.classList.remove("active");
          };
@@ -36,7 +35,6 @@ function scrollObserver() {
            navBtn2.classList.add("active");
            navBtn1.classList.remove("active");
            navBtn3.classList.remove("active");
-           console.log(callValue);
          } else {
            navBtn2.classList.remove("active");
          };
@@ -45,7 +43,6 @@ function scrollObserver() {
            navBtn3.classList.add("active");
            navBtn2.classList.remove("active");
            navBtn4.classList.remove("active");
-           console.log(callValue);
          } else {
            navBtn3.classList.remove("active");
          };
@@ -54,7 +51,6 @@ function scrollObserver() {
            navBtn4.classList.add("active");
            navBtn3.classList.remove("active");
            navBtn5.classList.remove("active");
-           console.log(callValue);
          } else {
            navBtn4.classList.remove("active");
          };
@@ -62,7 +58,6 @@ function scrollObserver() {
          if (callValue === "five") {
            navBtn5.classList.add("active");
            navBtn4.classList.remove("active");
-           console.log(callValue);
          } else {
            navBtn5.classList.remove("active");
          };
