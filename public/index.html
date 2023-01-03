@@ -60,7 +60,21 @@
 </head>
 <body class="page-home" id="scroll-target"> 
 <div id="js-scroll" data-scroll-container>
-<div class="progress-bar" data-scroll data-scroll-sticky data-scroll-target="#js-scroll"></div>
+
+<section data-scroll-section>
+    <div class="progress-bar" data-scroll data-scroll-sticky data-scroll-target="#js-scroll"></div>
+</section>
+
+<script>
+    const bar = document.querySelector('.progress-bar');
+
+scroll.on('scroll', ({ limit, scroll }) => {
+  const progress = scroll.y / limit.y * 100
+    
+  bar.style.height = `${progress}vh`
+});
+</script>
+
 <div class="site-grid">
    <div class="container">
         <div class="row gx-0">
@@ -126,20 +140,20 @@
 
 <section class="fixed-nav d-none d-lg-block" data-scroll data-scroll-sticky data-scroll-target="#scroll-target">
     <ul class="mm-projects-nav" id="mm-projects-nav">
-      <li id="nav-btn-1" class="mm-projects-nav-btn active">
-        <a href="#portfolio" class="" id="one" data-scroll-to>Prace</a>
+      <li id="nav-btn-1" class="mm-projects-nav-btn">
+        <a href="#portfolio" class="" id="one" data-scroll-to data-scroll-offset="80">Prace</a>
       </li>
       <li id="nav-btn-2" class="mm-projects-nav-btn">
-        <a href="#services" class="" id="two" data-scroll-to>Usługi</a>
+        <a href="#services" class="" id="two" data-scroll-to data-scroll-offset="80">Usługi</a>
       </li>
       <li id="nav-btn-3" class="mm-projects-nav-btn">
-        <a href="#about" class="" id="three" data-scroll-to>O mnie</a>
+        <a href="#about" class="" id="three" data-scroll-to data-scroll-offset="80">O mnie</a>
       </li>
       <li id="nav-btn-4" class="mm-projects-nav-btn">
-        <a href="#faq" class="" id="four" data-scroll-to>Pytania</a>
+        <a href="#faq" class="" id="four" data-scroll-to data-scroll-offset="80">Pytania</a>
       </li>
       <li id="nav-btn-5" class="mm-projects-nav-btn">
-        <a href="#contact" class="" id="five" data-scroll-to>Kontakt</a>
+        <a href="#contact" class="" id="five" data-scroll-to data-scroll-offset="80">Kontakt</a>
       </li>
     </ul>
 </section>
@@ -210,19 +224,19 @@
             <div class="col-md-2 d-none d-md-block pt-xsmall">
                 <div class="portfolio-img-wrap fade-in-down" data-scroll>
                     <div class="portfolio-img p-img-1">
-                        <img src="/assets/img/mockups/mobile-1.jpg" alt="">
+                        <img src="/assets/img/mockups/mobile-1.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-2">
-                        <img src="/assets/img/mockups/mobile-2.jpg" alt="">
+                        <img src="/assets/img/mockups/mobile-2.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-3">
-                        <img src="/assets/img/mockups/mobile-3.jpg" alt="">
+                        <img src="/assets/img/mockups/mobile-3.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-4">
-                        <img src="/assets/img/mockups/mobile-4.jpg" alt="">
+                        <img src="/assets/img/mockups/mobile-4.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-5">
-                        <img src="/assets/img/mockups/mobile-5.jpg" alt="">
+                        <img src="/assets/img/mockups/mobile-5.webp" alt="">
                     </div>
                 </div>
             </div>
@@ -288,38 +302,38 @@
                 </div>
                 <div class="portfolio-img-wrap fade-in-down" data-scroll>
                     <div class="portfolio-img p-img-1">
-                        <img src="/assets/img/mockups/desktop-1.jpg" alt="">
+                        <img src="/assets/img/mockups/desktop-1.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-2">
-                        <img src="/assets/img/mockups/desktop-2.jpg" alt="">
+                        <img src="/assets/img/mockups/desktop-2.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-3">
-                        <img src="/assets/img/mockups/desktop-3.jpg" alt="">
+                        <img src="/assets/img/mockups/desktop-3.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-4">
-                        <img src="/assets/img/mockups/desktop-4.jpg" alt="">
+                        <img src="/assets/img/mockups/desktop-4.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-5">
-                        <img src="/assets/img/mockups/desktop-5.jpg" alt="">
+                        <img src="/assets/img/mockups/desktop-5.webp" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-md-2 d-none d-md-block pt-xsmall">
                 <div class="portfolio-img-wrap fade-in-down" data-scroll>
                     <div class="portfolio-img p-img-1">
-                        <img src="/assets/img/mockups/brand-1.jpg" alt="">
+                        <img src="/assets/img/mockups/brand-1.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-2">
-                        <img src="/assets/img/mockups/brand-2.jpg" alt="">
+                        <img src="/assets/img/mockups/brand-2.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-3">
-                        <img src="/assets/img/mockups/brand-3.jpg" alt="">
+                        <img src="/assets/img/mockups/brand-3.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-4">
-                        <img src="/assets/img/mockups/brand-4.jpg" alt="">
+                        <img src="/assets/img/mockups/brand-4.webp" alt="">
                     </div>
                     <div class="portfolio-img p-img-5">
-                        <img src="/assets/img/mockups/brand-5.jpg" alt="">
+                        <img src="/assets/img/mockups/brand-5.webp" alt="">
                     </div>
                 </div>
             </div>
@@ -750,6 +764,9 @@
 </div>
 </div>
 <script src="/assets/js/swup.js"></script>
+<script src="/assets/js/loco.js"></script>
+<script src="/assets/js/split.js"></script>
+<script>splt({ reveal: true });</script>
 <script src="/assets/js/app.js"></script>
 
 <script>
@@ -766,92 +783,10 @@ function loadingScripts() {
     if (document.querySelector("#scroll-target")) {
         splt({ reveal: true })
     }
-    if (document.querySelector(".fixed-nav")) {
-        scrollObserver()
+    if (document.querySelector(".contact-link")) {
+        contactLink()
     }
-}
-  
-</script>
-
-<script src="/assets/js/split.js"></script>
-<script>splt({ reveal: true });</script>
-
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-
-<script>
-  window.addEventListener("load", () => {
-
-  const navBtn1 = document.getElementById("nav-btn-1");
-  const navBtn2 = document.getElementById("nav-btn-2");
-  const navBtn3 = document.getElementById("nav-btn-3");
-  const navBtn4 = document.getElementById("nav-btn-4");
-  const navBtn5 = document.getElementById("nav-btn-5");
-
-  scroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    reloadOnContextChange: !0,
-    multiplier: .65,
-    lerp: .15,
-    touchMultiplier: 2,
-    tablet: {
-      smooth: !0
-    },
-    smartphone: {
-      smooth: !0
-    }
-  });
-
-function scrollObserver() {
- scroll.on("call", callValue => {
-      if (callValue === "one") {
-        navBtn1.classList.add("active");
-        navBtn2.classList.remove("active");
-        console.log(callValue);
-      } else {
-        navBtn1.classList.remove("active");
-      };
-
-      if (callValue === "two") {
-        navBtn2.classList.add("active");
-        navBtn1.classList.remove("active");
-        navBtn3.classList.remove("active");
-        console.log(callValue);
-      } else {
-        navBtn2.classList.remove("active");
-      };
-
-      if (callValue === "three") {
-        navBtn3.classList.add("active");
-        navBtn2.classList.remove("active");
-        navBtn4.classList.remove("active");
-        console.log(callValue);
-      } else {
-        navBtn3.classList.remove("active");
-      };
-
-      if (callValue === "four") {
-        navBtn4.classList.add("active");
-        navBtn3.classList.remove("active");
-        navBtn5.classList.remove("active");
-        console.log(callValue);
-      } else {
-        navBtn4.classList.remove("active");
-      };
-      
-      if (callValue === "five") {
-        navBtn5.classList.add("active");
-        navBtn4.classList.remove("active");
-        console.log(callValue);
-      } else {
-        navBtn5.classList.remove("active");
-      };
-});
-}
-scrollObserver();
-
-
-new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
+};
 
 const swup = new Swup({
   animateHistoryBrowsing: true,
@@ -870,7 +805,7 @@ document.addEventListener("swup:animationInStart", () => {
 document.addEventListener("swup:animationInDone", () => {
   scroll.destroy(), scroll.init()
 }), console.clear();
-});
+  
 </script>
 
 <script>
@@ -895,8 +830,6 @@ document.addEventListener("swup:animationInDone", () => {
      themeToggleBtn.setAttribute('title', themeLabel);
    });
 </script>
-<script>
 
-</script>
 </body>
 </html>

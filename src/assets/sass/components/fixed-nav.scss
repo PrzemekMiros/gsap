@@ -1,9 +1,20 @@
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
 
 .fixed-nav {
     position: fixed;
     display: block;
     top: 8em;
     right: 1.3vw;
+    animation: fadeRight .5s linear forwards;
     z-index: 999
 }
 
@@ -28,7 +39,12 @@
     white-space: nowrap;
     font-size: .85vw;
     letter-spacing: .1em;
+    transition: .2s;
     opacity: .6
+}
+
+.mm-projects-nav-btn a:hover {
+    opacity: .9
 }
 
 .mm-projects-nav-btn.active {

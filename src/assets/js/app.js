@@ -1,3 +1,80 @@
+window.addEventListener("load", () => {
+
+  scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    reloadOnContextChange: !0,
+    multiplier: .65,
+    lerp: .15,
+    touchMultiplier: 2,
+    tablet: {
+      smooth: !0
+    },
+    smartphone: {
+      smooth: !0
+    }
+  });
+
+function scrollObserver() {
+    
+    const navBtn1 = document.getElementById("nav-btn-1");
+    const navBtn2 = document.getElementById("nav-btn-2");
+    const navBtn3 = document.getElementById("nav-btn-3");
+    const navBtn4 = document.getElementById("nav-btn-4");
+    const navBtn5 = document.getElementById("nav-btn-5");
+
+    scroll.on("call", callValue => {
+         if (callValue === "one") {
+           navBtn1.classList.add("active");
+           navBtn2.classList.remove("active");
+           console.log(callValue);
+         } else {
+           navBtn1.classList.remove("active");
+         };
+   
+         if (callValue === "two") {
+           navBtn2.classList.add("active");
+           navBtn1.classList.remove("active");
+           navBtn3.classList.remove("active");
+           console.log(callValue);
+         } else {
+           navBtn2.classList.remove("active");
+         };
+   
+         if (callValue === "three") {
+           navBtn3.classList.add("active");
+           navBtn2.classList.remove("active");
+           navBtn4.classList.remove("active");
+           console.log(callValue);
+         } else {
+           navBtn3.classList.remove("active");
+         };
+   
+         if (callValue === "four") {
+           navBtn4.classList.add("active");
+           navBtn3.classList.remove("active");
+           navBtn5.classList.remove("active");
+           console.log(callValue);
+         } else {
+           navBtn4.classList.remove("active");
+         };
+         
+         if (callValue === "five") {
+           navBtn5.classList.add("active");
+           navBtn4.classList.remove("active");
+           console.log(callValue);
+         } else {
+           navBtn5.classList.remove("active");
+         };
+   });
+   }
+   scrollObserver();
+
+new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
+
+});
+
+
 
 function portfolioList() {
 
@@ -83,6 +160,7 @@ function greetingsText () {
   accordionWrap();  
 
   
+function contactLink() {
   const contactLink = document.querySelector(".contact-link");
   const contactArrow = document.querySelector(".arrow");
 
@@ -93,3 +171,7 @@ function greetingsText () {
   contactLink.addEventListener("mouseleave", () => {
     contactArrow.classList.remove("active");
   })
+}
+contactLink();
+
+

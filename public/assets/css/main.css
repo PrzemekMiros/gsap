@@ -70,6 +70,9 @@ img {
 }
 
 @media (min-width: 767px) {
+  html {
+    overflow-y: hidden;
+  }
   .gradient-black::before {
     top: -150vh;
     left: -85%;
@@ -4968,7 +4971,7 @@ html.has-scroll-dragging {
   left: 0;
   width: 10px;
   height: 0;
-  background: red;
+  background: #231955;
 }
 
 .site-header {
@@ -5010,11 +5013,22 @@ html.has-scroll-dragging {
     width: 10vw;
   }
 }
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .fixed-nav {
   position: fixed;
   display: block;
   top: 8em;
   right: 1.3vw;
+  animation: fadeRight 0.5s linear forwards;
   z-index: 999;
 }
 
@@ -5039,7 +5053,12 @@ html.has-scroll-dragging {
   white-space: nowrap;
   font-size: 0.85vw;
   letter-spacing: 0.1em;
-  opacity: 0.5;
+  transition: 0.2s;
+  opacity: 0.6;
+}
+
+.mm-projects-nav-btn a:hover {
+  opacity: 0.9;
 }
 
 .mm-projects-nav-btn.active {

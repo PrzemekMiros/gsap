@@ -74,6 +74,9 @@ img {
 }
 
 @media(min-width:767px) {
+  html {
+    overflow-y: hidden
+  }
   .gradient-black::before {
     top: -150vh;
     left: -85%;
