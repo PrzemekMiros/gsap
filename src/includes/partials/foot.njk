@@ -40,7 +40,8 @@ document.addEventListener("swup:animationInStart", () => {
 }), 
 
 document.addEventListener("swup:animationInDone", () => {
-
+  scroll.destroy(), 
+  scroll.init()
 }), console.clear();
   
 </script>
