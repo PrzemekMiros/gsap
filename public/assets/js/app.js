@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     smooth: true,
     reloadOnContextChange: !0,
     multiplier: .65,
-    lerp: .15,
+    lerp: .08,
     touchMultiplier: 2,
     tablet: {
       smooth: !0
@@ -68,7 +68,6 @@ function scrollObserver() {
 new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
 
 });
-
 
 
 function portfolioList() {

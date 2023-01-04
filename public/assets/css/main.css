@@ -86,7 +86,7 @@ img {
 }
 :root {
   --font-primary: "Syne", sans-serif;
-  --font-secondary: "Montserrat", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
   --xxl-font-size: 15;
   --xxl-line-height: .9;
   --xxl-letter-spacing: 3;
@@ -336,8 +336,7 @@ small, .small {
   --color-accent-1: #e75a3a;
   --color-accent-2: #224637;
   --color-light-1: #fefef5;
-  --color-dark-1: rgb(7, 9, 10);
-  --color-dark-2: rgb(14, 14, 14);
+  --color-dark-1: rgb(2, 25, 36);
   --color-text: #6c6c6c;
 }
 
@@ -4870,7 +4869,9 @@ html.has-scroll-dragging {
   transform: scaleX(1.45);
 }
 
-.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
   opacity: 1;
 }
 
@@ -4878,8 +4879,8 @@ html.has-scroll-dragging {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--color-dark-2);
-  opacity: 0.2;
+  background-color: var(--color-dark-1);
+  opacity: 0.15;
   width: 7px;
   border-radius: 10px;
   margin: 2px;

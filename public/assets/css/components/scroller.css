@@ -32,7 +32,9 @@ html.has-scroll-dragging {
   transform: scaleX(1.45);
 }
 
-.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
   opacity: 1;
 }
 
@@ -40,8 +42,8 @@ html.has-scroll-dragging {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--color-dark-2);
-  opacity: 0.2;
+  background-color: var(--color-dark-1);
+  opacity: 0.15;
   width: 7px;
   border-radius: 10px;
   margin: 2px;
