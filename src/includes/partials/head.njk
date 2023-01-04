@@ -58,22 +58,12 @@
 }
     </style>
 </head>
-<body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}" id="scroll-target"> 
+<body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %} gradient-black" id="scroll-target"> 
 <div id="js-scroll" data-scroll-container>
 
 <section data-scroll-section>
     <div class="progress-bar" data-scroll data-scroll-sticky data-scroll-target="#js-scroll"></div>
 </section>
-
-<script>
-    const bar = document.querySelector('.progress-bar');
-
-scroll.on('scroll', ({ limit, scroll }) => {
-  const progress = scroll.y / limit.y * 100
-    
-  bar.style.height = `${progress}vh`
-});
-</script>
 
 <div class="site-grid">
    <div class="container">

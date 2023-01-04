@@ -15,7 +15,62 @@ window.addEventListener("load", () => {
     }
   });
 
+function scrollObserver() {
+    
+    const navBtn1 = document.getElementById("nav-btn-1");
+    const navBtn2 = document.getElementById("nav-btn-2");
+    const navBtn3 = document.getElementById("nav-btn-3");
+    const navBtn4 = document.getElementById("nav-btn-4");
+    const navBtn5 = document.getElementById("nav-btn-5");
 
+    scroll.on("call", callValue => {
+         if (callValue === "one") {
+           navBtn1.classList.add("active");
+           navBtn2.classList.remove("active");
+         } else {
+           navBtn1.classList.remove("active");
+         };
+   
+         if (callValue === "two") {
+           navBtn2.classList.add("active");
+           navBtn1.classList.remove("active");
+           navBtn3.classList.remove("active");
+         } else {
+           navBtn2.classList.remove("active");
+         };
+   
+         if (callValue === "three") {
+           navBtn3.classList.add("active");
+           navBtn2.classList.remove("active");
+           navBtn4.classList.remove("active");
+         } else {
+           navBtn3.classList.remove("active");
+         };
+   
+         if (callValue === "four") {
+           navBtn4.classList.add("active");
+           navBtn3.classList.remove("active");
+           navBtn5.classList.remove("active");
+         } else {
+           navBtn4.classList.remove("active");
+         };
+         
+         if (callValue === "five") {
+           navBtn5.classList.add("active");
+           navBtn4.classList.remove("active");
+         } else {
+           navBtn5.classList.remove("active");
+         };
+   });
+   const bar = document.querySelector('.progress-bar');
+
+   scroll.on('scroll', ({ limit, scroll }) => {
+     const progress = scroll.y / limit.y * 100
+       
+     bar.style.height = `${progress}vh`
+   });
+   }
+   scrollObserver();
 
 new ResizeObserver(() => scroll.update()).observe(document.querySelector("[data-scroll-container]"));
 
