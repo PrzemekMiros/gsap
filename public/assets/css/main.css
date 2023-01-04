@@ -336,48 +336,22 @@ small, .small {
   --color-accent-1: #e75a3a;
   --color-accent-2: #224637;
   --color-light-1: #fefef5;
-  --color-light-2: #fafaed;
-  --color-light-3: #f7faf881;
   --color-dark-1: rgb(7, 9, 10);
   --color-dark-2: rgb(14, 14, 14);
-  --color-white: rgb(255, 255, 255);
-  --color-black: rgb(14, 14, 14);
-  --color-red: #D91A3B;
-  --color-blue: #0F9ED9;
-  --color-green: #05D8A2;
-  --color-heading: #0c3340;
   --color-text: #6c6c6c;
-  --shadow-img: 0px 10px 50px rgba(17, 17, 17, 0.06), 0px -10px 50px rgba(17, 17, 17, 0.06);
-  --color-border: rgba(153, 153, 153, 0.1333333333);
 }
 
 [data-theme=dark] {
   --color-light-1: rgb(4, 5, 5);
-  --color-light-2: rgb(18, 19, 19);
-  --color-light-3: rgba(77, 90, 101, 0.5);
-  --color-white: #fff;
   --color-dark-1: #fefef5;
-  --color-dark-2: #fafaed;
-  --color-black: rgb(14, 14, 14);
-  --color-heading: #fff;
   --color-text: #aaa;
-  --shadow-img: 0px 10px 30px rgba(17, 17, 17, 0.1), 0px -10px 30px rgba(17, 17, 17, 0.1);
-  --color-border: rgba(153, 153, 153, 0.1333333333);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-light-1: rgb(4, 5, 5);
-    --color-light-2: rgb(18, 19, 19);
-    --color-light-3: rgba(77, 90, 101, 0.5);
-    --color-white: #fff;
     --color-dark-1: #fefef5;
-    --color-dark-2: #fafaed;
-    --color-black: rgb(14, 14, 14);
-    --color-heading: #fff;
     --color-text: #aaa;
-    --shadow-img: 0px 10px 30px rgba(17, 17, 17, 0.1), 0px -10px 30px rgba(17, 17, 17, 0.1);
-    --color-border: rgba(153, 153, 153, 0.1333333333);
   }
 }
 .color-accent-1 {
@@ -392,26 +366,6 @@ small, .small {
   color: var(--color-dark-1);
 }
 
-.color-black {
-  color: var(--color-black);
-}
-
-.color-white {
-  color: var(--color-white);
-}
-
-.color-red {
-  color: var(--color-red);
-}
-
-.color-blue {
-  color: var(--color-blue);
-}
-
-.color-green {
-  color: var(--color-green);
-}
-
 .bg-accent-1 {
   background-color: var(--color-accent-1);
 }
@@ -420,36 +374,8 @@ small, .small {
   background-color: var(--color-light-1);
 }
 
-.bg-light-2 {
-  background-color: var(--color-light-2);
-}
-
-.bg-light-3 {
-  background-color: var(--color-light-3);
-}
-
 .bg-dark-1 {
   background-color: var(--color-dark-1);
-}
-
-.bg-dark-2 {
-  background-color: var(--color-dark-2);
-}
-
-.bg-black {
-  background-color: var(--color-black);
-}
-
-.bg-red {
-  background-color: var(--color-red);
-}
-
-.bg-blue {
-  background-color: var(--color-blue);
-}
-
-.bg-green {
-  background-color: var(--color-green);
 }
 
 .overlay-20,
@@ -4848,7 +4774,7 @@ html.is-leaving .site-overlay {
 .reveal {
   transform: translateX(-100%);
   animation-timing-function: var(--ease1);
-  transition-duration: 0.8s;
+  transition: transform 0.8s;
 }
 
 .is-inview .reveal {
@@ -4889,7 +4815,7 @@ html.is-leaving .site-overlay {
 
 .fade-in {
   opacity: 0;
-  transition: 0.8s;
+  transition: opacity 0.8s;
   transition-delay: 0.3s;
 }
 
@@ -4900,7 +4826,7 @@ html.is-leaving .site-overlay {
 .fade-in-down {
   opacity: 0;
   transform: translateY(50%);
-  transition: 0.8s;
+  transition: opacity 0.8s, transform 0.8s;
   animation-timing-function: var(--ease1);
   transition-delay: 0.3s;
 }
@@ -4972,7 +4898,7 @@ html.has-scroll-dragging {
   left: 0;
   width: 10px;
   height: 0;
-  background: #231955;
+  background: #00ff4c;
 }
 
 .site-header {
@@ -5092,13 +5018,21 @@ html.has-scroll-dragging {
   overflow: hidden;
 }
 
+#inside-js-scroll {
+  height: 50vh;
+  min-height: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
 .portfolio-list {
   padding-left: 0;
 }
 
 .portfolio-item {
   position: relative;
-  margin-bottom: 1.6em;
+  margin-bottom: 1.5em;
   padding-left: 0;
   list-style: none;
   z-index: 9;

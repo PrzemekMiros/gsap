@@ -62,13 +62,6 @@ function scrollObserver() {
            navBtn5.classList.remove("active");
          };
    });
-   const bar = document.querySelector('.progress-bar');
-
-   scroll.on('scroll', ({ limit, scroll }) => {
-     const progress = scroll.y / limit.y * 100
-       
-     bar.style.height = `${progress}vh`
-   });
    }
    scrollObserver();
 
