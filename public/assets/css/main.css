@@ -69,6 +69,19 @@ img {
   opacity: 0.8;
 }
 
+.brief {
+  width: 1px;
+  min-width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  border: none;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-delay: 1s;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
 @media (min-width: 767px) {
   html {
     overflow-y: hidden;
@@ -82,6 +95,22 @@ img {
     background: radial-gradient(circle, #fcffab 0, rgba(0, 171, 35, 0) 40%);
     z-index: -1;
     opacity: 0.1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 100%;
   }
 }
 :root {
