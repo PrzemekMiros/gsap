@@ -36,6 +36,7 @@ const swup = new Swup({
 document.addEventListener("swup:animationInStart", () => {
   scroll.destroy(), 
   scroll.init(), 
+  scrollTo(top),
   loadingScripts()
 }), 
 

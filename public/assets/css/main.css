@@ -5072,25 +5072,6 @@ html.has-scroll-dragging {
   position: relative;
 }
 
-.portfolio-link::before {
-  position: absolute;
-  content: "";
-  bottom: 3px;
-  width: 0;
-  height: 3px;
-  background-color: var(--color-dark-1);
-  animation-timing-function: var(--ease1);
-  transition: 0.5s;
-}
-
-.portfolio-link:hover::before {
-  width: 100%;
-}
-
-.portfolio-link.active::before {
-  width: 100%;
-}
-
 .portfolio-img-wrap {
   position: relative;
   overflow: hidden;
@@ -5130,6 +5111,22 @@ html.has-scroll-dragging {
   .portfolio-item::after {
     left: -5em;
     font-size: 1vw;
+  }
+  .portfolio-link::before {
+    position: absolute;
+    content: "";
+    bottom: 3px;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-dark-1);
+    animation-timing-function: var(--ease1);
+    transition: 0.5s;
+  }
+  .portfolio-link:hover::before {
+    width: 100%;
+  }
+  .portfolio-link.active::before {
+    width: 100%;
   }
 }
 .counter {
