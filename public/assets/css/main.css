@@ -5098,7 +5098,10 @@ html.has-scroll-dragging {
 }
 
 .portfolio-link {
-  position: relative;
+  position: absolute;
+  top: calc(50% - 0.75em);
+  left: 0;
+  z-index: 9;
 }
 
 .portfolio-img-wrap {
@@ -5136,10 +5139,29 @@ html.has-scroll-dragging {
   opacity: 1;
 }
 
+.portfolio-img-mobile {
+  position: relative;
+  margin-bottom: 2.2em;
+}
+
+.portfolio-img-mobile::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, var(--color-light-1) 0%, rgba(41, 53, 86, 0.2) 100%);
+  opacity: 0.8;
+}
+
 @media (min-width: 767px) {
   .portfolio-item::after {
     left: -5em;
     font-size: 1vw;
+  }
+  .portfolio-link {
+    position: relative;
   }
   .portfolio-link::before {
     position: absolute;
