@@ -124,10 +124,10 @@
     transition: 0.5s;
   }
   .portfolio-link:hover::before {
-    width: 100%;
+    width: 97%;
   }
   .portfolio-link.active::before {
-    width: 100%;
+    width: 97%;
   }
 }
 @media (max-width: 768px) {

@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     smooth: true,
     reloadOnContextChange: !0,
     multiplier: .65,
-    lerp: .08,
+    lerp: .095,
     touchMultiplier: 2,
     tablet: {
       smooth: !0
