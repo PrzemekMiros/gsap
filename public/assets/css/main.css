@@ -87,12 +87,11 @@ img {
     overflow-y: hidden;
   }
   .gradient-black::before {
-    top: -200vh;
-    left: -184%;
-    height: 300vh;
-    width: 380%;
-    background: var(--color-light-1);
-    background: radial-gradient(circle, #fcffab 0, rgba(0, 171, 35, 0) 40%);
+    top: -100vh;
+    left: -95%;
+    height: 200vh;
+    width: 200%;
+    background: radial-gradient(circle, rgba(254, 254, 249, 0.791) 0, rgba(17, 17, 17, 0) 40%);
     z-index: -1;
     opacity: 0.1;
   }
@@ -747,8 +746,8 @@ small, .small {
 
 @media (min-width: 767px) {
   .row {
-    padding-left: 8vw;
-    padding-right: 8vw;
+    padding-left: 11vw;
+    padding-right: 11vw;
   }
 }
 .col {
@@ -4932,7 +4931,7 @@ html.has-scroll-dragging {
 }
 
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -4942,14 +4941,14 @@ html.has-scroll-dragging {
 }
 
 .header-wrap {
-  padding: 2em 1em;
+  padding: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .site-logo img {
-  width: 22vw;
+  width: 13vw;
   height: auto;
   pointer-events: all;
 }
@@ -4964,10 +4963,10 @@ html.has-scroll-dragging {
 
 @media (min-width: 767px) {
   .header-wrap {
-    padding: 3.5em 2.2em;
+    padding: 2.5em 4vw 2.5em 2.2em;
   }
   .site-logo img {
-    width: 10vw;
+    width: 7vw;
   }
 }
 @keyframes fadeRight {
@@ -4983,8 +4982,8 @@ html.has-scroll-dragging {
 .fixed-nav {
   position: fixed;
   display: block;
-  top: 8em;
-  right: 1.3vw;
+  top: 16vh;
+  right: calc(4vw - 1em);
   animation: fadeRight 0.5s linear forwards;
   z-index: 999;
 }
@@ -5166,9 +5165,9 @@ html.has-scroll-dragging {
   .portfolio-link::before {
     position: absolute;
     content: "";
-    bottom: -5px;
+    bottom: -1px;
     width: 0;
-    height: 3px;
+    height: 0.07em;
     background-color: var(--color-dark-1);
     animation-timing-function: var(--ease1);
     transition: 0.5s;

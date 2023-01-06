@@ -12,8 +12,8 @@
 .fixed-nav {
     position: fixed;
     display: block;
-    top: 8em;
-    right: 1.3vw;
+    top: 16vh;
+    right: calc(4vw - 1em);
     animation: fadeRight .5s linear forwards;
     z-index: 999
 }

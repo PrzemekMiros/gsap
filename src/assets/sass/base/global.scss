@@ -91,12 +91,11 @@ img {
     overflow-y: hidden
   }
   .gradient-black::before {
-    top: -200vh;
-    left: -184%;
-    height: 300vh;
-    width: 380%;
-    background: var(--color-light-1);
-    background: radial-gradient(circle, #fcffab 0, rgba(0, 171, 35, 0) 40%);
+    top: -100vh;
+    left: -95%;
+    height: 200vh;
+    width: 200%;
+    background: radial-gradient(circle, rgba(254, 254, 249, 0.791) 0, rgba(17, 17, 17, 0) 40%);
     z-index: -1;
     opacity: .1
   }
