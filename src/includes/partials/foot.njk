@@ -5,7 +5,6 @@
 <script src="/assets/js/split.js"></script>
 <script>splt({ reveal: true });</script>
 <script src="/assets/js/app.js"></script>
-
 <script>
 function loadingScripts() {
     if (document.querySelector(".portfolio-list")) {
@@ -24,7 +23,6 @@ function loadingScripts() {
         contactLink()
     }
 };
-
 const swup = new Swup({
   animateHistoryBrowsing: true,
   plugins: [
@@ -32,21 +30,17 @@ const swup = new Swup({
     new SwupBodyClassPlugin()
   ]
 });
-
 document.addEventListener("swup:animationInStart", () => {
   scroll.destroy(), 
   scroll.init(), 
   scrollTo(top),
   loadingScripts()
 }), 
-
 document.addEventListener("swup:animationInDone", () => {
   scroll.destroy(), 
   scroll.init()
 }), console.clear();
-  
 </script>
-
 <script>
    const setTheme = () => {
      const currentTheme = localStorage.getItem('theme');
@@ -69,6 +63,20 @@ document.addEventListener("swup:animationInDone", () => {
      themeToggleBtn.setAttribute('title', themeLabel);
    });
 </script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Przemek Miros",
+  "url": "https://przemekmiros.pl/",
+  "image": "https://przemekmiros.pl/assets/img/about.jpg",
+  "sameAs": [
+    "https://www.facebook.com/przemekstronyinternetowe",
+    "https://www.youtube.com/channel/UCJlzx8qM6bVuCp7mP9yLepA",
+    "https://www.linkedin.com/in/przemys%C5%82aw-miros-6b6b431a2/",
+    "https://przemekmiros.pl/"
+  ]  
+}
+</script>
 </body>
 </html>
