@@ -365,7 +365,7 @@ small, .small {
   --color-accent-2: #224637;
   --color-light-1: #fefef5;
   --color-light-2: #f5f5e8;
-  --color-dark-1: rgb(2, 25, 36);
+  --color-dark-1: rgb(0, 18, 27);
   --color-dark-2: rgb(9, 31, 41);
   --color-text: #6c6c6c;
   --color-border: rgba(140, 140, 140, 0.25);
@@ -373,7 +373,7 @@ small, .small {
 
 [data-theme=dark] {
   --color-light-1: rgb(4, 5, 5);
-  --color-light-2: rgb(9, 31, 41);
+  --color-light-2: rgb(16, 23, 26);
   --color-dark-1: #fefef5;
   --color-dark-2: #f5f5e8;
   --color-text: #aaa;
@@ -382,7 +382,7 @@ small, .small {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-light-1: rgb(4, 5, 5);
-    --color-light-2: rgb(9, 31, 41);
+    --color-light-2: rgb(16, 23, 26);
     --color-dark-1: #fefef5;
     --color-dark-2: #f5f5e8;
     --color-text: #aaa;
@@ -4803,6 +4803,19 @@ html.is-leaving .site-overlay {
 
 .char {
   overflow: hidden;
+  position: relative;
+}
+
+[data-theme=dark] .char::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 212, 255, 0) 100%);
+  opacity: 0.8;
+  z-index: 9;
 }
 
 .reveal {

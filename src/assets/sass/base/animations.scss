@@ -4,6 +4,19 @@
 
 .char {
   overflow: hidden;
+  position: relative
+}
+
+[data-theme="dark"] .char::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,212,255,0) 100%); 
+  opacity: .8;
+  z-index: 9
 }
 
 .reveal {
