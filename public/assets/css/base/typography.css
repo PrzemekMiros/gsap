@@ -60,7 +60,7 @@ h6 {
   margin-bottom: 0;
   font-family: var(--font-secondary);
   line-height: var(--xxl-line-height);
-  font-size: calc(var(--xxl-font-size) * 1vw);
+  font-size: calc(var(--xxl-font-size) * 1.2vw);
   font-weight: 900;
   letter-spacing: calc(var(--xxl-letter-spacing) * 1px);
 }
@@ -203,6 +203,14 @@ small, .small {
     font-size: calc(var(--subheading-font-size) * 1vw);
   }
 }
+ol {
+  padding-left: 1em;
+}
+
+ol li {
+  margin-bottom: 1em;
+}
+
 .text-uppercase {
   text-transform: capitalize;
 }
