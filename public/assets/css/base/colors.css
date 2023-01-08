@@ -2,20 +2,27 @@
   --color-accent-1: #e75a3a;
   --color-accent-2: #224637;
   --color-light-1: #fefef5;
+  --color-light-2: #f5f5e8;
   --color-dark-1: rgb(2, 25, 36);
+  --color-dark-2: rgb(9, 31, 41);
   --color-text: #6c6c6c;
+  --color-border: rgba(140, 140, 140, 0.25);
 }
 
 [data-theme=dark] {
   --color-light-1: rgb(4, 5, 5);
+  --color-light-2: rgb(9, 31, 41);
   --color-dark-1: #fefef5;
+  --color-dark-2: #f5f5e8;
   --color-text: #aaa;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-light-1: rgb(4, 5, 5);
+    --color-light-2: rgb(9, 31, 41);
     --color-dark-1: #fefef5;
+    --color-dark-2: #f5f5e8;
     --color-text: #aaa;
   }
 }
