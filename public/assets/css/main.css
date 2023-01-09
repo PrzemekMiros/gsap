@@ -4991,7 +4991,7 @@ html.has-scroll-dragging {
 
 @media (min-width: 767px) {
   .header-wrap {
-    padding: 2.5em 4vw 2.5em 2.2em;
+    padding: 2em 4vw 2.5em 2em;
   }
   .site-logo img {
     width: 7vw;
@@ -5177,7 +5177,7 @@ html.has-scroll-dragging {
 
 @media (min-width: 767px) {
   .portfolio-item::after {
-    left: -5em;
+    left: -6em;
     font-size: 1vw;
   }
   .portfolio-link {
@@ -5340,7 +5340,7 @@ html.has-scroll-dragging {
     right: 2em;
   }
   .accordion::after {
-    left: -5em;
+    left: -6em;
     font-size: 1vw;
   }
 }
