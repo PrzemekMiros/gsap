@@ -125,6 +125,7 @@
 }
 @media (max-width: 768px) {
   .portfolio-link {
+    margin-left: 22%;
     font-weight: 800;
   }
 }
