@@ -10,6 +10,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/static");
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
+  // Add custom page type
+  eleventyConfig.addCollection('realizacje', function(collectionApi) {
+    return collectionApi.getFilteredByGlob('src/realizacje/**/*.md').reverse();
+  });
+
     // Return your Object options:
     return {
       dir: {

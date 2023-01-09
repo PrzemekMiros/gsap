@@ -47,13 +47,6 @@
   content: "V";
 }
 
-.portfolio-link {
-  position: absolute;
-  top: calc(50% - 0.75em);
-  left: 0;
-  z-index: 9;
-}
-
 .portfolio-img-wrap {
   position: relative;
   overflow: hidden;
@@ -91,7 +84,7 @@
 
 .portfolio-img-mobile {
   position: relative;
-  margin-bottom: 2.2em;
+  margin-bottom: 1.2em;
 }
 
 .portfolio-img-mobile::before {
@@ -101,8 +94,8 @@
   bottom: 0;
   width: 70%;
   height: 100%;
-  background-image: linear-gradient(90deg, var(--color-light-1) 0%, rgba(41, 53, 86, 0) 100%);
-  opacity: 0.75;
+  background-image: linear-gradient(180deg, var(--color-light-1) 0%, rgba(41, 53, 86, 0) 100%);
+  opacity: 0.25;
 }
 
 @media (min-width: 767px) {
