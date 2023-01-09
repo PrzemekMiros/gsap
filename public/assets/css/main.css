@@ -4969,7 +4969,7 @@ html.has-scroll-dragging {
 }
 
 .header-wrap {
-  padding: 1em;
+  padding: 1em 1.8em 1em 3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
