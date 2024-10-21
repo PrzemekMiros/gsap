@@ -1,4 +1,4 @@
-name: Deploy Eleventy to OVH
+name: Deploy Eleventy Site to OVH
 
 on:
   push:
@@ -31,4 +31,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./public  # Folder z plikami Eleventy
-        server-dir: /www/build/  # Folder na serwerze OVH
+        server-dir: /www/build  # Folder na serwerze OVH
